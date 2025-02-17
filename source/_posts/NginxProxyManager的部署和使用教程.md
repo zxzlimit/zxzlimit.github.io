@@ -3,6 +3,7 @@ title: NginxProxyManager的部署和使用教程
 date: 2025-02-17 17:07:55
 tags:
   - NPM
+  - server
 categories: 服务器
 description: 服务器一般都是需要搞网页的嘛，网页离不开nginx，NPM就是一个webui化管理nginx的工具嘛，会用它了就不需要在nginx的配置文件里面慢慢敲了，很方便。
 ---

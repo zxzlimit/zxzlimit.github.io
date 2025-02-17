@@ -3,6 +3,7 @@ title: 阿里云域名+Nginx Proxy Manager配置SSL证书全流程
 date: 2025-02-17 17:10:31
 tags:
   - NPM
+  - server
 categories: 服务器
 description: 之前讲过了NPM的安装，现在详细说一下它是怎么配置的，以及一些服务器的基本东西，域名啊，ssl证书啊，dns云解析啊这些，还有国内域名一般都要备案，好麻烦的说啊。
 ---
