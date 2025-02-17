@@ -6,15 +6,6 @@ tags:
 categories: 博客
 description: 将个人博客网站部署到GitHub Pages，通过git来进行网站更新。
 ---
-title: 个人博客网站部署到GitHub Pages
-date: 2025-02-17 15:23:56
-tags:
-
-  - Next
-    categories: 博客
-    description: 将个人博客网站部署到GitHub Pages，通过git来进行网站更新。
-
----
 
 # 一、注册GitHub账号
 
