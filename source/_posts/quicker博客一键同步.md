@@ -25,4 +25,9 @@ cmd中就可以像这样执行
 D:\git\Git\git-bash.exe -c "cd /c/Users/zxz/Desktop/test && git add . && git commit -m 's' && git push origin dev"
 ```
 
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" /> 
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
+
+quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
+
