@@ -412,6 +412,7 @@
         <category>服务器</category>
       </categories>
       <tags>
+        <tag>server</tag>
         <tag>NPM</tag>
       </tags>
   </entry>
@@ -448,6 +449,34 @@
         <category>服务器</category>
       </categories>
       <tags>
+        <tag>server</tag>
+        <tag>NPM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图床</title>
+    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>server</tag>
         <tag>NPM</tag>
       </tags>
   </entry>
