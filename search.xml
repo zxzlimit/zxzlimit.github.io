@@ -225,12 +225,7 @@
   <entry>
     <title>个人博客网站部署到GitHub Pages</title>
     <url>/2025/02/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages/</url>
-    <content><![CDATA[<p>title: 个人博客网站部署到GitHub Pages<br>date: 2025-02-17 15:23:56<br>tags:</p>
-<ul>
-<li>Next<br>categories: 博客<br>description: 将个人博客网站部署到GitHub Pages，通过git来进行网站更新。</li>
-</ul>
-<hr>
-<h1 id="一、注册GitHub账号"><a href="#一、注册GitHub账号" class="headerlink" title="一、注册GitHub账号"></a>一、注册GitHub账号</h1><p>后面要将我们的个人博客网站部署到GitHub Pages上，拥有一个GitHub账户自然就是最基本的前提了。</p>
+    <content><![CDATA[<h1 id="一、注册GitHub账号"><a href="#一、注册GitHub账号" class="headerlink" title="一、注册GitHub账号"></a>一、注册GitHub账号</h1><p>后面要将我们的个人博客网站部署到GitHub Pages上，拥有一个GitHub账户自然就是最基本的前提了。</p>
 <p>百度搜索“gitub”，搜索结果如下图所示：</p>
 <p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1.png" alt="img"></p>
 <p>选择并点击“GitHub Build software better, together.”，或直接访问<a href="https://github.com/">https://github.com/</a><br>进入如下图所示界面：</p>
