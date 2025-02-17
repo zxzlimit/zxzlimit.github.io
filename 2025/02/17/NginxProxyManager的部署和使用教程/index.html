@@ -20,25 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="无人扶我青云志，我自踏雪至山巅。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zxz&#39;s blog">
-<meta property="og:url" content="http://localhost:4000/archives/2025/02/index.html">
+    <meta name="description" content="服务器一般都是需要搞网页的嘛，网页离不开nginx，NPM就是一个webui化管理nginx的工具嘛，会用它了就不需要在nginx的配置文件里面慢慢敲了，很方便。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NginxProxyManager的部署和使用教程">
+<meta property="og:url" content="http://localhost:4000/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="zxz&#39;s blog">
-<meta property="og:description" content="无人扶我青云志，我自踏雪至山巅。">
+<meta property="og:description" content="服务器一般都是需要搞网页的嘛，网页离不开nginx，NPM就是一个webui化管理nginx的工具嘛，会用它了就不需要在nginx的配置文件里面慢慢敲了，很方便。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png">
+<meta property="article:published_time" content="2025-02-17T09:07:55.000Z">
+<meta property="article:modified_time" content="2025-02-17T09:10:09.647Z">
 <meta property="article:author" content="zxz">
-<meta property="article:tag" content="技术, 自我提升, 动力, 编程, 个人成长">
+<meta property="article:tag" content="NPM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png">
 
 
-<link rel="canonical" href="http://localhost:4000/archives/2025/02/">
+<link rel="canonical" href="http://localhost:4000/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2025/02/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://localhost:4000/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/","path":"2025/02/17/NginxProxyManager的部署和使用教程/","title":"NginxProxyManager的部署和使用教程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | zxz's blog</title>
+<title>NginxProxyManager的部署和使用教程 | zxz's blog</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">zxz's blog</h1>
+      <p class="site-title">zxz's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -124,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -137,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-text">NginxProxyManager的部署和使用教程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,170 +195,143 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
+      <meta itemprop="name" content="zxz">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zxz's blog">
+      <meta itemprop="description" content="无人扶我青云志，我自踏雪至山巅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NginxProxyManager的部署和使用教程 | zxz's blog">
+      <meta itemprop="description" content="服务器一般都是需要搞网页的嘛，网页离不开nginx，NPM就是一个webui化管理nginx的工具嘛，会用它了就不需要在nginx的配置文件里面慢慢敲了，很方便。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NginxProxyManager的部署和使用教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2025<span class="collection-year-count">7</span></span>
+
+      <time title="创建时间：2025-02-17 17:07:55 / 修改时间：17:10:09" itemprop="dateCreated datePublished" datetime="2025-02-17T17:07:55+08:00">2025-02-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">服务器</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>853</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">服务器一般都是需要搞网页的嘛，网页离不开nginx，NPM就是一个webui化管理nginx的工具嘛，会用它了就不需要在nginx的配置文件里面慢慢敲了，很方便。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><p>要先安装docker才方便安装<code>nginx-proxy-manage</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir nginx-proxy-manager</span><br><span class="line">cd nginx-proxy-manager</span><br><span class="line">touch docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>docker-compose.yml</code>内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    container_name: nginx-proxy-manager</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">    - &#x27;80:80&#x27;</span><br><span class="line">    - &#x27;81:81&#x27;</span><br><span class="line">    - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">    - ./data:/data</span><br><span class="line">    - ./letsencrypt:/etc/letsencrypt</span><br><span class="line">    networks:</span><br><span class="line">    - nginx_network # 加入nginx_network 网络</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">nginx_network:</span><br><span class="line">external: true # 声明此网络为外部网络，需确保nginx_network网络已事先创建</span><br></pre></td></tr></table></figure>
+
+<p>上面使用了一个nginx_network网络，后续部署所有的服务都可以加入此网络内，在同一网络下的服务不需要对外暴露端口，安全性大大提高。 启动服务前需要手动创建这个网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create nginx_network</span><br></pre></td></tr></table></figure>
+
+<p>查看已创建网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
+
+<p>然后启动：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line">或者</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>可以使用下面命令查看日志</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker compose logs app</span><br></pre></td></tr></table></figure>
+
+<p><code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</p>
+<p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
+<p>默认管理员用户以及密码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> 
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T17:10:31+08:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D-Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6%E5%85%A8%E6%B5%81%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">阿里云域名+Nginx Proxy Manager配置SSL证书全流程</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NPM/" rel="tag"># NPM</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/17/Quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/" rel="prev" title="Quicker博客一键同步">
+                  <i class="fa fa-angle-left"></i> Quicker博客一键同步
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/02/17/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D-Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6%E5%85%A8%E6%B5%81%E7%A8%8B/" rel="next" title="阿里云域名+Nginx Proxy Manager配置SSL证书全流程">
+                  阿里云域名+Nginx Proxy Manager配置SSL证书全流程 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T17:07:55+08:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">NginxProxyManager的部署和使用教程</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T16:48:51+08:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/Quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/" itemprop="url">
-            <span itemprop="name">Quicker博客一键同步</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T15:59:42+08:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8v2raya%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%88%E6%97%A0UI%EF%BC%89/" itemprop="url">
-            <span itemprop="name">服务器使用v2raya来实现科学上网（无UI）</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T15:23:56+08:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages/" itemprop="url">
-            <span itemprop="name">个人博客网站部署到GitHub Pages</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-16T14:49:55+08:00"
-              content="2025-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/16/%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/" itemprop="url">
-            <span itemprop="name">博客NexT主题美化设置</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-16T14:45:29+08:00"
-              content="2025-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/16/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url">
-            <span itemprop="name">Hexo个人博客搭建</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 

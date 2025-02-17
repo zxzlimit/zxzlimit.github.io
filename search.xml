@@ -360,9 +360,9 @@
       </tags>
   </entry>
   <entry>
-    <title>quicker博客一键同步</title>
-    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="quicker博客一键同步"><a href="#quicker博客一键同步" class="headerlink" title="quicker博客一键同步"></a>quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
+    <title>Quicker博客一键同步</title>
+    <url>/2025/02/17/Quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
 
 <p>cmd中就可以像这样执行</p>
@@ -370,7 +370,7 @@
 
 <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
 
-<p>quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
+<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
 <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
 
 ]]></content>
@@ -378,7 +378,77 @@
         <category>便利</category>
       </categories>
       <tags>
-        <tag>quicker</tag>
+        <tag>Quicker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NginxProxyManager的部署和使用教程</title>
+    <url>/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><p>要先安装docker才方便安装<code>nginx-proxy-manage</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir nginx-proxy-manager</span><br><span class="line">cd nginx-proxy-manager</span><br><span class="line">touch docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>docker-compose.yml</code>内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    container_name: nginx-proxy-manager</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">    - &#x27;80:80&#x27;</span><br><span class="line">    - &#x27;81:81&#x27;</span><br><span class="line">    - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">    - ./data:/data</span><br><span class="line">    - ./letsencrypt:/etc/letsencrypt</span><br><span class="line">    networks:</span><br><span class="line">    - nginx_network # 加入nginx_network 网络</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">nginx_network:</span><br><span class="line">external: true # 声明此网络为外部网络，需确保nginx_network网络已事先创建</span><br></pre></td></tr></table></figure>
+
+<p>上面使用了一个nginx_network网络，后续部署所有的服务都可以加入此网络内，在同一网络下的服务不需要对外暴露端口，安全性大大提高。 启动服务前需要手动创建这个网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create nginx_network</span><br></pre></td></tr></table></figure>
+
+<p>查看已创建网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
+
+<p>然后启动：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line">或者</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>可以使用下面命令查看日志</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker compose logs app</span><br></pre></td></tr></table></figure>
+
+<p><code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</p>
+<p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
+<p>默认管理员用户以及密码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>NPM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云域名+Nginx Proxy Manager配置SSL证书全流程</title>
+    <url>/2025/02/17/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D-Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6%E5%85%A8%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="阿里云域名-Nginx-Proxy-Manager配置SSL证书全流程"><a href="#阿里云域名-Nginx-Proxy-Manager配置SSL证书全流程" class="headerlink" title="阿里云域名+Nginx Proxy Manager配置SSL证书全流程"></a>阿里云域名+Nginx Proxy Manager配置SSL证书全流程</h1><p>域名就是像wwwbaidu.com这样的东西嘛，其实就是把ip地址隐藏起来，将一个ip加端口给隐藏起来，通过域名访问网站嘛</p>
+<p>ssl就是https，更加安全，没有ssl证书只能是http，不太安全</p>
+<p>dns云解析，这个就是把域名解析到ip嘛</p>
+<p>其实配置这一步就是把ip加端口关联到一个域名。一般前端也好，后端也好，运行都是一个ip加一个端口号的嘛，这样不太好看也暴露了服务器，所以配置一下好一些嘛。</p>
+<p>买完域名记得备案，然后是搞ssl证书</p>
+<p>下面直接开始操作</p>
+<p>注意一点<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hq2tyc45.sm4.png" alt="hq2tyc45.sm4"></p>
+<p>它的domain names对应<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/e1sp0fla.25i.png" alt="e1sp0fla.25i"></p>
+<h4 id="阿里云DNS-API的获取"><a href="#阿里云DNS-API的获取" class="headerlink" title="阿里云DNS API的获取"></a>阿里云DNS API的获取</h4><h5 id="创建子账号"><a href="#创建子账号" class="headerlink" title="创建子账号"></a>创建子账号</h5><p>前往：<a href="https://ram.console.aliyun.com/">https://ram.console.aliyun.com</a> 申请子账号。</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qjsdsrul.e2d.png" alt="qjsdsrul.e2d"></p>
+<p>名字任意命名，下面勾上：使用永久 AccessKey 访问 <a href="https://img.idev.ink/2024/12/11/AA9D2F2E-5AD5-4CD2-8754-345E8A22F603.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/5fn4elbs.rug.png" alt="5fn4elbs.rug"></a></p>
+<p>然后确定</p>
+<p><a href="https://img.idev.ink/2024/12/11/5ADB7A45-10FC-4758-A881-7FAF089AE82D.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/j1ixwkc4.ego.png" alt="j1ixwkc4.ego"></a></p>
+<p>把AccessKey ID和Secret都复制下来备用。</p>
+<h5 id="子账号授权"><a href="#子账号授权" class="headerlink" title="子账号授权"></a>子账号授权</h5><p>点击授权，新增授权： <a href="https://img.idev.ink/2024/12/11/F15DAC2A-5100-473D-9EFA-1CEDDB8E8C7D.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/5jauoqzb.b1a.png" alt="5jauoqzb.b1a"></a></p>
+<p>勾选刚才新建的用户，授予两个权限：<code>AliyunHTTPDNSFullAccess</code> <code>AliyunDNSFullAccess</code></p>
+<p><a href="https://img.idev.ink/2024/12/11/E085DAAF-9264-4AF1-A1CC-3A35226E537D.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/b32wkgiy.wnp.png" alt="b32wkgiy.wnp"></a></p>
+<p>然后确定，aliyun DNS API 获取完毕。</p>
+<h4 id="使用-nginx-proxy-manager-使用阿里云域名为网站部署证书"><a href="#使用-nginx-proxy-manager-使用阿里云域名为网站部署证书" class="headerlink" title="使用 nginx proxy manager 使用阿里云域名为网站部署证书"></a>使用 nginx proxy manager 使用阿里云域名为网站部署证书</h4><p>登录nginx proxy manager 控制台 点击<code>SSL Certificates</code></p>
+<p><a href="https://img.idev.ink/2024/12/11/B2F1212A-B64E-40B9-999B-01B5E74261EF.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/px32tmee.hc0.png" alt="px32tmee.hc0"></a></p>
+<p>点击 Add SSL Certificate</p>
+<p><a href="https://img.idev.ink/2024/12/11/4C741D10-A009-4C68-AA5A-1F01C11B89BB.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/xi33spac.5hg.png" alt="xi33spac.5hg"></a></p>
+<p>如图所示我设置了一个通配符证书，DNS服务商选阿里云，把下面的API ID和值替换成实际值，点save。 <a href="https://img.idev.ink/2024/12/11/2E53D4D0-6AF6-4D4F-A760-FBF0CC40B411.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fan5whop.dnz.png" alt="fan5whop.dnz"></a></p>
+<p>成功后如图所示： <a href="https://img.idev.ink/2024/12/11/6FA23FE0-008C-444C-9A65-0706DF79EC46.png?size=large"><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250215153255305.png" alt="image-20250215153255305"></a></p>
+<p>在部署的其他服务中就可以直接使用了</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>NPM</tag>
       </tags>
   </entry>
 </search>
