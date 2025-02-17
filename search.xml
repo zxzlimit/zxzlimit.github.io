@@ -359,4 +359,21 @@
         <tag>server</tag>
       </tags>
   </entry>
+  <entry>
+    <title>quicker博客一键同步</title>
+    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="quicker博客一键同步"><a href="#quicker博客一键同步" class="headerlink" title="quicker博客一键同步"></a>quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>cmd中就可以像这样执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" /> ]]></content>
+      <categories>
+        <category>便利</category>
+      </categories>
+      <tags>
+        <tag>quicker</tag>
+      </tags>
+  </entry>
 </search>
