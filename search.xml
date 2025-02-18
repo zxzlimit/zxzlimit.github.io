@@ -479,4 +479,34 @@
         <tag>图床</tag>
       </tags>
   </entry>
+  <entry>
+    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
+    <url>/2025/02/18/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
+<p>2、共享的相关设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
+<p>还有个设置，打开触控面板里面的程序设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
+<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
+<p>然后找到通讯录</p>
+<p>设置SMB功能，然后注册</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
+<p>然后确定，然后就配置好了。</p>
+<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
+<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>打印机</tag>
+      </tags>
+  </entry>
 </search>
