@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png">
 <meta property="article:published_time" content="2025-02-17T09:07:55.000Z">
-<meta property="article:modified_time" content="2025-02-17T09:20:30.626Z">
+<meta property="article:modified_time" content="2025-02-26T03:10:34.786Z">
 <meta property="article:author" content="zxz">
 <meta property="article:tag" content="server">
 <meta property="article:tag" content="NPM">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-text">NginxProxyManager的部署和使用教程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-text">NginxProxyManager的部署和使用教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%BF%AE%E6%94%B9-Docker-%E9%85%8D%E7%BD%AE%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-text">1、修改 Docker 配置（可选）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%A6%81%E5%85%88%E5%AE%89%E8%A3%85Docker%E5%92%8CDocker-Compose%E6%89%8D%E6%96%B9%E4%BE%BF%E5%AE%89%E8%A3%85nginx-proxy-manage"><span class="nav-text">2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E7%84%B6%E5%90%8E%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%86%99NGX%E7%9A%84%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C"><span class="nav-text">4、然后创建文件写NGX的配置运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81nginx-proxy-manager%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A881%E7%AB%AF%E5%8F%A3%EF%BC%8C%E9%9C%80%E8%A6%81%E9%98%B2%E7%81%AB%E5%A2%99%E6%94%BE%E8%A1%8C81%E7%AB%AF%E5%8F%A3%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%9C%89%E5%AE%89%E5%85%A8%E7%BB%84%E5%90%8C%E6%A0%B7%E9%9C%80%E8%A6%81%E6%94%BE%E8%A1%8C%E3%80%82"><span class="nav-text">5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,9 +235,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-02-17 17:07:55 / 修改时间：17:20:30" itemprop="dateCreated datePublished" datetime="2025-02-17T17:07:55+08:00">2025-02-17</time>
+      <time title="创建时间：2025-02-17 17:07:55" itemprop="dateCreated datePublished" datetime="2025-02-17T17:07:55+08:00">2025-02-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-26 11:10:34" itemprop="dateModified" datetime="2025-02-26T11:10:34+08:00">2025-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -256,7 +262,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>853</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -274,26 +280,45 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><p>要先安装docker才方便安装<code>nginx-proxy-manage</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir nginx-proxy-manager</span><br><span class="line">cd nginx-proxy-manager</span><br><span class="line">touch docker-compose.yml</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">    &quot;log-opts&quot;: &#123;</span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,</span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ipv6&quot;: true,</span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::/80&quot;,</span><br><span class="line">    &quot;experimental&quot;:true,</span><br><span class="line">    &quot;ip6tables&quot;:true</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>然后重启 Docker 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage"><a href="#2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage" class="headerlink" title="2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage"></a>2、要先安装Docker和Docker Compose才方便安装<code>nginx-proxy-manage</code></h2><p>安装docker</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ./docker-desktop-amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
+
+<p>安装docker Compose</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>3、查看端口是否被占用（以 81 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>如果啥也没出现，表示端口未被占用，我们可以继续下面的操作了～</p>
+<h2 id="4、然后创建文件写NGX的配置运行"><a href="#4、然后创建文件写NGX的配置运行" class="headerlink" title="4、然后创建文件写NGX的配置运行"></a>4、然后创建文件写NGX的配置运行</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
 
 <p>编辑<code>docker-compose.yml</code>内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    container_name: nginx-proxy-manager</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">    - &#x27;80:80&#x27;</span><br><span class="line">    - &#x27;81:81&#x27;</span><br><span class="line">    - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">    - ./data:/data</span><br><span class="line">    - ./letsencrypt:/etc/letsencrypt</span><br><span class="line">    networks:</span><br><span class="line">    - nginx_network # 加入nginx_network 网络</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">nginx_network:</span><br><span class="line">external: true # 声明此网络为外部网络，需确保nginx_network网络已事先创建</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;  # 保持默认即可，不建议修改左侧的80</span><br><span class="line">      - &#x27;81:81&#x27;  # 冒号左边可以改成自己服务器未被占用的端口</span><br><span class="line">      - &#x27;443:443&#x27; # 保持默认即可，不建议修改左侧的443</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>上面使用了一个nginx_network网络，后续部署所有的服务都可以加入此网络内，在同一网络下的服务不需要对外暴露端口，安全性大大提高。 启动服务前需要手动创建这个网络：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create nginx_network</span><br></pre></td></tr></table></figure>
+<p>然后运行该配置文件，这里的-d表示后台运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/npm   # 来到 dockercompose 文件所在的文件夹</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
-<p>查看已创建网络：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
 
-<p>然后启动：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line">或者</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
-<p>可以使用下面命令查看日志</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker compose logs app</span><br></pre></td></tr></table></figure>
-
-<p><code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</p>
-<p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
+<h2 id="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"><a href="#5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。" class="headerlink" title="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"></a>5、<code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</h2><p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
 <p>默认管理员用户以及密码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
 
@@ -353,13 +378,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">15k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
