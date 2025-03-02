@@ -431,8 +431,7 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>server</tag>
-        <tag>NPM</tag>
+        <tag>Nginx Proxy Manager</tag>
       </tags>
   </entry>
   <entry>
@@ -620,5 +619,10 @@
       <tags>
         <tag>软件</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Nginx Proxy Manager配置SSL</title>
+    <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
