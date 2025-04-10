@@ -20,25 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zxzlimit.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="无人扶我青云志，我自踏雪至山巅。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zxz&#39;s blog">
-<meta property="og:url" content="https://zxzlimit.github.io/categories/%E8%BD%AF%E4%BB%B6/index.html">
+    <meta name="description" content="SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器配置SyncClipboard">
+<meta property="og:url" content="https://zxzlimit.github.io/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/index.html">
 <meta property="og:site_name" content="zxz&#39;s blog">
-<meta property="og:description" content="无人扶我青云志，我自踏雪至山巅。">
+<meta property="og:description" content="SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-26T03:22:15.000Z">
+<meta property="article:modified_time" content="2025-04-10T12:08:38.168Z">
 <meta property="article:author" content="zxz">
-<meta property="article:tag" content="技术, 自我提升, 动力, 编程, 个人成长">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://zxzlimit.github.io/categories/%E8%BD%AF%E4%BB%B6/">
+<link rel="canonical" href="https://zxzlimit.github.io/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/软件/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zxzlimit.github.io/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/","path":"2025/02/26/服务器配置SyncClipboard/","title":"服务器配置SyncClipboard"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: 软件 | zxz's blog</title>
+<title>服务器配置SyncClipboard | zxz's blog</title>
   
 
 
@@ -124,7 +126,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -137,6 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard"><span class="nav-text">服务器配置SyncClipboard</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,51 +193,139 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">软件
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
+      <meta itemprop="name" content="zxz">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zxz's blog">
+      <meta itemprop="description" content="无人扶我青云志，我自踏雪至山巅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="服务器配置SyncClipboard | zxz's blog">
+      <meta itemprop="description" content="SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          服务器配置SyncClipboard
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-02-26 11:22:15" itemprop="dateCreated datePublished" datetime="2025-02-26T11:22:15+08:00">2025-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-10 20:08:38" itemprop="dateModified" datetime="2025-04-10T20:08:38+08:00">2025-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AE%9E%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">实用</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>692</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="服务器配置SyncClipboard"><a href="#服务器配置SyncClipboard" class="headerlink" title="服务器配置SyncClipboard"></a>服务器配置SyncClipboard</h1><p>1、创建安装目录<br>创建一下安装的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/syncclipboard</span><br></pre></td></tr></table></figure>
+
+<p>2、接着我们来编辑下docker-compose.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编辑配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  syncclipboard-server:</span><br><span class="line">    image: jericx/syncclipboard-server:latest</span><br><span class="line">    container_name: syncclipboard-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5133:5033&quot; # 左边的5133可以改成服务器上没有用过的其他端口</span><br><span class="line">    environment:</span><br><span class="line">      - SYNCCLIPBOARD_USERNAME=这里改成你的英文的用户名</span><br><span class="line">      - SYNCCLIPBOARD_PASSWORD=这个改成你的密码</span><br><span class="line"> </span><br><span class="line"> #其中的5133可以改成服务器上没有用过的端口，记得修改自己的用户名和密码，修改完成之后，可以在英文输入法下，按 i 修改，完成之后，按一下 esc，然后 :wq 保存退出。</span><br></pre></td></tr></table></figure>
+
+<p>3、查看端口是否被占用<br>查看端口是否被占用（以 5133 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:5133  #查看 5133 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>4、启动 syncclipboard</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-25T10:54:24+08:00"
-              content="2025-02-25">
-          02-25
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/25/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/" itemprop="url">
-            <span itemprop="name">win软件配置</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/docker/" rel="tag"># docker</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/25/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/" rel="prev" title="win软件配置">
+                  <i class="fa fa-angle-left"></i> win软件配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/" rel="next" title="Nginx Proxy Manager配置SSL">
+                  Nginx Proxy Manager配置SSL <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 
