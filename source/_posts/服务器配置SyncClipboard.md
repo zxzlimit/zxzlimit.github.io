@@ -2,10 +2,9 @@
 title: 服务器配置SyncClipboard
 date: 2025-02-26 11:22:15
 tags:
-
   - docker
-    categories: 实用
-    description: SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐
+categories: 实用
+description: SyncClipboard是一个云剪贴版，可以同步电脑手机平板直接的文字，非常无感，推荐
 ---
 
 # 服务器配置SyncClipboard
