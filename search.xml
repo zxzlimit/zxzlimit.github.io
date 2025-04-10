@@ -44,6 +44,59 @@
       </tags>
   </entry>
   <entry>
+    <title>NginxProxyManager的部署和使用教程</title>
+    <url>/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">    &quot;log-opts&quot;: &#123;</span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,</span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ipv6&quot;: true,</span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::/80&quot;,</span><br><span class="line">    &quot;experimental&quot;:true,</span><br><span class="line">    &quot;ip6tables&quot;:true</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>然后重启 Docker 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage"><a href="#2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage" class="headerlink" title="2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage"></a>2、要先安装Docker和Docker Compose才方便安装<code>nginx-proxy-manage</code></h2><p>安装docker</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ./docker-desktop-amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
+
+<p>安装docker Compose</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>3、查看端口是否被占用（以 81 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>如果啥也没出现，表示端口未被占用，我们可以继续下面的操作了～</p>
+<h2 id="4、然后创建文件写NGX的配置运行"><a href="#4、然后创建文件写NGX的配置运行" class="headerlink" title="4、然后创建文件写NGX的配置运行"></a>4、然后创建文件写NGX的配置运行</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>docker-compose.yml</code>内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;  # 保持默认即可，不建议修改左侧的80</span><br><span class="line">      - &#x27;81:81&#x27;  # 冒号左边可以改成自己服务器未被占用的端口</span><br><span class="line">      - &#x27;443:443&#x27; # 保持默认即可，不建议修改左侧的443</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后运行该配置文件，这里的-d表示后台运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/npm   # 来到 dockercompose 文件所在的文件夹</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"><a href="#5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。" class="headerlink" title="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"></a>5、<code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</h2><p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
+<p>默认管理员用户以及密码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>Nginx Proxy Manager</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx Proxy Manager配置SSL</title>
     <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
     <content><![CDATA[<h1 id="Nginx-Proxy-Manager配置SSL"><a href="#Nginx-Proxy-Manager配置SSL" class="headerlink" title="Nginx Proxy Manager配置SSL"></a>Nginx Proxy Manager配置SSL</h1><p>这里有两种方式</p>
@@ -193,59 +246,6 @@
       </tags>
   </entry>
   <entry>
-    <title>NginxProxyManager的部署和使用教程</title>
-    <url>/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">    &quot;log-opts&quot;: &#123;</span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,</span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ipv6&quot;: true,</span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::/80&quot;,</span><br><span class="line">    &quot;experimental&quot;:true,</span><br><span class="line">    &quot;ip6tables&quot;:true</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<p>然后重启 Docker 服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage"><a href="#2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage" class="headerlink" title="2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage"></a>2、要先安装Docker和Docker Compose才方便安装<code>nginx-proxy-manage</code></h2><p>安装docker</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ./docker-desktop-amd64.deb</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
-
-<p>安装docker Compose</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>3、查看端口是否被占用（以 81 为例），输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
-
-<p>如果啥也没出现，表示端口未被占用，我们可以继续下面的操作了～</p>
-<h2 id="4、然后创建文件写NGX的配置运行"><a href="#4、然后创建文件写NGX的配置运行" class="headerlink" title="4、然后创建文件写NGX的配置运行"></a>4、然后创建文件写NGX的配置运行</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
-
-<p>编辑<code>docker-compose.yml</code>内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;  # 保持默认即可，不建议修改左侧的80</span><br><span class="line">      - &#x27;81:81&#x27;  # 冒号左边可以改成自己服务器未被占用的端口</span><br><span class="line">      - &#x27;443:443&#x27; # 保持默认即可，不建议修改左侧的443</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后运行该配置文件，这里的-d表示后台运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/npm   # 来到 dockercompose 文件所在的文件夹</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"><a href="#5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。" class="headerlink" title="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"></a>5、<code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</h2><p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
-<p>默认管理员用户以及密码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>Nginx Proxy Manager</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>个人博客网站部署到GitHub Pages</title>
     <url>/2025/02/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages/</url>
     <content><![CDATA[<h1 id="一、注册GitHub账号"><a href="#一、注册GitHub账号" class="headerlink" title="一、注册GitHub账号"></a>一、注册GitHub账号</h1><p>后面要将我们的个人博客网站部署到GitHub Pages上，拥有一个GitHub账户自然就是最基本的前提了。</p>
@@ -330,136 +330,6 @@
       </categories>
       <tags>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器使用v2raya来实现科学上网（无UI）</title>
-    <url>/2025/02/17/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8v2raya%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%88%E6%97%A0UI%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="服务器使用v2raya来实现科学上网（无UI）"><a href="#服务器使用v2raya来实现科学上网（无UI）" class="headerlink" title="服务器使用v2raya来实现科学上网（无UI）"></a>服务器使用v2raya来实现科学上网（无UI）</h1><p>使用v2raya对v2ray核心进行管理，实现在本地电脑配置服务器的代理</p>
-<p>1、安装v2raya</p>
-<p>在<a href="https://github.com/v2rayA/v2rayA/releases%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8C%E5%B0%86%E5%85%B6%E4%BC%A0%E5%85%A5%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8C%E9%9D%A2">https://github.com/v2rayA/v2rayA/releases下载对应的安装包，将其传入到服务器里面</a></p>
-<p>在通过进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install /path/download/installer_debian_xxx_vxxx.deb ### 自行替换 deb 包所在的实际路径</span><br></pre></td></tr></table></figure>
-
-<p>启动v2raya</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start v2raya</span><br></pre></td></tr></table></figure>
-
-<p>查看运行状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status v2raya</span><br></pre></td></tr></table></figure>
-
-<p>配置v2raya的.config</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/v2raya/config.json</span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;api&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;listen&quot;: &quot;0.0.0.0&quot;,   // 设置为 0.0.0.0 以便通过外部访问</span><br><span class="line">    &quot;port&quot;: 2017,           // 默认端口是 2017，如果需要，可以改成其他端口</span><br><span class="line">    &quot;auth&quot;: &#123;</span><br><span class="line">      &quot;user&quot;: &quot;admin&quot;,      // 设置用户名</span><br><span class="line">      &quot;password&quot;: &quot;your_password&quot;  // 设置密码</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2、安装v2ray和相关配置</p>
-<p>参考网址<a href="https://github.com/v2fly/fhs-install-v2ray?tab=readme-ov-file">https://github.com/v2fly/fhs-install-v2ray?tab=readme-ov-file</a></p>
-<p><strong>安装unzip后面解压要用</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install unzip</span><br></pre></td></tr></table></figure>
-
-<p><strong>安裝和更新 V2Ray</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)</span><br><span class="line"></span><br><span class="line">sudo systemctl start v2ray   # 启动</span><br><span class="line"></span><br><span class="line">sudo systemctl status v2ray   #查看状态</span><br></pre></td></tr></table></figure>
-
-<p><strong>安裝最新發行的 geoip.dat 和 geosite.dat</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)</span><br></pre></td></tr></table></figure>
-
-<p>3、去浏览器输入对应网址进行配置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://&lt;your-server-ip&gt;:2017</span><br></pre></td></tr></table></figure>
-
-<p>设置里面这么在保存一下</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/r0xqu5lg.vls.png" alt="r0xqu5lg.vls"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/bngo51a0.0rb.png" alt="bngo51a0.0rb"></p>
-<p>4、检查是否成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -I https://www.google.com</span><br></pre></td></tr></table></figure>
-
-<p>很快能进行结果返回即代表成功</p>
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器配置SyncClipboard</title>
-    <url>/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/</url>
-    <content><![CDATA[<h1 id="服务器配置SyncClipboard"><a href="#服务器配置SyncClipboard" class="headerlink" title="服务器配置SyncClipboard"></a>服务器配置SyncClipboard</h1><p>1、创建安装目录<br>创建一下安装的目录：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/syncclipboard</span><br></pre></td></tr></table></figure>
-
-<p>2、接着我们来编辑下docker-compose.yml</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>编辑配置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  syncclipboard-server:</span><br><span class="line">    image: jericx/syncclipboard-server:latest</span><br><span class="line">    container_name: syncclipboard-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5133:5033&quot; # 左边的5133可以改成服务器上没有用过的其他端口</span><br><span class="line">    environment:</span><br><span class="line">      - SYNCCLIPBOARD_USERNAME=这里改成你的英文的用户名</span><br><span class="line">      - SYNCCLIPBOARD_PASSWORD=这个改成你的密码</span><br><span class="line"> </span><br><span class="line"> #其中的5133可以改成服务器上没有用过的端口，记得修改自己的用户名和密码，修改完成之后，可以在英文输入法下，按 i 修改，完成之后，按一下 esc，然后 :wq 保存退出。</span><br></pre></td></tr></table></figure>
-
-<p>3、查看端口是否被占用<br>查看端口是否被占用（以 5133 为例），输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:5133  #查看 5133 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
-
-<p>4、启动 syncclipboard</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>实用</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图床</title>
-    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
-<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
-<p>新建一个bucket</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
-<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
-<p>然后基本完成了</p>
-<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
-<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
-<p>这些信息就是刚刚注册bucket时的，填写好。</p>
-<p>然后在配置一下serve</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
-<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
-    <url>/2025/02/18/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
-    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
-<p>2、共享的相关设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
-<p>还有个设置，打开触控面板里面的程序设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
-<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
-<p>然后找到通讯录</p>
-<p>设置SMB功能，然后注册</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
-<p>然后确定，然后就配置好了。</p>
-<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
-<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>打印机</tag>
       </tags>
   </entry>
   <entry>
@@ -639,6 +509,136 @@
       </categories>
       <tags>
         <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图床</title>
+    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器配置SyncClipboard</title>
+    <url>/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/</url>
+    <content><![CDATA[<h1 id="服务器配置SyncClipboard"><a href="#服务器配置SyncClipboard" class="headerlink" title="服务器配置SyncClipboard"></a>服务器配置SyncClipboard</h1><p>1、创建安装目录<br>创建一下安装的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/syncclipboard</span><br></pre></td></tr></table></figure>
+
+<p>2、接着我们来编辑下docker-compose.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编辑配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  syncclipboard-server:</span><br><span class="line">    image: jericx/syncclipboard-server:latest</span><br><span class="line">    container_name: syncclipboard-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5133:5033&quot; # 左边的5133可以改成服务器上没有用过的其他端口</span><br><span class="line">    environment:</span><br><span class="line">      - SYNCCLIPBOARD_USERNAME=这里改成你的英文的用户名</span><br><span class="line">      - SYNCCLIPBOARD_PASSWORD=这个改成你的密码</span><br><span class="line"> </span><br><span class="line"> #其中的5133可以改成服务器上没有用过的端口，记得修改自己的用户名和密码，修改完成之后，可以在英文输入法下，按 i 修改，完成之后，按一下 esc，然后 :wq 保存退出。</span><br></pre></td></tr></table></figure>
+
+<p>3、查看端口是否被占用<br>查看端口是否被占用（以 5133 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:5133  #查看 5133 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>4、启动 syncclipboard</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>实用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
+    <url>/2025/02/18/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
+<p>2、共享的相关设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
+<p>还有个设置，打开触控面板里面的程序设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
+<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
+<p>然后找到通讯录</p>
+<p>设置SMB功能，然后注册</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
+<p>然后确定，然后就配置好了。</p>
+<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
+<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>打印机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器使用v2raya来实现科学上网（无UI）</title>
+    <url>/2025/02/17/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8v2raya%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%88%E6%97%A0UI%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="服务器使用v2raya来实现科学上网（无UI）"><a href="#服务器使用v2raya来实现科学上网（无UI）" class="headerlink" title="服务器使用v2raya来实现科学上网（无UI）"></a>服务器使用v2raya来实现科学上网（无UI）</h1><p>使用v2raya对v2ray核心进行管理，实现在本地电脑配置服务器的代理</p>
+<p>1、安装v2raya</p>
+<p>在<a href="https://github.com/v2rayA/v2rayA/releases%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8C%E5%B0%86%E5%85%B6%E4%BC%A0%E5%85%A5%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8C%E9%9D%A2">https://github.com/v2rayA/v2rayA/releases下载对应的安装包，将其传入到服务器里面</a></p>
+<p>在通过进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install /path/download/installer_debian_xxx_vxxx.deb ### 自行替换 deb 包所在的实际路径</span><br></pre></td></tr></table></figure>
+
+<p>启动v2raya</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start v2raya</span><br></pre></td></tr></table></figure>
+
+<p>查看运行状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status v2raya</span><br></pre></td></tr></table></figure>
+
+<p>配置v2raya的.config</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/v2raya/config.json</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;api&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;listen&quot;: &quot;0.0.0.0&quot;,   // 设置为 0.0.0.0 以便通过外部访问</span><br><span class="line">    &quot;port&quot;: 2017,           // 默认端口是 2017，如果需要，可以改成其他端口</span><br><span class="line">    &quot;auth&quot;: &#123;</span><br><span class="line">      &quot;user&quot;: &quot;admin&quot;,      // 设置用户名</span><br><span class="line">      &quot;password&quot;: &quot;your_password&quot;  // 设置密码</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、安装v2ray和相关配置</p>
+<p>参考网址<a href="https://github.com/v2fly/fhs-install-v2ray?tab=readme-ov-file">https://github.com/v2fly/fhs-install-v2ray?tab=readme-ov-file</a></p>
+<p><strong>安装unzip后面解压要用</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install unzip</span><br></pre></td></tr></table></figure>
+
+<p><strong>安裝和更新 V2Ray</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)</span><br><span class="line"></span><br><span class="line">sudo systemctl start v2ray   # 启动</span><br><span class="line"></span><br><span class="line">sudo systemctl status v2ray   #查看状态</span><br></pre></td></tr></table></figure>
+
+<p><strong>安裝最新發行的 geoip.dat 和 geosite.dat</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)</span><br></pre></td></tr></table></figure>
+
+<p>3、去浏览器输入对应网址进行配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://&lt;your-server-ip&gt;:2017</span><br></pre></td></tr></table></figure>
+
+<p>设置里面这么在保存一下</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/r0xqu5lg.vls.png" alt="r0xqu5lg.vls"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/bngo51a0.0rb.png" alt="bngo51a0.0rb"></p>
+<p>4、检查是否成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -I https://www.google.com</span><br></pre></td></tr></table></figure>
+
+<p>很快能进行结果返回即代表成功</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>server</tag>
       </tags>
   </entry>
 </search>
