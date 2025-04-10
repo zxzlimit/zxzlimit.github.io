@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Nginx Proxy Manager配置SSL</title>
+    <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
+    <content><![CDATA[<h1 id="Nginx-Proxy-Manager配置SSL"><a href="#Nginx-Proxy-Manager配置SSL" class="headerlink" title="Nginx Proxy Manager配置SSL"></a>Nginx Proxy Manager配置SSL</h1><p>这里有两种方式</p>
+<p>~血的教训，记得打开443端口啊！！！这是https的端口，md在这里绕了好久啊！！！<br>还有配置好可能还是有问题，记得清除浏览器缓存或者换个浏览器打开试一试。</p>
+<p>泛域名就是*.zxzflask.cn,其实按理说每一个域名下的子域名都应该单独配置一个ssl证书，但那样太麻烦了，于是就给一个域名配置好就行了，其他就是泛域名属于这个域名下的东西，只要给这个域名配置好了，后面的泛域名就一样了。例如dsada.zxzflask.cn ,adad.zxzflask.cn, 主域名就一个zxzflask.cn罢了。下面图片第一个就是属于泛域名。</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qk0evn04.j1x.png" alt="qk0evn04.j1x"></p>
+<h2 id="1、自己申请证书配置"><a href="#1、自己申请证书配置" class="headerlink" title="1、自己申请证书配置"></a>1、自己申请证书配置</h2><p>因为免费证书不支持泛域名。就只能一个一个申请了，不过申请也快的。例如文字a.zxzflask.cn。同时dns解析也要打开哈，必须的。</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rjbbjyf0.vmj.png" alt="rjbbjyf0.vmj" style="zoom:33%;" /> 
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pxeivvto.dkc.png" alt="pxeivvto.dkc" style="zoom:33%;" /> 
+
+<p>然后下载npm的证书文件，解压得到两个文件，一个后缀为.key:一个后缀为.pem的</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yzz1mdy5.a1c.png" alt="yzz1mdy5.a1c"> </p>
+<p>然后配置Nginx Proxy Manager，选择上传证书文件。</p>
+ <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uql44sng.4hj.png" alt="uql44sng.4hj" style="zoom:33%;" />
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kxsex3ut.wnx.png" alt="kxsex3ut.wnx" style="zoom:33%;" /> 
+
+<p>然后在proxy中选择这个就行了</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250302095633072.png" alt="image-20250302095633072" style="zoom:33%;" /> 
+
+<h2 id="2、使用dns申请证书配置"><a href="#2、使用dns申请证书配置" class="headerlink" title="2、使用dns申请证书配置"></a>2、使用dns申请证书配置</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hpb0zv5p.xgi.png" alt="hpb0zv5p.xgi" style="zoom:50%;" />
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/guw5huto.sk1.png" alt="guw5huto.sk1"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/tjc0oilm.x4d.png" alt="tjc0oilm.x4d"></p>
+<p>然后在Nginx Proxy Manager里面的主机配置好了就行了，也简单的。</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>Nginx Proxy Manager</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Quicker博客一键同步</title>
+    <url>/2025/02/17/Quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>cmd中就可以像这样执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
+
+<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
+
+]]></content>
+      <categories>
+        <category>便利</category>
+      </categories>
+      <tags>
+        <tag>Quicker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo个人博客搭建</title>
     <url>/2025/02/16/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h1 id="hexo搭建个人博客"><a href="#hexo搭建个人博客" class="headerlink" title="hexo搭建个人博客"></a>hexo搭建个人博客</h1><h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2><p>1、先安环境，查看是否安装</p>
@@ -44,113 +101,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx Proxy Manager配置SSL</title>
-    <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
-    <content><![CDATA[<h1 id="Nginx-Proxy-Manager配置SSL"><a href="#Nginx-Proxy-Manager配置SSL" class="headerlink" title="Nginx Proxy Manager配置SSL"></a>Nginx Proxy Manager配置SSL</h1><p>这里有两种方式</p>
-<p>~血的教训，记得打开443端口啊！！！这是https的端口，md在这里绕了好久啊！！！<br>还有配置好可能还是有问题，记得清除浏览器缓存或者换个浏览器打开试一试。</p>
-<p>泛域名就是*.zxzflask.cn,其实按理说每一个域名下的子域名都应该单独配置一个ssl证书，但那样太麻烦了，于是就给一个域名配置好就行了，其他就是泛域名属于这个域名下的东西，只要给这个域名配置好了，后面的泛域名就一样了。例如dsada.zxzflask.cn ,adad.zxzflask.cn, 主域名就一个zxzflask.cn罢了。下面图片第一个就是属于泛域名。</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qk0evn04.j1x.png" alt="qk0evn04.j1x"></p>
-<h2 id="1、自己申请证书配置"><a href="#1、自己申请证书配置" class="headerlink" title="1、自己申请证书配置"></a>1、自己申请证书配置</h2><p>因为免费证书不支持泛域名。就只能一个一个申请了，不过申请也快的。例如文字a.zxzflask.cn。同时dns解析也要打开哈，必须的。</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rjbbjyf0.vmj.png" alt="rjbbjyf0.vmj" style="zoom:33%;" /> 
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pxeivvto.dkc.png" alt="pxeivvto.dkc" style="zoom:33%;" /> 
-
-<p>然后下载npm的证书文件，解压得到两个文件，一个后缀为.key:一个后缀为.pem的</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yzz1mdy5.a1c.png" alt="yzz1mdy5.a1c"> </p>
-<p>然后配置Nginx Proxy Manager，选择上传证书文件。</p>
- <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uql44sng.4hj.png" alt="uql44sng.4hj" style="zoom:33%;" />
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kxsex3ut.wnx.png" alt="kxsex3ut.wnx" style="zoom:33%;" /> 
-
-<p>然后在proxy中选择这个就行了</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250302095633072.png" alt="image-20250302095633072" style="zoom:33%;" /> 
-
-<h2 id="2、使用dns申请证书配置"><a href="#2、使用dns申请证书配置" class="headerlink" title="2、使用dns申请证书配置"></a>2、使用dns申请证书配置</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hpb0zv5p.xgi.png" alt="hpb0zv5p.xgi" style="zoom:50%;" />
-
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/guw5huto.sk1.png" alt="guw5huto.sk1"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/tjc0oilm.x4d.png" alt="tjc0oilm.x4d"></p>
-<p>然后在Nginx Proxy Manager里面的主机配置好了就行了，也简单的。</p>
+    <title>图床</title>
+    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
 ]]></content>
       <categories>
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>Nginx Proxy Manager</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NginxProxyManager的部署和使用教程</title>
-    <url>/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">    &quot;log-opts&quot;: &#123;</span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,</span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ipv6&quot;: true,</span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::/80&quot;,</span><br><span class="line">    &quot;experimental&quot;:true,</span><br><span class="line">    &quot;ip6tables&quot;:true</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<p>然后重启 Docker 服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage"><a href="#2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage" class="headerlink" title="2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage"></a>2、要先安装Docker和Docker Compose才方便安装<code>nginx-proxy-manage</code></h2><p>安装docker</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ./docker-desktop-amd64.deb</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
-
-<p>安装docker Compose</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>3、查看端口是否被占用（以 81 为例），输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
-
-<p>如果啥也没出现，表示端口未被占用，我们可以继续下面的操作了～</p>
-<h2 id="4、然后创建文件写NGX的配置运行"><a href="#4、然后创建文件写NGX的配置运行" class="headerlink" title="4、然后创建文件写NGX的配置运行"></a>4、然后创建文件写NGX的配置运行</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
-
-<p>编辑<code>docker-compose.yml</code>内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;  # 保持默认即可，不建议修改左侧的80</span><br><span class="line">      - &#x27;81:81&#x27;  # 冒号左边可以改成自己服务器未被占用的端口</span><br><span class="line">      - &#x27;443:443&#x27; # 保持默认即可，不建议修改左侧的443</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后运行该配置文件，这里的-d表示后台运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/npm   # 来到 dockercompose 文件所在的文件夹</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"><a href="#5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。" class="headerlink" title="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"></a>5、<code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</h2><p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
-<p>默认管理员用户以及密码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>Nginx Proxy Manager</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Quicker博客一键同步</title>
-    <url>/2025/02/17/Quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
-
-<p>cmd中就可以像这样执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
-
-<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
-
-]]></content>
-      <categories>
-        <category>便利</category>
-      </categories>
-      <tags>
-        <tag>Quicker</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -333,32 +306,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图床</title>
-    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
-<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
-<p>新建一个bucket</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
-<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
-<p>然后基本完成了</p>
-<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
-<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
-<p>这些信息就是刚刚注册bucket时的，填写好。</p>
-<p>然后在配置一下serve</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
-<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客NexT主题美化设置</title>
     <url>/2025/02/16/%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="博客NexT主题美化设置"><a href="#博客NexT主题美化设置" class="headerlink" title="博客NexT主题美化设置"></a>博客NexT主题美化设置</h1><p>在网站根目录下输入以下命令</p>
@@ -538,6 +485,83 @@
       </tags>
   </entry>
   <entry>
+    <title>服务器配置SyncClipboard</title>
+    <url>/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/</url>
+    <content><![CDATA[<h1 id="服务器配置SyncClipboard"><a href="#服务器配置SyncClipboard" class="headerlink" title="服务器配置SyncClipboard"></a>服务器配置SyncClipboard</h1><p>1、创建安装目录<br>创建一下安装的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/syncclipboard</span><br></pre></td></tr></table></figure>
+
+<p>2、接着我们来编辑下docker-compose.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编辑配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  syncclipboard-server:</span><br><span class="line">    image: jericx/syncclipboard-server:latest</span><br><span class="line">    container_name: syncclipboard-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5133:5033&quot; # 左边的5133可以改成服务器上没有用过的其他端口</span><br><span class="line">    environment:</span><br><span class="line">      - SYNCCLIPBOARD_USERNAME=这里改成你的英文的用户名</span><br><span class="line">      - SYNCCLIPBOARD_PASSWORD=这个改成你的密码</span><br><span class="line"> </span><br><span class="line"> #其中的5133可以改成服务器上没有用过的端口，记得修改自己的用户名和密码，修改完成之后，可以在英文输入法下，按 i 修改，完成之后，按一下 esc，然后 :wq 保存退出。</span><br></pre></td></tr></table></figure>
+
+<p>3、查看端口是否被占用<br>查看端口是否被占用（以 5133 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:5133  #查看 5133 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>4、启动 syncclipboard</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>实用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NginxProxyManager的部署和使用教程</title>
+    <url>/2025/02/17/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">    &quot;log-opts&quot;: &#123;</span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,</span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ipv6&quot;: true,</span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::/80&quot;,</span><br><span class="line">    &quot;experimental&quot;:true,</span><br><span class="line">    &quot;ip6tables&quot;:true</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>然后重启 Docker 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage"><a href="#2、要先安装Docker和Docker-Compose才方便安装nginx-proxy-manage" class="headerlink" title="2、要先安装Docker和Docker Compose才方便安装nginx-proxy-manage"></a>2、要先安装Docker和Docker Compose才方便安装<code>nginx-proxy-manage</code></h2><p>安装docker</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ./docker-desktop-amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
+
+<p>安装docker Compose</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>3、查看端口是否被占用（以 81 为例），输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
+
+<p>如果啥也没出现，表示端口未被占用，我们可以继续下面的操作了～</p>
+<h2 id="4、然后创建文件写NGX的配置运行"><a href="#4、然后创建文件写NGX的配置运行" class="headerlink" title="4、然后创建文件写NGX的配置运行"></a>4、然后创建文件写NGX的配置运行</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>docker-compose.yml</code>内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;  # 保持默认即可，不建议修改左侧的80</span><br><span class="line">      - &#x27;81:81&#x27;  # 冒号左边可以改成自己服务器未被占用的端口</span><br><span class="line">      - &#x27;443:443&#x27; # 保持默认即可，不建议修改左侧的443</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后运行该配置文件，这里的-d表示后台运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/npm   # 来到 dockercompose 文件所在的文件夹</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"><a href="#5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。" class="headerlink" title="5、nginx-proxy-manager控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。"></a>5、<code>nginx-proxy-manager</code>控制台默认使用81端口，需要防火墙放行81端口，如果有安全组同样需要放行。</h2><p>浏览器输入地址：<code>http://ip:81</code>进入控制台。</p>
+<p>默认管理员用户以及密码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>Nginx Proxy Manager</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>服务器使用v2raya来实现科学上网（无UI）</title>
     <url>/2025/02/17/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8v2raya%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%88%E6%97%A0UI%EF%BC%89/</url>
     <content><![CDATA[<h1 id="服务器使用v2raya来实现科学上网（无UI）"><a href="#服务器使用v2raya来实现科学上网（无UI）" class="headerlink" title="服务器使用v2raya来实现科学上网（无UI）"></a>服务器使用v2raya来实现科学上网（无UI）</h1><p>使用v2raya对v2ray核心进行管理，实现在本地电脑配置服务器的代理</p>
@@ -585,30 +609,6 @@
       </categories>
       <tags>
         <tag>server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器配置SyncClipboard</title>
-    <url>/2025/02/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AESyncClipboard/</url>
-    <content><![CDATA[<h1 id="服务器配置SyncClipboard"><a href="#服务器配置SyncClipboard" class="headerlink" title="服务器配置SyncClipboard"></a>服务器配置SyncClipboard</h1><p>1、创建安装目录<br>创建一下安装的目录：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line">mkdir -p /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">cd /root/data/docker_data/syncclipboard</span><br></pre></td></tr></table></figure>
-
-<p>2、接着我们来编辑下docker-compose.yml</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>编辑配置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services:</span><br><span class="line">  syncclipboard-server:</span><br><span class="line">    image: jericx/syncclipboard-server:latest</span><br><span class="line">    container_name: syncclipboard-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5133:5033&quot; # 左边的5133可以改成服务器上没有用过的其他端口</span><br><span class="line">    environment:</span><br><span class="line">      - SYNCCLIPBOARD_USERNAME=这里改成你的英文的用户名</span><br><span class="line">      - SYNCCLIPBOARD_PASSWORD=这个改成你的密码</span><br><span class="line"> </span><br><span class="line"> #其中的5133可以改成服务器上没有用过的端口，记得修改自己的用户名和密码，修改完成之后，可以在英文输入法下，按 i 修改，完成之后，按一下 esc，然后 :wq 保存退出。</span><br></pre></td></tr></table></figure>
-
-<p>3、查看端口是否被占用<br>查看端口是否被占用（以 5133 为例），输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:5133  #查看 5133 端口是否被占用，如果被占用，重新自定义一个端口</span><br></pre></td></tr></table></figure>
-
-<p>4、启动 syncclipboard</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>实用</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
