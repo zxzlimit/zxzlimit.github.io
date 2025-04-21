@@ -705,6 +705,32 @@
   <entry>
     <title>常用的linux指令</title>
     <url>/2025/04/21/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="常用的linux指令"><a href="#常用的linux指令" class="headerlink" title="常用的linux指令"></a>常用的linux指令</h1><h2 id="根据域名获取ip"><a href="#根据域名获取ip" class="headerlink" title="根据域名获取ip"></a>根据域名获取ip</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nslookup xc104.zjxc.gov.cn</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zxz@r9000p:~$ nslookup xc104.zjxc.gov.cn</span><br><span class="line">Server:         10.255.255.254</span><br><span class="line">Address:        10.255.255.254#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:   xc104.zjxc.gov.cn</span><br><span class="line">Address: 220.191.226.152</span><br></pre></td></tr></table></figure>
+
+<p>结果ip为220.191.226.152</p>
+<h2 id="获取进程"><a href="#获取进程" class="headerlink" title="获取进程"></a>获取进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">获取所有的进程</span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line">获取特定的</span><br><span class="line">ps aux | grep python</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取所有进行的端口"><a href="#获取所有进行的端口" class="headerlink" title="获取所有进行的端口"></a>获取所有进行的端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo netstat -tulnp</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="杀死端口或进程"><a href="#杀死端口或进程" class="headerlink" title="杀死端口或进程"></a>杀死端口或进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取系统架构"><a href="#获取系统架构" class="headerlink" title="获取系统架构"></a>获取系统架构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -m</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
 </search>
