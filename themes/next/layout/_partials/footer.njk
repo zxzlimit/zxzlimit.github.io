@@ -1,3 +1,4 @@
+{# ===== 1. ICP / 公安备案信息显示 ===== #}
 {%- if theme.footer.beian.enable %}
   <div class="beian">
     {{- next_url('https://beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
@@ -10,6 +11,8 @@
   </div>
 {%- endif %}
 
+
+{# ===== 3. 页脚版权信息 ===== #}
 {%- if theme.footer.copyright !== false %}
   <div class="copyright">
     {%- set copyright_year = date(null, 'YYYY') %}
@@ -22,6 +25,27 @@
   </div>
 {%- endif %}
 
+
+
+
+
+<!-- ===== 2. 不蒜子访问统计 ===== -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="busuanzi-count">
+  <span id="busuanzi_container_page_pv">
+    本文浏览<span id="busuanzi_value_page_pv"></span>次
+  </span>
+  <span> |</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+
+
+
+
+
+{# ===== 4. 字数统计 + 阅读时间估算 ===== #}
 {%- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time %}
 <div class="wordcount">
   {%- if config.symbols_count_time.total_symbols %}
@@ -49,32 +73,3 @@
   {%- endif %}
 </div>
 {%- endif %}
-
-{%- if theme.busuanzi_count.enable %}
-<div class="busuanzi-count">
-  {%- if theme.busuanzi_count.total_visitors %}
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="{{ theme.busuanzi_count.total_visitors_icon }}"></i>
-      </span>
-      <span class="site-uv" title="{{ __('footer.total_visitors') }}">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-  {%- endif %}
-
-  {%- if theme.busuanzi_count.total_views %}
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="{{ theme.busuanzi_count.total_views_icon }}"></i>
-      </span>
-      <span class="site-pv" title="{{ __('footer.total_views') }}">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-  {%- endif %}
-</div>
-{%- endif %}
-
-
-

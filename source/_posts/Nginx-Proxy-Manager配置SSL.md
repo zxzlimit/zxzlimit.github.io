@@ -3,7 +3,8 @@ title: Nginx Proxy Manager配置SSL
 date: 2025-03-02 10:09:50
 tags:
   - Nginx Proxy Manager
-categories: 服务器
+categories: 
+  - [学习,html]
 description: Nginx Proxy Manager配置SSL,打开https的443端口啊，血的教训了。
 ---
 # Nginx Proxy Manager配置SSL
