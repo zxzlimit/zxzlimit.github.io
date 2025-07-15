@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo个人博客搭建</title>
-    <url>/2025/02/16/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1 id="hexo搭建个人博客"><a href="#hexo搭建个人博客" class="headerlink" title="hexo搭建个人博客"></a>hexo搭建个人博客</h1><h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2><p>1、先安环境，查看是否安装</p>
-<p>检查git是否安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git version</span><br></pre></td></tr></table></figure>
+    <title>mybatis-plus的使用</title>
+    <url>/2025/04/21/mybatis-plus%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="mybatis-plus的使用"><a href="#mybatis-plus的使用" class="headerlink" title="mybatis-plus的使用"></a>mybatis-plus的使用</h1><p>mp可以帮助我们快速完成项目的curd。</p>
+<h2 id="1、首先在配置中完成引用"><a href="#1、首先在配置中完成引用" class="headerlink" title="1、首先在配置中完成引用"></a>1、首先在配置中完成引用</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250419151410165.png" alt="image-20250419151410087"></p>
+<p>在pom文件中添加如下依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.5.5&lt;/version&gt; &lt;!-- 这里写你想用的版本 --&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
-<p>检查node是否安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>重新加载后即可，这里的话mybatisplus包含mybatis，可以只安装一个就行了。两个都安装也没啥。最好还是一个吧。</p>
+<h2 id="2、具体在项目中引用操作如下"><a href="#2、具体在项目中引用操作如下" class="headerlink" title="2、具体在项目中引用操作如下"></a>2、具体在项目中引用操作如下</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250419151257396.png" alt="QQ截图20250419144911"></p>
+<h3 id="（1）创建一个pojo和数据库表对接"><a href="#（1）创建一个pojo和数据库表对接" class="headerlink" title="（1）创建一个pojo和数据库表对接"></a>（1）创建一个pojo和数据库表对接</h3><p>pojo下面创建一个实体类对应数据库表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.pojo;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line">    private Integer grade;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(Integer age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getGrade() &#123;</span><br><span class="line">        return grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setGrade(Integer grade) &#123;</span><br><span class="line">        this.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Student&#123;&quot; +</span><br><span class="line">                &quot;id=&quot; + id +</span><br><span class="line">                &quot;, name=&#x27;&quot; + name + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &quot;, age=&quot; + age +</span><br><span class="line">                &quot;, grade=&quot; + grade +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>2、本地搭建</p>
-<p>安装hexo脚手架</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="（2）创建mapper"><a href="#（2）创建mapper" class="headerlink" title="（2）创建mapper"></a>（2）创建mapper</h3><p>继承BaseMapper</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.dao;</span><br><span class="line"></span><br><span class="line">import com.baomidou.mybatisplus.core.mapper.BaseMapper;</span><br><span class="line">import org.apache.ibatis.annotations.Mapper;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line"></span><br><span class="line">@Mapper</span><br><span class="line">public interface StudentMapper extends BaseMapper&lt;Student&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>进入指定文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd  /c/Users/zxz/Desktop</span><br></pre></td></tr></table></figure>
+<h3 id="（3）创建service"><a href="#（3）创建service" class="headerlink" title="（3）创建service"></a>（3）创建service</h3><p>继承IService</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.service;</span><br><span class="line">import com.baomidou.mybatisplus.extension.service.IService;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line"></span><br><span class="line">public interface StudentService extends IService&lt;Student&gt; &#123;</span><br><span class="line">    // 你可以在这里加自定义方法，比如：</span><br><span class="line">    // Student findByPhone(String phone);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>初始化一个hexo项目在该文件夹下，文件名为test</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init test</span><br></pre></td></tr></table></figure>
+<h3 id="（4）创建serviceImpl"><a href="#（4）创建serviceImpl" class="headerlink" title="（4）创建serviceImpl"></a>（4）创建serviceImpl</h3><p>继承ServiceImpl</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.service.impl;</span><br><span class="line"></span><br><span class="line">import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl; // 这个导入漏了</span><br><span class="line">import org.example.mybatis.dao.StudentMapper;</span><br><span class="line">import org.example.mybatis.pojo.Student; // 记得导入 Student 实体类</span><br><span class="line">import org.example.mybatis.service.StudentService;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class StudentServiceImpl extends ServiceImpl&lt;StudentMapper, Student&gt; implements StudentService &#123;</span><br><span class="line">    // 这里可以加你自己的业务逻辑方法，比如：</span><br><span class="line">    // public Student findByPhone(String phone) &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>如果安装不全，则进入test文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd test</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>生成对应文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/cypa2a31.va3.png" alt="cypa2a31.va3" style="zoom: 50%;" />  
-
-<p>启动服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="一些常用的hexo命令"><a href="#一些常用的hexo命令" class="headerlink" title="一些常用的hexo命令"></a>一些常用的hexo命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;	#生成新的post文章</span><br><span class="line">$ hexo s	#启动服务</span><br><span class="line">$ hexo g	#更新文件</span><br></pre></td></tr></table></figure>
+<h3 id="（5）在controller当中试一试"><a href="#（5）在controller当中试一试" class="headerlink" title="（5）在controller当中试一试"></a>（5）在controller当中试一试</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.controller;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line">import org.example.mybatis.service.StudentService;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class StudentController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StudentService studentService;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;/findd&quot;)</span><br><span class="line">    public Student find(@RequestParam int id) &#123;</span><br><span class="line">        return studentService.getById(id);  // 调用 Service 的 getById() 方法来查找学生</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>Next</tag>
+        <tag>-springboot -mybatisplus</tag>
       </tags>
   </entry>
   <entry>
@@ -133,25 +122,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Quicker博客一键同步</title>
-    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+    <title>springboot的结构解析</title>
+    <url>/2025/04/21/springboot%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="springboot的结构解析"><a href="#springboot的结构解析" class="headerlink" title="springboot的结构解析"></a>springboot的结构解析</h1><p>三层架构</p>
+<p>为什么要分，把每个业务交给专门的层来处理，便于后期的维护，需求的增删等</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250413170450306.png" alt="image-20250413170450206"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250413170954993.png" alt="image-20250413170954939"></p>
+<h2 id="1、controller层"><a href="#1、controller层" class="headerlink" title="1、controller层"></a>1、controller层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">仅仅只接收数据和传递数据，不做业务逻辑的处理，所有的controller都这样就三步。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@PostMapping(&quot;/login&quot;)</span><br><span class="line">    public Result&lt;String&gt; login(@RequestBody Map&lt;String, Object&gt; requestData) &#123;</span><br><span class="line">        // 1. 提取请求参数</span><br><span class="line">        String username = (String) requestData.get(&quot;username&quot;);</span><br><span class="line">        String password = (String) requestData.get(&quot;password&quot;);</span><br><span class="line"></span><br><span class="line">        // 2. 调用 Service 层处理登录逻辑</span><br><span class="line">        String token = userService.login(username, password);</span><br><span class="line"></span><br><span class="line">        // 3. 返回响应</span><br><span class="line">        if (token != null) &#123;</span><br><span class="line">            return Result.success(token);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return Result.error(&quot;Invalid username or password&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>cmd中就可以像这样执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
 
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
 
-<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
+<h2 id="2、service层"><a href="#2、service层" class="headerlink" title="2、service层"></a>2、service层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">实现业务功能的一层，很重要的一层</span><br><span class="line">这里要先建立一个service对应的接口，在Impl下具体的实现方式。impl下是把每个功能单独拆开，前面写一个大函数将业务逻辑实现汇总。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements IUserService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RedisService redisService;</span><br><span class="line"></span><br><span class="line">    // 大函数 1：实现登录功能</span><br><span class="line">    @Override</span><br><span class="line">    public String login(String username, String password) &#123;</span><br><span class="line">        // 协调各个子功能</span><br><span class="line">        String encryptedPassword = encryptPassword(password); // 小函数 1：加密密码</span><br><span class="line">        User user = validateUser(username, encryptedPassword); // 小函数 2：验证用户</span><br><span class="line">        if (user == null) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        return getOrGenerateToken(user); // 小函数 3：获取或生成 token</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 小函数 1：加密密码</span><br><span class="line">    private String encryptPassword(String password) &#123;</span><br><span class="line">        return Md5Util.getMD5String(password);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 小函数 2：获取或生成 token</span><br><span class="line">    private String getOrGenerateToken(User user) &#123;</span><br><span class="line">        String username = user.getUsername();</span><br><span class="line">        String token = getTokenFromRedis(username); // 小函数 3.1</span><br><span class="line">        if (token != null) &#123;</span><br><span class="line">            return token;</span><br><span class="line">        &#125;</span><br><span class="line">        return generateAndStoreToken(user); // 小函数 3.2</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    。。。。。。。。。。。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3、dao层"><a href="#3、dao层" class="headerlink" title="3、dao层"></a>3、dao层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">就是与数据库之间进行curd操作，也是mapper层。一个sql语言，一个函数处理</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@Mapper</span><br><span class="line">public interface LoginMapper &#123;</span><br><span class="line"></span><br><span class="line">    @Select(&quot;SELECT id FROM login WHERE username = #&#123;username&#125; AND password = #&#123;password&#125; LIMIT 1&quot;)</span><br><span class="line">    Integer exists(@Param(&quot;username&quot;) String username, @Param(&quot;password&quot;) String password);</span><br><span class="line"></span><br><span class="line">    @Select(&quot;select * from login where id = #&#123;id&#125;&quot;)</span><br><span class="line">    public Login findById(Integer id);</span><br><span class="line"></span><br><span class="line">    @Update(&quot;update login set password = #&#123;newPwd&#125; where id = #&#123;id&#125;&quot;)</span><br><span class="line">    void updataPwd(Integer id, String newPwd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4、entity实体类"><a href="#4、entity实体类" class="headerlink" title="4、entity实体类"></a>4、entity实体类</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这个没什么好说的了，就是一些数据的类。对应数据库当中的表的字段，一一对应的嘛这个是pojo。这里注意一下和DOT的区分。POJO是映射数据库表结构，字段与表列一一对应（比如 User 类的 id、username、password、createdAt、updatedAt）。可能包含敏感字段（比如 password），不适合直接返回给前端。DTO：根据接口需求定义字段（比如 LoginResponseDTO 只包含 username 和 id）。适合返回给前端，不包含敏感字段。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">public class Login &#123;</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getUsername() &#123;</span><br><span class="line">        return username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUsername(String username) &#123;</span><br><span class="line">        this.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getPassword() &#123;</span><br><span class="line">        return password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPassword(String password) &#123;</span><br><span class="line">        this.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">    。。。。。。。。。。</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>便利</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>Quicker</tag>
+        <tag>-springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -244,6 +240,71 @@
       </categories>
       <tags>
         <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo个人博客搭建</title>
+    <url>/2025/02/16/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="hexo搭建个人博客"><a href="#hexo搭建个人博客" class="headerlink" title="hexo搭建个人博客"></a>hexo搭建个人博客</h1><h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2><p>1、先安环境，查看是否安装</p>
+<p>检查git是否安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git version</span><br></pre></td></tr></table></figure>
+
+<p>检查node是否安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>2、本地搭建</p>
+<p>安装hexo脚手架</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>进入指定文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd  /c/Users/zxz/Desktop</span><br></pre></td></tr></table></figure>
+
+<p>初始化一个hexo项目在该文件夹下，文件名为test</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init test</span><br></pre></td></tr></table></figure>
+
+<p>如果安装不全，则进入test文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd test</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>生成对应文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/cypa2a31.va3.png" alt="cypa2a31.va3" style="zoom: 50%;" />  
+
+<p>启动服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="一些常用的hexo命令"><a href="#一些常用的hexo命令" class="headerlink" title="一些常用的hexo命令"></a>一些常用的hexo命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;	#生成新的post文章</span><br><span class="line">$ hexo s	#启动服务</span><br><span class="line">$ hexo g	#更新文件</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Quicker博客一键同步</title>
+    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>cmd中就可以像这样执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
+
+<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
+
+]]></content>
+      <categories>
+        <category>便利</category>
+      </categories>
+      <tags>
+        <tag>Quicker</tag>
       </tags>
   </entry>
   <entry>
@@ -563,29 +624,38 @@
       </tags>
   </entry>
   <entry>
-    <title>图床</title>
-    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
-<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
-<p>新建一个bucket</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
-<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
-<p>然后基本完成了</p>
-<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
-<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
-<p>这些信息就是刚刚注册bucket时的，填写好。</p>
-<p>然后在配置一下serve</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
-<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+    <title>常用的linux指令</title>
+    <url>/2025/04/21/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="常用的linux指令"><a href="#常用的linux指令" class="headerlink" title="常用的linux指令"></a>常用的linux指令</h1><h2 id="根据域名获取ip"><a href="#根据域名获取ip" class="headerlink" title="根据域名获取ip"></a>根据域名获取ip</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nslookup xc104.zjxc.gov.cn</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zxz@r9000p:~$ nslookup xc104.zjxc.gov.cn</span><br><span class="line">Server:         10.255.255.254</span><br><span class="line">Address:        10.255.255.254#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:   xc104.zjxc.gov.cn</span><br><span class="line">Address: 220.191.226.152</span><br></pre></td></tr></table></figure>
+
+<p>结果ip为220.191.226.152</p>
+<h2 id="获取进程"><a href="#获取进程" class="headerlink" title="获取进程"></a>获取进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">获取所有的进程</span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line">获取特定的</span><br><span class="line">ps aux | grep python</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取所有进行的端口"><a href="#获取所有进行的端口" class="headerlink" title="获取所有进行的端口"></a>获取所有进行的端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ss -tulnp</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="杀死端口或进程"><a href="#杀死端口或进程" class="headerlink" title="杀死端口或进程"></a>杀死端口或进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取系统架构"><a href="#获取系统架构" class="headerlink" title="获取系统架构"></a>获取系统架构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -m</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof i ;端口号</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>服务器</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>图床</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -643,99 +713,29 @@
       </tags>
   </entry>
   <entry>
-    <title>mybatis-plus的使用</title>
-    <url>/2025/04/21/mybatis-plus%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="mybatis-plus的使用"><a href="#mybatis-plus的使用" class="headerlink" title="mybatis-plus的使用"></a>mybatis-plus的使用</h1><p>mp可以帮助我们快速完成项目的curd。</p>
-<h2 id="1、首先在配置中完成引用"><a href="#1、首先在配置中完成引用" class="headerlink" title="1、首先在配置中完成引用"></a>1、首先在配置中完成引用</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250419151410165.png" alt="image-20250419151410087"></p>
-<p>在pom文件中添加如下依赖</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.5.5&lt;/version&gt; &lt;!-- 这里写你想用的版本 --&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-<p>重新加载后即可，这里的话mybatisplus包含mybatis，可以只安装一个就行了。两个都安装也没啥。最好还是一个吧。</p>
-<h2 id="2、具体在项目中引用操作如下"><a href="#2、具体在项目中引用操作如下" class="headerlink" title="2、具体在项目中引用操作如下"></a>2、具体在项目中引用操作如下</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250419151257396.png" alt="QQ截图20250419144911"></p>
-<h3 id="（1）创建一个pojo和数据库表对接"><a href="#（1）创建一个pojo和数据库表对接" class="headerlink" title="（1）创建一个pojo和数据库表对接"></a>（1）创建一个pojo和数据库表对接</h3><p>pojo下面创建一个实体类对应数据库表</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.pojo;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line">    private Integer grade;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(Integer age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getGrade() &#123;</span><br><span class="line">        return grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setGrade(Integer grade) &#123;</span><br><span class="line">        this.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Student&#123;&quot; +</span><br><span class="line">                &quot;id=&quot; + id +</span><br><span class="line">                &quot;, name=&#x27;&quot; + name + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &quot;, age=&quot; + age +</span><br><span class="line">                &quot;, grade=&quot; + grade +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="（2）创建mapper"><a href="#（2）创建mapper" class="headerlink" title="（2）创建mapper"></a>（2）创建mapper</h3><p>继承BaseMapper</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.dao;</span><br><span class="line"></span><br><span class="line">import com.baomidou.mybatisplus.core.mapper.BaseMapper;</span><br><span class="line">import org.apache.ibatis.annotations.Mapper;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line"></span><br><span class="line">@Mapper</span><br><span class="line">public interface StudentMapper extends BaseMapper&lt;Student&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="（3）创建service"><a href="#（3）创建service" class="headerlink" title="（3）创建service"></a>（3）创建service</h3><p>继承IService</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.service;</span><br><span class="line">import com.baomidou.mybatisplus.extension.service.IService;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line"></span><br><span class="line">public interface StudentService extends IService&lt;Student&gt; &#123;</span><br><span class="line">    // 你可以在这里加自定义方法，比如：</span><br><span class="line">    // Student findByPhone(String phone);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="（4）创建serviceImpl"><a href="#（4）创建serviceImpl" class="headerlink" title="（4）创建serviceImpl"></a>（4）创建serviceImpl</h3><p>继承ServiceImpl</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.service.impl;</span><br><span class="line"></span><br><span class="line">import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl; // 这个导入漏了</span><br><span class="line">import org.example.mybatis.dao.StudentMapper;</span><br><span class="line">import org.example.mybatis.pojo.Student; // 记得导入 Student 实体类</span><br><span class="line">import org.example.mybatis.service.StudentService;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class StudentServiceImpl extends ServiceImpl&lt;StudentMapper, Student&gt; implements StudentService &#123;</span><br><span class="line">    // 这里可以加你自己的业务逻辑方法，比如：</span><br><span class="line">    // public Student findByPhone(String phone) &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="（5）在controller当中试一试"><a href="#（5）在controller当中试一试" class="headerlink" title="（5）在controller当中试一试"></a>（5）在controller当中试一试</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package org.example.mybatis.controller;</span><br><span class="line">import org.example.mybatis.pojo.Student;</span><br><span class="line">import org.example.mybatis.service.StudentService;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class StudentController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StudentService studentService;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;/findd&quot;)</span><br><span class="line">    public Student find(@RequestParam int id) &#123;</span><br><span class="line">        return studentService.getById(id);  // 调用 Service 的 getById() 方法来查找学生</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+    <title>图床</title>
+    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>服务器</category>
       </categories>
       <tags>
-        <tag>-springboot -mybatisplus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>springboot的结构解析</title>
-    <url>/2025/04/21/springboot%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="springboot的结构解析"><a href="#springboot的结构解析" class="headerlink" title="springboot的结构解析"></a>springboot的结构解析</h1><p>三层架构</p>
-<p>为什么要分，把每个业务交给专门的层来处理，便于后期的维护，需求的增删等</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250413170450306.png" alt="image-20250413170450206"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250413170954993.png" alt="image-20250413170954939"></p>
-<h2 id="1、controller层"><a href="#1、controller层" class="headerlink" title="1、controller层"></a>1、controller层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">仅仅只接收数据和传递数据，不做业务逻辑的处理，所有的controller都这样就三步。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@PostMapping(&quot;/login&quot;)</span><br><span class="line">    public Result&lt;String&gt; login(@RequestBody Map&lt;String, Object&gt; requestData) &#123;</span><br><span class="line">        // 1. 提取请求参数</span><br><span class="line">        String username = (String) requestData.get(&quot;username&quot;);</span><br><span class="line">        String password = (String) requestData.get(&quot;password&quot;);</span><br><span class="line"></span><br><span class="line">        // 2. 调用 Service 层处理登录逻辑</span><br><span class="line">        String token = userService.login(username, password);</span><br><span class="line"></span><br><span class="line">        // 3. 返回响应</span><br><span class="line">        if (token != null) &#123;</span><br><span class="line">            return Result.success(token);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return Result.error(&quot;Invalid username or password&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2、service层"><a href="#2、service层" class="headerlink" title="2、service层"></a>2、service层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">实现业务功能的一层，很重要的一层</span><br><span class="line">这里要先建立一个service对应的接口，在Impl下具体的实现方式。impl下是把每个功能单独拆开，前面写一个大函数将业务逻辑实现汇总。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements IUserService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RedisService redisService;</span><br><span class="line"></span><br><span class="line">    // 大函数 1：实现登录功能</span><br><span class="line">    @Override</span><br><span class="line">    public String login(String username, String password) &#123;</span><br><span class="line">        // 协调各个子功能</span><br><span class="line">        String encryptedPassword = encryptPassword(password); // 小函数 1：加密密码</span><br><span class="line">        User user = validateUser(username, encryptedPassword); // 小函数 2：验证用户</span><br><span class="line">        if (user == null) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        return getOrGenerateToken(user); // 小函数 3：获取或生成 token</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 小函数 1：加密密码</span><br><span class="line">    private String encryptPassword(String password) &#123;</span><br><span class="line">        return Md5Util.getMD5String(password);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 小函数 2：获取或生成 token</span><br><span class="line">    private String getOrGenerateToken(User user) &#123;</span><br><span class="line">        String username = user.getUsername();</span><br><span class="line">        String token = getTokenFromRedis(username); // 小函数 3.1</span><br><span class="line">        if (token != null) &#123;</span><br><span class="line">            return token;</span><br><span class="line">        &#125;</span><br><span class="line">        return generateAndStoreToken(user); // 小函数 3.2</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    。。。。。。。。。。。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3、dao层"><a href="#3、dao层" class="headerlink" title="3、dao层"></a>3、dao层</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">就是与数据库之间进行curd操作，也是mapper层。一个sql语言，一个函数处理</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">@Mapper</span><br><span class="line">public interface LoginMapper &#123;</span><br><span class="line"></span><br><span class="line">    @Select(&quot;SELECT id FROM login WHERE username = #&#123;username&#125; AND password = #&#123;password&#125; LIMIT 1&quot;)</span><br><span class="line">    Integer exists(@Param(&quot;username&quot;) String username, @Param(&quot;password&quot;) String password);</span><br><span class="line"></span><br><span class="line">    @Select(&quot;select * from login where id = #&#123;id&#125;&quot;)</span><br><span class="line">    public Login findById(Integer id);</span><br><span class="line"></span><br><span class="line">    @Update(&quot;update login set password = #&#123;newPwd&#125; where id = #&#123;id&#125;&quot;)</span><br><span class="line">    void updataPwd(Integer id, String newPwd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="4、entity实体类"><a href="#4、entity实体类" class="headerlink" title="4、entity实体类"></a>4、entity实体类</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这个没什么好说的了，就是一些数据的类。对应数据库当中的表的字段，一一对应的嘛这个是pojo。这里注意一下和DOT的区分。POJO是映射数据库表结构，字段与表列一一对应（比如 User 类的 id、username、password、createdAt、updatedAt）。可能包含敏感字段（比如 password），不适合直接返回给前端。DTO：根据接口需求定义字段（比如 LoginResponseDTO 只包含 username 和 id）。适合返回给前端，不包含敏感字段。</span><br><span class="line"></span><br><span class="line">例如</span><br><span class="line">public class Login &#123;</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getUsername() &#123;</span><br><span class="line">        return username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUsername(String username) &#123;</span><br><span class="line">        this.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getPassword() &#123;</span><br><span class="line">        return password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPassword(String password) &#123;</span><br><span class="line">        this.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">    。。。。。。。。。。</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>-springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用的linux指令</title>
-    <url>/2025/04/21/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="常用的linux指令"><a href="#常用的linux指令" class="headerlink" title="常用的linux指令"></a>常用的linux指令</h1><h2 id="根据域名获取ip"><a href="#根据域名获取ip" class="headerlink" title="根据域名获取ip"></a>根据域名获取ip</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nslookup xc104.zjxc.gov.cn</span><br></pre></td></tr></table></figure>
-
-<p>得到：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zxz@r9000p:~$ nslookup xc104.zjxc.gov.cn</span><br><span class="line">Server:         10.255.255.254</span><br><span class="line">Address:        10.255.255.254#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:   xc104.zjxc.gov.cn</span><br><span class="line">Address: 220.191.226.152</span><br></pre></td></tr></table></figure>
-
-<p>结果ip为220.191.226.152</p>
-<h2 id="获取进程"><a href="#获取进程" class="headerlink" title="获取进程"></a>获取进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">获取所有的进程</span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line">获取特定的</span><br><span class="line">ps aux | grep python</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="获取所有进行的端口"><a href="#获取所有进行的端口" class="headerlink" title="获取所有进行的端口"></a>获取所有进行的端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ss -tulnp</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="杀死端口或进程"><a href="#杀死端口或进程" class="headerlink" title="杀死端口或进程"></a>杀死端口或进程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="获取系统架构"><a href="#获取系统架构" class="headerlink" title="获取系统架构"></a>获取系统架构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -m</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof i ;端口号</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
 </search>
