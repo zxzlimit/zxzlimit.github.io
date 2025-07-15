@@ -72,7 +72,8 @@
 <p>然后在Nginx Proxy Manager里面的主机配置好了就行了，也简单的。</p>
 ]]></content>
       <categories>
-        <category>服务器</category>
+        <category>学习</category>
+        <category>html</category>
       </categories>
       <tags>
         <tag>Nginx Proxy Manager</tag>
@@ -715,7 +716,7 @@
 
 
 
-<h2 id="获取所有进行的端口"><a href="#获取所有进行的端口" class="headerlink" title="获取所有进行的端口"></a>获取所有进行的端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo netstat -tulnp</span><br></pre></td></tr></table></figure>
+<h2 id="获取所有进行的端口"><a href="#获取所有进行的端口" class="headerlink" title="获取所有进行的端口"></a>获取所有进行的端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ss -tulnp</span><br></pre></td></tr></table></figure>
 
 
 
@@ -724,6 +725,10 @@
 
 
 <h2 id="获取系统架构"><a href="#获取系统架构" class="headerlink" title="获取系统架构"></a>获取系统架构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -m</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof i ;端口号</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
