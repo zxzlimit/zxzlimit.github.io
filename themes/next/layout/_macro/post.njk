@@ -53,7 +53,7 @@
           {{ partial('_partials/post/post-meta.njk') }}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
-            <div class="post-description">{{ post.description }}</div>
+            <div class="post-description"></div>
           {%- endif %}
         </div>
       </header>
