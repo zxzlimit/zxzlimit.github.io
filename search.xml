@@ -38,47 +38,10 @@
 ]]></content>
       <categories>
         <category>学习</category>
-        <category>s</category>
+        <category>博客配置</category>
       </categories>
       <tags>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx Proxy Manager配置SSL</title>
-    <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
-    <content><![CDATA[<h1 id="Nginx-Proxy-Manager配置SSL"><a href="#Nginx-Proxy-Manager配置SSL" class="headerlink" title="Nginx Proxy Manager配置SSL"></a>Nginx Proxy Manager配置SSL</h1><p>这里有两种方式</p>
-<p>~血的教训，记得打开443端口啊！！！这是https的端口，md在这里绕了好久啊！！！<br>还有配置好可能还是有问题，记得清除浏览器缓存或者换个浏览器打开试一试。</p>
-<p>泛域名就是*.zxzflask.cn,其实按理说每一个域名下的子域名都应该单独配置一个ssl证书，但那样太麻烦了，于是就给一个域名配置好就行了，其他就是泛域名属于这个域名下的东西，只要给这个域名配置好了，后面的泛域名就一样了。例如dsada.zxzflask.cn ,adad.zxzflask.cn, 主域名就一个zxzflask.cn罢了。下面图片第一个就是属于泛域名。</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qk0evn04.j1x.png" alt="qk0evn04.j1x"></p>
-<h2 id="1、自己申请证书配置"><a href="#1、自己申请证书配置" class="headerlink" title="1、自己申请证书配置"></a>1、自己申请证书配置</h2><p>因为免费证书不支持泛域名。就只能一个一个申请了，不过申请也快的。例如文字a.zxzflask.cn。同时dns解析也要打开哈，必须的。</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rjbbjyf0.vmj.png" alt="rjbbjyf0.vmj" style="zoom:33%;" /> 
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pxeivvto.dkc.png" alt="pxeivvto.dkc" style="zoom:33%;" /> 
-
-<p>然后下载npm的证书文件，解压得到两个文件，一个后缀为.key:一个后缀为.pem的</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yzz1mdy5.a1c.png" alt="yzz1mdy5.a1c"> </p>
-<p>然后配置Nginx Proxy Manager，选择上传证书文件。</p>
- <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uql44sng.4hj.png" alt="uql44sng.4hj" style="zoom:33%;" />
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kxsex3ut.wnx.png" alt="kxsex3ut.wnx" style="zoom:33%;" /> 
-
-<p>然后在proxy中选择这个就行了</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250302095633072.png" alt="image-20250302095633072" style="zoom:33%;" /> 
-
-<h2 id="2、使用dns申请证书配置"><a href="#2、使用dns申请证书配置" class="headerlink" title="2、使用dns申请证书配置"></a>2、使用dns申请证书配置</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hpb0zv5p.xgi.png" alt="hpb0zv5p.xgi" style="zoom:50%;" />
-
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/guw5huto.sk1.png" alt="guw5huto.sk1"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/tjc0oilm.x4d.png" alt="tjc0oilm.x4d"></p>
-<p>然后在Nginx Proxy Manager里面的主机配置好了就行了，也简单的。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>学习sd</category>
-        <category>学习sa</category>
-      </categories>
-      <tags>
-        <tag>Nginx Proxy Manager</tag>
       </tags>
   </entry>
   <entry>
@@ -128,7 +91,46 @@
 
 <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/u43d4pb2.3zi.png" alt="u43d4pb2.3zi" style="zoom: 50%;" /> ]]></content>
       <categories>
-        <category>服务器</category>
+        <category>学习</category>
+        <category>网站</category>
+        <category>网站配置</category>
+      </categories>
+      <tags>
+        <tag>Nginx Proxy Manager</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx Proxy Manager配置SSL</title>
+    <url>/2025/03/02/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/</url>
+    <content><![CDATA[<h1 id="Nginx-Proxy-Manager配置SSL"><a href="#Nginx-Proxy-Manager配置SSL" class="headerlink" title="Nginx Proxy Manager配置SSL"></a>Nginx Proxy Manager配置SSL</h1><p>这里有两种方式</p>
+<p>~血的教训，记得打开443端口啊！！！这是https的端口，md在这里绕了好久啊！！！<br>还有配置好可能还是有问题，记得清除浏览器缓存或者换个浏览器打开试一试。</p>
+<p>泛域名就是*.zxzflask.cn,其实按理说每一个域名下的子域名都应该单独配置一个ssl证书，但那样太麻烦了，于是就给一个域名配置好就行了，其他就是泛域名属于这个域名下的东西，只要给这个域名配置好了，后面的泛域名就一样了。例如dsada.zxzflask.cn ,adad.zxzflask.cn, 主域名就一个zxzflask.cn罢了。下面图片第一个就是属于泛域名。</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qk0evn04.j1x.png" alt="qk0evn04.j1x"></p>
+<h2 id="1、自己申请证书配置"><a href="#1、自己申请证书配置" class="headerlink" title="1、自己申请证书配置"></a>1、自己申请证书配置</h2><p>因为免费证书不支持泛域名。就只能一个一个申请了，不过申请也快的。例如文字a.zxzflask.cn。同时dns解析也要打开哈，必须的。</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rjbbjyf0.vmj.png" alt="rjbbjyf0.vmj" style="zoom:33%;" /> 
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pxeivvto.dkc.png" alt="pxeivvto.dkc" style="zoom:33%;" /> 
+
+<p>然后下载npm的证书文件，解压得到两个文件，一个后缀为.key:一个后缀为.pem的</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yzz1mdy5.a1c.png" alt="yzz1mdy5.a1c"> </p>
+<p>然后配置Nginx Proxy Manager，选择上传证书文件。</p>
+ <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uql44sng.4hj.png" alt="uql44sng.4hj" style="zoom:33%;" />
+
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kxsex3ut.wnx.png" alt="kxsex3ut.wnx" style="zoom:33%;" /> 
+
+<p>然后在proxy中选择这个就行了</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250302095633072.png" alt="image-20250302095633072" style="zoom:33%;" /> 
+
+<h2 id="2、使用dns申请证书配置"><a href="#2、使用dns申请证书配置" class="headerlink" title="2、使用dns申请证书配置"></a>2、使用dns申请证书配置</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hpb0zv5p.xgi.png" alt="hpb0zv5p.xgi" style="zoom:50%;" />
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/guw5huto.sk1.png" alt="guw5huto.sk1"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/tjc0oilm.x4d.png" alt="tjc0oilm.x4d"></p>
+<p>然后在Nginx Proxy Manager里面的主机配置好了就行了，也简单的。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>网站</category>
+        <category>网站配置</category>
       </categories>
       <tags>
         <tag>Nginx Proxy Manager</tag>
@@ -161,31 +163,11 @@
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>网站</category>
+        <category>springboot</category>
       </categories>
       <tags>
         <tag>-springboot -mybatisplus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Quicker博客一键同步</title>
-    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
-
-<p>cmd中就可以像这样执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
-
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
-
-<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
-<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
-
-]]></content>
-      <categories>
-        <category>便利</category>
-      </categories>
-      <tags>
-        <tag>Quicker</tag>
       </tags>
   </entry>
   <entry>
@@ -212,127 +194,122 @@
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>网站</category>
+        <category>springboot</category>
       </categories>
       <tags>
         <tag>-springboot</tag>
       </tags>
   </entry>
   <entry>
-    <title>win软件配置</title>
-    <url>/2025/02/25/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="win软件配置"><a href="#win软件配置" class="headerlink" title="win软件配置"></a>win软件配置</h1><h2 id="软件和插件"><a href="#软件和插件" class="headerlink" title="软件和插件"></a>软件和插件</h2><h2 id="1、Typora"><a href="#1、Typora" class="headerlink" title="1、Typora"></a>1、Typora</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rbscc3mo.vr3.png" alt="rbscc3mo.vr3" style="zoom: 50%;" /> 
+    <title>Quicker博客一键同步</title>
+    <url>/2025/02/17/quicker%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Quicker博客一键同步"><a href="#Quicker博客一键同步" class="headerlink" title="Quicker博客一键同步"></a>Quicker博客一键同步</h1><p>首先再到gitbash的位置，因为git一般是用这个，这个也方便嘛，然后，将要执行的命令编写好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /c/Users/zxz/Desktop/test	#进入该文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;s&quot;	#这里的时间可以用一个变量代替</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
 
-<p> 这是一个md文件的编辑软件经常使用的，感觉还不错吧</p>
-<h2 id="2、TTime"><a href="#2、TTime" class="headerlink" title="2、TTime"></a>2、TTime</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pekrp2uc.kft.png" alt="pekrp2uc.kft" style="zoom: 67%;" /> 
+<p>cmd中就可以像这样执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\git\Git\git-bash.exe -c &quot;cd /c/Users/zxz/Desktop/test &amp;&amp; git add . &amp;&amp; git commit -m &#x27;s&#x27; &amp;&amp; git push origin dev&quot;</span><br></pre></td></tr></table></figure>
 
-<p>可以orc进行识别，效果还可以的</p>
-<h2 id="3、idm"><a href="#3、idm" class="headerlink" title="3、idm"></a>3、idm</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yr4emjxc.t1f.png" alt="yr4emjxc.t1f"> </p>
-<p>宇宙级下载器，也不多说了，已经入了永久版了</p>
-<h2 id="4、Twinkle-Tray"><a href="#4、Twinkle-Tray" class="headerlink" title="4、Twinkle Tray"></a>4、Twinkle Tray</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B7F62F815-DA19-496B-B7C4-C14565EE7C2E%7D" alt="img"> </p>
-<p> 能调剂电脑的显示亮度，感觉还是很有用的</p>
-<h2 id="5、QuickLook"><a href="#5、QuickLook" class="headerlink" title="5、QuickLook"></a>5、QuickLook</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B467D6B48-7DB5-4184-83B9-FCFF19823257%7D" alt="img"> </p>
-<p>按空格快速浏览文件，类似于mac上的空格</p>
-<h2 id="6、TranslucentTB"><a href="#6、TranslucentTB" class="headerlink" title="6、TranslucentTB"></a>6、TranslucentTB</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/e5mss02y.4im.png" alt="img"> </p>
-<p>一个能改变win底部框的小软件</p>
-<h2 id="7、Advanced-Archive-Password-Recovery"><a href="#7、Advanced-Archive-Password-Recovery" class="headerlink" title="7、Advanced Archive Password Recovery"></a>7、Advanced Archive Password Recovery</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/q02tb3to.y1u.png" alt="q02tb3to.y1u"> </p>
-<p>暴力破解压缩包的工具</p>
-<h2 id="8、Clash-for-Windows"><a href="#8、Clash-for-Windows" class="headerlink" title="8、Clash for Windows"></a>8、Clash for Windows</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/egew3ebt.y53.png" alt="egew3ebt.y53"> </p>
-<p>翻墙软件</p>
-<h2 id="9、PicList"><a href="#9、PicList" class="headerlink" title="9、PicList"></a>9、PicList</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fxunb05c.pn5.png" alt="fxunb05c.pn5" style="zoom:67%;" /> 
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fpa0imix.4wl.png" alt="fpa0imix.4wl" style="zoom:33%;" />
 
-<p>图床软件，和typora相关一起用</p>
-<h2 id="10、QQ截图独立版"><a href="#10、QQ截图独立版" class="headerlink" title="10、QQ截图独立版"></a>10、QQ截图独立版</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/05rmscg5.zre.png" alt="05rmscg5.zre"> </p>
-<p>截图软件，好用</p>
-<h2 id="11、平板串流"><a href="#11、平板串流" class="headerlink" title="11、平板串流"></a>11、平板串流</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/vnizhs3a.3rk.png" alt="vnizhs3a.3rk"> <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/04innbpq.ob4.png" alt="04innbpq.ob4" style="zoom:67%;" /></p>
-<p>这两个软件，第一个是虚拟屏幕，第二个是串流，详细配置去b站搜索平板串流有教程</p>
-<h2 id="12、Zoomlt"><a href="#12、Zoomlt" class="headerlink" title="12、Zoomlt"></a>12、Zoomlt</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/25f1alvl.bes.png" alt="25f1alvl.bes"> </p>
-<p>可以放大缩小屏幕，在屏幕上涂鸦，适合教学</p>
-<h2 id="13、火绒"><a href="#13、火绒" class="headerlink" title="13、火绒"></a>13、火绒</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ashircrk.teo.png" alt="ashircrk.teo"> </p>
-<p>真心不错的杀毒软件，它的弹窗拦截好评</p>
-<h2 id="14、Adobe-Acrobat-DC"><a href="#14、Adobe-Acrobat-DC" class="headerlink" title="14、Adobe Acrobat DC"></a>14、Adobe Acrobat DC</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3i3151rf.rw5.png" alt="3i3151rf.rw5"> </p>
-<p>pdf神奇了属于</p>
-<h2 id="15、draw-io"><a href="#15、draw-io" class="headerlink" title="15、draw.io"></a>15、draw.io</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hlvei5yf.zoy.png" alt="hlvei5yf.zoy"> </p>
-<p>流程图神器</p>
-<h2 id="16、Quicker"><a href="#16、Quicker" class="headerlink" title="16、Quicker"></a>16、Quicker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/dwxincma.v35.png" alt="dwxincma.v35"> </p>
-<p>绝对的神器，能快速启动软件，能自己编一些程序，然后通过其一键打开。十分十分有用对于我来说**********，当然这个配置也最麻烦。</p>
-<h2 id="17、篡改猴"><a href="#17、篡改猴" class="headerlink" title="17、篡改猴"></a>17、篡改猴</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/igrbehke.41v.png" alt="igrbehke.41v"> </p>
-<p>油猴脚本，可以自己写一些js代码在浏览器上执行，很不错</p>
-<h2 id="18、沉汉式翻译"><a href="#18、沉汉式翻译" class="headerlink" title="18、沉汉式翻译"></a>18、沉汉式翻译</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/jjbe1frv.44w.png" alt="jjbe1frv.44w"> </p>
-<p>浏览器翻译的神</p>
-<h2 id="19、OBS-Studio"><a href="#19、OBS-Studio" class="headerlink" title="19、OBS Studio"></a>19、OBS Studio</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwcu1x2l.cym.png" alt="mwcu1x2l.cym"> </p>
-<p>录屏直播软件好评</p>
-<h2 id="20、Todesk"><a href="#20、Todesk" class="headerlink" title="20、Todesk"></a>20、Todesk</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qjeg3pvd.yux.png" alt="qjeg3pvd.yux"> </p>
-<p>远程控制软件，也没什么好的，没办法暂时就这个好点</p>
-<h2 id="21、GIT"><a href="#21、GIT" class="headerlink" title="21、GIT"></a>21、GIT</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kf5fi0yx.uop.png" alt="kf5fi0yx.uop"> </p>
-<p>git的终端操作器好用</p>
-<h2 id="22、Docker"><a href="#22、Docker" class="headerlink" title="22、Docker"></a>22、Docker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1mwtcjqb.byp.png" alt="1mwtcjqb.byp"> </p>
-<p>容器</p>
-<h2 id="23、Mysql"><a href="#23、Mysql" class="headerlink" title="23、Mysql"></a>23、Mysql</h2><p>数据库</p>
-<h2 id="24、Xshell"><a href="#24、Xshell" class="headerlink" title="24、Xshell"></a>24、Xshell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ajiqvzrk.jfp.png" alt="ajiqvzrk.jfp"> </p>
-<p>远程连接服务器终端的</p>
-<h2 id="25、Postman"><a href="#25、Postman" class="headerlink" title="25、Postman"></a>25、Postman</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/izysicai.l4z.png" alt="izysicai.l4z"> </p>
-<p>后端api测试工具</p>
-<h2 id="26、VMware"><a href="#26、VMware" class="headerlink" title="26、VMware"></a>26、VMware</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uuwjmqqk.ac1.png" alt="uuwjmqqk.ac1"> </p>
-<p>虚拟机</p>
-<h2 id="27、Hbuilder"><a href="#27、Hbuilder" class="headerlink" title="27、Hbuilder"></a>27、Hbuilder</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/z0eadlkh.hax.png" alt="z0eadlkh.hax"> </p>
-<p>前端的ide</p>
-<h2 id="28、Vscode"><a href="#28、Vscode" class="headerlink" title="28、Vscode"></a>28、Vscode</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/evalbizt.0eq.png" alt="evalbizt.0eq"> </p>
-<p>全能好用的ide </p>
-<h2 id="29、Intell"><a href="#29、Intell" class="headerlink" title="29、Intell"></a>29、Intell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/er5hhttb.ivz.png" alt="er5hhttb.ivz"> </p>
-<p>java的ide</p>
-<h2 id="30、Navicat-Premium"><a href="#30、Navicat-Premium" class="headerlink" title="30、Navicat Premium"></a>30、Navicat Premium</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ucbwaunc.snf.png" alt="ucbwaunc.snf"> </p>
-<p>远程数据库管理软件 </p>
-<h2 id="31、Xmind"><a href="#31、Xmind" class="headerlink" title="31、Xmind"></a>31、Xmind</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4klfjefg.5vr.png" alt="4klfjefg.5vr"> </p>
-<p>不多说，思维导图软件 </p>
-<h2 id="32、figma"><a href="#32、figma" class="headerlink" title="32、figma"></a>32、figma</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250224161209063.png" alt="image-20250224161209063"> </p>
-<p>网页设计软件，不太会 </p>
-<h2 id="33、WSL"><a href="#33、WSL" class="headerlink" title="33、WSL"></a>33、WSL</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/30louyag.2oc.png" alt="30louyag.2oc"> </p>
-<p>win下的linux系统</p>
-<h2 id="34、Anaconda-Navigator"><a href="#34、Anaconda-Navigator" class="headerlink" title="34、Anaconda Navigator"></a>34、Anaconda Navigator</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mryxkjdd.4mz.png" alt="mryxkjdd.4mz"> </p>
-<p>python必装的东西 </p>
-<h2 id="35、OneDrive"><a href="#35、OneDrive" class="headerlink" title="35、OneDrive"></a>35、OneDrive</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pzigh3cd.hq5.png" alt="pzigh3cd.hq5"> </p>
-<p>云盘</p>
-<h2 id="36、word实用工具插件"><a href="#36、word实用工具插件" class="headerlink" title="36、word实用工具插件"></a>36、word实用工具插件</h2><p>可以支持正则表达</p>
-<h2 id="37、方方格子和uuoffice"><a href="#37、方方格子和uuoffice" class="headerlink" title="37、方方格子和uuoffice"></a>37、方方格子和uuoffice</h2><p>基本上就这些了，其他也没什么好说的了</p>
-<h2 id="38、LocalSend"><a href="#38、LocalSend" class="headerlink" title="38、LocalSend"></a>38、LocalSend</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/wkbhozcl.yvz.png" alt="wkbhozcl.yvz" style="zoom:50%;" /> 
+<p>Quicker像这样还能做很多东西，比如说快速运行python代码，还有其他的自行探索</p>
+<img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwo20snb.s4s.png" alt="mwo20snb.s4s" style="zoom: 50%;" /> 
 
-<p>局域网文件传输工具</p>
-<h2 id="39、SyncClipboard"><a href="#39、SyncClipboard" class="headerlink" title="39、SyncClipboard"></a>39、SyncClipboard</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ihjt1nkh.lml.png" alt="ihjt1nkh.lml"> </p>
-<p>云粘贴版</p>
-<h2 id="40、Everything"><a href="#40、Everything" class="headerlink" title="40、Everything"></a>40、Everything</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B4268A7C3-5DF7-4DE5-8852-991EB733C2CC%7D" alt="img"> </p>
-<p>文件搜索神器</p>
 ]]></content>
       <categories>
-        <category>软件</category>
+        <category>学习</category>
+        <category>便捷</category>
       </categories>
       <tags>
-        <tag>软件</tag>
+        <tag>Quicker</tag>
       </tags>
   </entry>
   <entry>
-    <title>图床</title>
-    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
-<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
-<p>新建一个bucket</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
-<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
-<p>然后基本完成了</p>
-<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
-<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
-<p>这些信息就是刚刚注册bucket时的，填写好。</p>
-<p>然后在配置一下serve</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
-<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+    <title>个人博客网站部署到GitHub Pages</title>
+    <url>/2025/02/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages/</url>
+    <content><![CDATA[<h1 id="一、注册GitHub账号"><a href="#一、注册GitHub账号" class="headerlink" title="一、注册GitHub账号"></a>一、注册GitHub账号</h1><p>后面要将我们的个人博客网站部署到GitHub Pages上，拥有一个GitHub账户自然就是最基本的前提了。</p>
+<p>百度搜索“gitub”，搜索结果如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1.png" alt="img"></p>
+<p>选择并点击“GitHub Build software better, together.”，或直接访问<a href="https://github.com/">https://github.com/</a><br>进入如下图所示界面：</p>
+<p><img src="https://oceanwang.top/personal-website-7/2.png" alt="img"></p>
+<ul>
+<li>如果是第一次使用GitHub，点击“Sign up”进行注册；</li>
+<li>如果以前使用过GitHub，点击“Sign in”登录即可。</li>
+</ul>
+<h1 id="二、创建部署目录仓库"><a href="#二、创建部署目录仓库" class="headerlink" title="二、创建部署目录仓库"></a>二、创建部署目录仓库</h1><p>按照官方说明的使用规则，如果使用GitHub Pages进行网站部署的话，所建仓库必须要取名为“GitHub用户名.github.io”。因为我的GitHub用户名为Napoleon940911，所以我的这个仓库应取名为“Napoleon940911.github.io”。</p>
+<p>在GitHub官网（<a href="https://github.com/%EF%BC%89%E4%B8%8A%E6%88%90%E5%8A%9F%E7%99%BB%E5%BD%95%E5%90%8E%EF%BC%8C%E6%89%BE%E5%88%B0%E5%B9%B6%E7%82%B9%E5%87%BB%E7%BD%91%E9%A1%B5%E5%B7%A6%E4%B8%8A%E6%96%B9%E7%9A%84%E2%80%9CNew%E2%80%9D%EF%BC%9A">https://github.com/）上成功登录后，找到并点击网页左上方的“New”：</a></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3.png" alt="img"></p>
+<p>从而进入如下网页：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4.png" alt="img"></p>
+<p>依次：</p>
+<ul>
+<li>在上图所示的“Repository name”方框中填入仓库名称；</li>
+<li>勾选“Add a README file”；</li>
+<li>点击“Create repository”。<br>即可完成该仓库的创建（简单起见，其余所有内容均保持默认）。</li>
+</ul>
+<p>*<strong>注意：一定要勾选“Add a README file”，不然后面会看不到GitHub Pages的域名和部署分支*</strong></p>
+<h1 id="三、访问GitHub-Pages"><a href="#三、访问GitHub-Pages" class="headerlink" title="三、访问GitHub Pages"></a>三、访问GitHub Pages</h1><p>该仓库创建成功后，会进入如下图所示网页：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/5.png" alt="img"></p>
+<p>点击上图中的“Settings”，将所进入的网页滚轮移动至GitHub Pages相关的部分，如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/6.png" alt="img"></p>
+<p>从上图中可以看出，GitHub Pages给我们提供了一个格式为<a href="https://github用户名.github.io/">https://GitHub用户名.github.io</a> 的免费域名，并且相应的网站是从该仓库的 main 分支构建得到的。</p>
+<p>我们直接点击上图中的这个域名，或是将这个域名（<a href="https://napoleon940911.github.io/%EF%BC%89%E8%BE%93%E5%85%A5%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E6%A0%8F%E5%B9%B6%E5%9B%9E%E8%BD%A6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%9A%84%E7%95%8C%E9%9D%A2%EF%BC%9A">https://napoleon940911.github.io/）输入浏览器的地址栏并回车，可以看到如下图所示的界面：</a></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/7.png" alt="img"></p>
+<p>如果你成功看到上图这样的界面，那么恭喜你已经拥有一个自己专属的网站了！！！</p>
+<h1 id="四、设置部署仓库和分支"><a href="#四、设置部署仓库和分支" class="headerlink" title="四、设置部署仓库和分支"></a>四、设置部署仓库和分支</h1><p>回到我们前面创建的Hexo源码目录，用Notepad++或记事本等文本编辑工具打开根目录下面的 _config.yml 文件，并滚动到文件最后，可以看到如下图所示内容：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/8.png" alt="img"></p>
+<p>将上图中这部分的内容更改为如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/9.png" alt="img"></p>
+<p>关于上图中“repo”内容的获取，如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/10.png" alt="img"></p>
+<p>依次点击上图中3个圈出的位置，即可将我们需要的信息添加到<strong>剪切板</strong> 里面，直接粘贴到前面提到的 _config.yml 文件中最后的**repo:**后面即可。</p>
+<p>关于branch的填写，必须要和<a href="https://github.com/Napoleon940911/Napoleon940911.github.io/settings">https://github.com/Napoleon940911/Napoleon940911.github.io/settings</a> 中GitHub Pages部分指定的<strong>Branch</strong>保持一致。<br>保存_config.yml文件，并退出。</p>
+<h1 id="五、生成静态网页文件"><a href="#五、生成静态网页文件" class="headerlink" title="五、生成静态网页文件"></a>五、生成静态网页文件</h1><p>在Git Bash窗口中输入如下指令并回车，将Hexo源码目录中已有的源码编译生成为静态网页文件：<br>hexo generate<br>该指令执行完成后，如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/11.png" alt="img"></p>
+<p>与此同时，可以看到Hexo源码目录中新增了一个名为db.json的文件，以及一个名为public的文件夹，如下图所示。</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/12.png" alt="img"></p>
+<ul>
+<li>db.json文件：编译过程中产生的中间文件，不用关心；</li>
+<li>public文件夹：新生成的静态网页文件就存放在这个目录下。</li>
+</ul>
+<p>点进public文件夹可以看到：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/13.png" alt="img"></p>
+<p>这些就是刚刚编译生成的静态网页文件。</p>
+<h1 id="六、部署到GitHub-Pages上"><a href="#六、部署到GitHub-Pages上" class="headerlink" title="六、部署到GitHub Pages上"></a>六、部署到GitHub Pages上</h1><p>在Git Bash窗口中输入如下指令并回车，将刚刚新生产的静态网页文件推送到GitHub Pages：<br>hexo deploy<br>该指令执行完成后，如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/14.png" alt="img"></p>
+<p>上图中最后一行提示 Deploy done，意味着我们部署成功了！</p>
+<h1 id="七、再次访问GitHub-Pages"><a href="#七、再次访问GitHub-Pages" class="headerlink" title="七、再次访问GitHub Pages"></a>七、再次访问GitHub Pages</h1><p>这时，我们再去访问我们前面得到的 GitHub Pages（<a href="https://napoleon940911.github.io/%EF%BC%89">https://napoleon940911.github.io/）</a> 。会发现原来几乎空白的网页，已经变成了前面我们在本地通过 <a href="http://localhost:4000/">http://localhost:4000</a> 所访问到的网页了！如下图所示：</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/15.png" alt="img"></p>
+<p>如果测试发现 GitHub Pages 还是没有任何变化，不要着急，等几分钟之后再次刷新即可。</p>
+<p>至此，我们就已经成功将本地的 Hexo 仓库部署到 GitHub 上了。</p>
+<p><strong>更新</strong></p>
+<p>最好设置两个分支，一个管理代码，一个展示网页</p>
+<p>代码管理就是和平时的git一样，将写好的代码上传到git进行备份</p>
+<p>网页展示的则进入本地项目的文件夹里，通过命令，直接推送过去了，其他不用管了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>一些git的简单命令</strong></p>
+<p>强制推送</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;Your commit message&quot;</span><br><span class="line">git push --set-upstream git@github.com:zxzlimit/zxzlimit.github.io.git main --force</span><br></pre></td></tr></table></figure>
+
+<p>以后要推送的话</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">本地连接远程</span><br><span class="line">git remote add origin git@github.com:zxzlimit/zxzlimit.github.io.git</span><br><span class="line"></span><br><span class="line">本地分支命名</span><br><span class="line">git branch -m master main</span><br><span class="line"></span><br><span class="line">查看是否连接远程</span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line">推送到远程dev分支下</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>服务器</category>
+        <category>学习</category>
+        <category>博客配置</category>
       </categories>
       <tags>
-        <tag>图床</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -508,6 +485,7 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>更多设置参考<a href="https://www.wylu.me/posts/e0424f3f/#%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C">https://www.wylu.me/posts/e0424f3f/#%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C</a></p>
 ]]></content>
       <categories>
+        <category>学习</category>
         <category>博客</category>
       </categories>
       <tags>
@@ -515,90 +493,123 @@
       </tags>
   </entry>
   <entry>
-    <title>个人博客网站部署到GitHub Pages</title>
-    <url>/2025/02/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages/</url>
-    <content><![CDATA[<h1 id="一、注册GitHub账号"><a href="#一、注册GitHub账号" class="headerlink" title="一、注册GitHub账号"></a>一、注册GitHub账号</h1><p>后面要将我们的个人博客网站部署到GitHub Pages上，拥有一个GitHub账户自然就是最基本的前提了。</p>
-<p>百度搜索“gitub”，搜索结果如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1.png" alt="img"></p>
-<p>选择并点击“GitHub Build software better, together.”，或直接访问<a href="https://github.com/">https://github.com/</a><br>进入如下图所示界面：</p>
-<p><img src="https://oceanwang.top/personal-website-7/2.png" alt="img"></p>
-<ul>
-<li>如果是第一次使用GitHub，点击“Sign up”进行注册；</li>
-<li>如果以前使用过GitHub，点击“Sign in”登录即可。</li>
-</ul>
-<h1 id="二、创建部署目录仓库"><a href="#二、创建部署目录仓库" class="headerlink" title="二、创建部署目录仓库"></a>二、创建部署目录仓库</h1><p>按照官方说明的使用规则，如果使用GitHub Pages进行网站部署的话，所建仓库必须要取名为“GitHub用户名.github.io”。因为我的GitHub用户名为Napoleon940911，所以我的这个仓库应取名为“Napoleon940911.github.io”。</p>
-<p>在GitHub官网（<a href="https://github.com/%EF%BC%89%E4%B8%8A%E6%88%90%E5%8A%9F%E7%99%BB%E5%BD%95%E5%90%8E%EF%BC%8C%E6%89%BE%E5%88%B0%E5%B9%B6%E7%82%B9%E5%87%BB%E7%BD%91%E9%A1%B5%E5%B7%A6%E4%B8%8A%E6%96%B9%E7%9A%84%E2%80%9CNew%E2%80%9D%EF%BC%9A">https://github.com/）上成功登录后，找到并点击网页左上方的“New”：</a></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3.png" alt="img"></p>
-<p>从而进入如下网页：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4.png" alt="img"></p>
-<p>依次：</p>
-<ul>
-<li>在上图所示的“Repository name”方框中填入仓库名称；</li>
-<li>勾选“Add a README file”；</li>
-<li>点击“Create repository”。<br>即可完成该仓库的创建（简单起见，其余所有内容均保持默认）。</li>
-</ul>
-<p>*<strong>注意：一定要勾选“Add a README file”，不然后面会看不到GitHub Pages的域名和部署分支*</strong></p>
-<h1 id="三、访问GitHub-Pages"><a href="#三、访问GitHub-Pages" class="headerlink" title="三、访问GitHub Pages"></a>三、访问GitHub Pages</h1><p>该仓库创建成功后，会进入如下图所示网页：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/5.png" alt="img"></p>
-<p>点击上图中的“Settings”，将所进入的网页滚轮移动至GitHub Pages相关的部分，如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/6.png" alt="img"></p>
-<p>从上图中可以看出，GitHub Pages给我们提供了一个格式为<a href="https://github用户名.github.io/">https://GitHub用户名.github.io</a> 的免费域名，并且相应的网站是从该仓库的 main 分支构建得到的。</p>
-<p>我们直接点击上图中的这个域名，或是将这个域名（<a href="https://napoleon940911.github.io/%EF%BC%89%E8%BE%93%E5%85%A5%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E6%A0%8F%E5%B9%B6%E5%9B%9E%E8%BD%A6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%9A%84%E7%95%8C%E9%9D%A2%EF%BC%9A">https://napoleon940911.github.io/）输入浏览器的地址栏并回车，可以看到如下图所示的界面：</a></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/7.png" alt="img"></p>
-<p>如果你成功看到上图这样的界面，那么恭喜你已经拥有一个自己专属的网站了！！！</p>
-<h1 id="四、设置部署仓库和分支"><a href="#四、设置部署仓库和分支" class="headerlink" title="四、设置部署仓库和分支"></a>四、设置部署仓库和分支</h1><p>回到我们前面创建的Hexo源码目录，用Notepad++或记事本等文本编辑工具打开根目录下面的 _config.yml 文件，并滚动到文件最后，可以看到如下图所示内容：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/8.png" alt="img"></p>
-<p>将上图中这部分的内容更改为如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/9.png" alt="img"></p>
-<p>关于上图中“repo”内容的获取，如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/10.png" alt="img"></p>
-<p>依次点击上图中3个圈出的位置，即可将我们需要的信息添加到<strong>剪切板</strong> 里面，直接粘贴到前面提到的 _config.yml 文件中最后的**repo:**后面即可。</p>
-<p>关于branch的填写，必须要和<a href="https://github.com/Napoleon940911/Napoleon940911.github.io/settings">https://github.com/Napoleon940911/Napoleon940911.github.io/settings</a> 中GitHub Pages部分指定的<strong>Branch</strong>保持一致。<br>保存_config.yml文件，并退出。</p>
-<h1 id="五、生成静态网页文件"><a href="#五、生成静态网页文件" class="headerlink" title="五、生成静态网页文件"></a>五、生成静态网页文件</h1><p>在Git Bash窗口中输入如下指令并回车，将Hexo源码目录中已有的源码编译生成为静态网页文件：<br>hexo generate<br>该指令执行完成后，如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/11.png" alt="img"></p>
-<p>与此同时，可以看到Hexo源码目录中新增了一个名为db.json的文件，以及一个名为public的文件夹，如下图所示。</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/12.png" alt="img"></p>
-<ul>
-<li>db.json文件：编译过程中产生的中间文件，不用关心；</li>
-<li>public文件夹：新生成的静态网页文件就存放在这个目录下。</li>
-</ul>
-<p>点进public文件夹可以看到：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/13.png" alt="img"></p>
-<p>这些就是刚刚编译生成的静态网页文件。</p>
-<h1 id="六、部署到GitHub-Pages上"><a href="#六、部署到GitHub-Pages上" class="headerlink" title="六、部署到GitHub Pages上"></a>六、部署到GitHub Pages上</h1><p>在Git Bash窗口中输入如下指令并回车，将刚刚新生产的静态网页文件推送到GitHub Pages：<br>hexo deploy<br>该指令执行完成后，如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/14.png" alt="img"></p>
-<p>上图中最后一行提示 Deploy done，意味着我们部署成功了！</p>
-<h1 id="七、再次访问GitHub-Pages"><a href="#七、再次访问GitHub-Pages" class="headerlink" title="七、再次访问GitHub Pages"></a>七、再次访问GitHub Pages</h1><p>这时，我们再去访问我们前面得到的 GitHub Pages（<a href="https://napoleon940911.github.io/%EF%BC%89">https://napoleon940911.github.io/）</a> 。会发现原来几乎空白的网页，已经变成了前面我们在本地通过 <a href="http://localhost:4000/">http://localhost:4000</a> 所访问到的网页了！如下图所示：</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/15.png" alt="img"></p>
-<p>如果测试发现 GitHub Pages 还是没有任何变化，不要着急，等几分钟之后再次刷新即可。</p>
-<p>至此，我们就已经成功将本地的 Hexo 仓库部署到 GitHub 上了。</p>
-<p><strong>更新</strong></p>
-<p>最好设置两个分支，一个管理代码，一个展示网页</p>
-<p>代码管理就是和平时的git一样，将写好的代码上传到git进行备份</p>
-<p>网页展示的则进入本地项目的文件夹里，通过命令，直接推送过去了，其他不用管了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+    <title>win软件配置</title>
+    <url>/2025/02/25/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="win软件配置"><a href="#win软件配置" class="headerlink" title="win软件配置"></a>win软件配置</h1><h2 id="软件和插件"><a href="#软件和插件" class="headerlink" title="软件和插件"></a>软件和插件</h2><h2 id="1、Typora"><a href="#1、Typora" class="headerlink" title="1、Typora"></a>1、Typora</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rbscc3mo.vr3.png" alt="rbscc3mo.vr3" style="zoom: 50%;" /> 
 
+<p> 这是一个md文件的编辑软件经常使用的，感觉还不错吧</p>
+<h2 id="2、TTime"><a href="#2、TTime" class="headerlink" title="2、TTime"></a>2、TTime</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pekrp2uc.kft.png" alt="pekrp2uc.kft" style="zoom: 67%;" /> 
 
+<p>可以orc进行识别，效果还可以的</p>
+<h2 id="3、idm"><a href="#3、idm" class="headerlink" title="3、idm"></a>3、idm</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yr4emjxc.t1f.png" alt="yr4emjxc.t1f"> </p>
+<p>宇宙级下载器，也不多说了，已经入了永久版了</p>
+<h2 id="4、Twinkle-Tray"><a href="#4、Twinkle-Tray" class="headerlink" title="4、Twinkle Tray"></a>4、Twinkle Tray</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B7F62F815-DA19-496B-B7C4-C14565EE7C2E%7D" alt="img"> </p>
+<p> 能调剂电脑的显示亮度，感觉还是很有用的</p>
+<h2 id="5、QuickLook"><a href="#5、QuickLook" class="headerlink" title="5、QuickLook"></a>5、QuickLook</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B467D6B48-7DB5-4184-83B9-FCFF19823257%7D" alt="img"> </p>
+<p>按空格快速浏览文件，类似于mac上的空格</p>
+<h2 id="6、TranslucentTB"><a href="#6、TranslucentTB" class="headerlink" title="6、TranslucentTB"></a>6、TranslucentTB</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/e5mss02y.4im.png" alt="img"> </p>
+<p>一个能改变win底部框的小软件</p>
+<h2 id="7、Advanced-Archive-Password-Recovery"><a href="#7、Advanced-Archive-Password-Recovery" class="headerlink" title="7、Advanced Archive Password Recovery"></a>7、Advanced Archive Password Recovery</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/q02tb3to.y1u.png" alt="q02tb3to.y1u"> </p>
+<p>暴力破解压缩包的工具</p>
+<h2 id="8、Clash-for-Windows"><a href="#8、Clash-for-Windows" class="headerlink" title="8、Clash for Windows"></a>8、Clash for Windows</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/egew3ebt.y53.png" alt="egew3ebt.y53"> </p>
+<p>翻墙软件</p>
+<h2 id="9、PicList"><a href="#9、PicList" class="headerlink" title="9、PicList"></a>9、PicList</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fxunb05c.pn5.png" alt="fxunb05c.pn5" style="zoom:67%;" /> 
 
+<p>图床软件，和typora相关一起用</p>
+<h2 id="10、QQ截图独立版"><a href="#10、QQ截图独立版" class="headerlink" title="10、QQ截图独立版"></a>10、QQ截图独立版</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/05rmscg5.zre.png" alt="05rmscg5.zre"> </p>
+<p>截图软件，好用</p>
+<h2 id="11、平板串流"><a href="#11、平板串流" class="headerlink" title="11、平板串流"></a>11、平板串流</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/vnizhs3a.3rk.png" alt="vnizhs3a.3rk"> <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/04innbpq.ob4.png" alt="04innbpq.ob4" style="zoom:67%;" /></p>
+<p>这两个软件，第一个是虚拟屏幕，第二个是串流，详细配置去b站搜索平板串流有教程</p>
+<h2 id="12、Zoomlt"><a href="#12、Zoomlt" class="headerlink" title="12、Zoomlt"></a>12、Zoomlt</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/25f1alvl.bes.png" alt="25f1alvl.bes"> </p>
+<p>可以放大缩小屏幕，在屏幕上涂鸦，适合教学</p>
+<h2 id="13、火绒"><a href="#13、火绒" class="headerlink" title="13、火绒"></a>13、火绒</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ashircrk.teo.png" alt="ashircrk.teo"> </p>
+<p>真心不错的杀毒软件，它的弹窗拦截好评</p>
+<h2 id="14、Adobe-Acrobat-DC"><a href="#14、Adobe-Acrobat-DC" class="headerlink" title="14、Adobe Acrobat DC"></a>14、Adobe Acrobat DC</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3i3151rf.rw5.png" alt="3i3151rf.rw5"> </p>
+<p>pdf神奇了属于</p>
+<h2 id="15、draw-io"><a href="#15、draw-io" class="headerlink" title="15、draw.io"></a>15、draw.io</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hlvei5yf.zoy.png" alt="hlvei5yf.zoy"> </p>
+<p>流程图神器</p>
+<h2 id="16、Quicker"><a href="#16、Quicker" class="headerlink" title="16、Quicker"></a>16、Quicker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/dwxincma.v35.png" alt="dwxincma.v35"> </p>
+<p>绝对的神器，能快速启动软件，能自己编一些程序，然后通过其一键打开。十分十分有用对于我来说**********，当然这个配置也最麻烦。</p>
+<h2 id="17、篡改猴"><a href="#17、篡改猴" class="headerlink" title="17、篡改猴"></a>17、篡改猴</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/igrbehke.41v.png" alt="igrbehke.41v"> </p>
+<p>油猴脚本，可以自己写一些js代码在浏览器上执行，很不错</p>
+<h2 id="18、沉汉式翻译"><a href="#18、沉汉式翻译" class="headerlink" title="18、沉汉式翻译"></a>18、沉汉式翻译</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/jjbe1frv.44w.png" alt="jjbe1frv.44w"> </p>
+<p>浏览器翻译的神</p>
+<h2 id="19、OBS-Studio"><a href="#19、OBS-Studio" class="headerlink" title="19、OBS Studio"></a>19、OBS Studio</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwcu1x2l.cym.png" alt="mwcu1x2l.cym"> </p>
+<p>录屏直播软件好评</p>
+<h2 id="20、Todesk"><a href="#20、Todesk" class="headerlink" title="20、Todesk"></a>20、Todesk</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qjeg3pvd.yux.png" alt="qjeg3pvd.yux"> </p>
+<p>远程控制软件，也没什么好的，没办法暂时就这个好点</p>
+<h2 id="21、GIT"><a href="#21、GIT" class="headerlink" title="21、GIT"></a>21、GIT</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kf5fi0yx.uop.png" alt="kf5fi0yx.uop"> </p>
+<p>git的终端操作器好用</p>
+<h2 id="22、Docker"><a href="#22、Docker" class="headerlink" title="22、Docker"></a>22、Docker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1mwtcjqb.byp.png" alt="1mwtcjqb.byp"> </p>
+<p>容器</p>
+<h2 id="23、Mysql"><a href="#23、Mysql" class="headerlink" title="23、Mysql"></a>23、Mysql</h2><p>数据库</p>
+<h2 id="24、Xshell"><a href="#24、Xshell" class="headerlink" title="24、Xshell"></a>24、Xshell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ajiqvzrk.jfp.png" alt="ajiqvzrk.jfp"> </p>
+<p>远程连接服务器终端的</p>
+<h2 id="25、Postman"><a href="#25、Postman" class="headerlink" title="25、Postman"></a>25、Postman</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/izysicai.l4z.png" alt="izysicai.l4z"> </p>
+<p>后端api测试工具</p>
+<h2 id="26、VMware"><a href="#26、VMware" class="headerlink" title="26、VMware"></a>26、VMware</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uuwjmqqk.ac1.png" alt="uuwjmqqk.ac1"> </p>
+<p>虚拟机</p>
+<h2 id="27、Hbuilder"><a href="#27、Hbuilder" class="headerlink" title="27、Hbuilder"></a>27、Hbuilder</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/z0eadlkh.hax.png" alt="z0eadlkh.hax"> </p>
+<p>前端的ide</p>
+<h2 id="28、Vscode"><a href="#28、Vscode" class="headerlink" title="28、Vscode"></a>28、Vscode</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/evalbizt.0eq.png" alt="evalbizt.0eq"> </p>
+<p>全能好用的ide </p>
+<h2 id="29、Intell"><a href="#29、Intell" class="headerlink" title="29、Intell"></a>29、Intell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/er5hhttb.ivz.png" alt="er5hhttb.ivz"> </p>
+<p>java的ide</p>
+<h2 id="30、Navicat-Premium"><a href="#30、Navicat-Premium" class="headerlink" title="30、Navicat Premium"></a>30、Navicat Premium</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ucbwaunc.snf.png" alt="ucbwaunc.snf"> </p>
+<p>远程数据库管理软件 </p>
+<h2 id="31、Xmind"><a href="#31、Xmind" class="headerlink" title="31、Xmind"></a>31、Xmind</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4klfjefg.5vr.png" alt="4klfjefg.5vr"> </p>
+<p>不多说，思维导图软件 </p>
+<h2 id="32、figma"><a href="#32、figma" class="headerlink" title="32、figma"></a>32、figma</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250224161209063.png" alt="image-20250224161209063"> </p>
+<p>网页设计软件，不太会 </p>
+<h2 id="33、WSL"><a href="#33、WSL" class="headerlink" title="33、WSL"></a>33、WSL</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/30louyag.2oc.png" alt="30louyag.2oc"> </p>
+<p>win下的linux系统</p>
+<h2 id="34、Anaconda-Navigator"><a href="#34、Anaconda-Navigator" class="headerlink" title="34、Anaconda Navigator"></a>34、Anaconda Navigator</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mryxkjdd.4mz.png" alt="mryxkjdd.4mz"> </p>
+<p>python必装的东西 </p>
+<h2 id="35、OneDrive"><a href="#35、OneDrive" class="headerlink" title="35、OneDrive"></a>35、OneDrive</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pzigh3cd.hq5.png" alt="pzigh3cd.hq5"> </p>
+<p>云盘</p>
+<h2 id="36、word实用工具插件"><a href="#36、word实用工具插件" class="headerlink" title="36、word实用工具插件"></a>36、word实用工具插件</h2><p>可以支持正则表达</p>
+<h2 id="37、方方格子和uuoffice"><a href="#37、方方格子和uuoffice" class="headerlink" title="37、方方格子和uuoffice"></a>37、方方格子和uuoffice</h2><p>基本上就这些了，其他也没什么好说的了</p>
+<h2 id="38、LocalSend"><a href="#38、LocalSend" class="headerlink" title="38、LocalSend"></a>38、LocalSend</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/wkbhozcl.yvz.png" alt="wkbhozcl.yvz" style="zoom:50%;" /> 
 
-
-<p><strong>一些git的简单命令</strong></p>
-<p>强制推送</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;Your commit message&quot;</span><br><span class="line">git push --set-upstream git@github.com:zxzlimit/zxzlimit.github.io.git main --force</span><br></pre></td></tr></table></figure>
-
-<p>以后要推送的话</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">本地连接远程</span><br><span class="line">git remote add origin git@github.com:zxzlimit/zxzlimit.github.io.git</span><br><span class="line"></span><br><span class="line">本地分支命名</span><br><span class="line">git branch -m master main</span><br><span class="line"></span><br><span class="line">查看是否连接远程</span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line">推送到远程dev分支下</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
-
+<p>局域网文件传输工具</p>
+<h2 id="39、SyncClipboard"><a href="#39、SyncClipboard" class="headerlink" title="39、SyncClipboard"></a>39、SyncClipboard</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ihjt1nkh.lml.png" alt="ihjt1nkh.lml"> </p>
+<p>云粘贴版</p>
+<h2 id="40、Everything"><a href="#40、Everything" class="headerlink" title="40、Everything"></a>40、Everything</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B4268A7C3-5DF7-4DE5-8852-991EB733C2CC%7D" alt="img"> </p>
+<p>文件搜索神器</p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>学习</category>
+        <category>精品软件</category>
       </categories>
       <tags>
-        <tag>Next</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图床</title>
+    <url>/2025/02/17/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>图床</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -631,9 +642,41 @@
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>Linux指令</category>
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
+    <url>/2025/02/18/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
+<p>2、共享的相关设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
+<p>还有个设置，打开触控面板里面的程序设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
+<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
+<p>然后找到通讯录</p>
+<p>设置SMB功能，然后注册</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
+<p>然后确定，然后就配置好了。</p>
+<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
+<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>办公</category>
+      </categories>
+      <tags>
+        <tag>打印机</tag>
       </tags>
   </entry>
   <entry>
@@ -654,7 +697,8 @@
 <p>4、启动 syncclipboard</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /root/data/docker_data/syncclipboard</span><br><span class="line"></span><br><span class="line">docker compose up -d   # 注意，老版本用户用 docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>实用</category>
+        <category>学习</category>
+        <category>服务器</category>
       </categories>
       <tags>
         <tag>docker</tag>
@@ -704,40 +748,11 @@
 <p>很快能进行结果返回即代表成功</p>
 ]]></content>
       <categories>
+        <category>学习</category>
         <category>服务器</category>
       </categories>
       <tags>
         <tag>server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
-    <url>/2025/02/18/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
-    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
-<p>2、共享的相关设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
-<p>还有个设置，打开触控面板里面的程序设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
-<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
-<p>然后找到通讯录</p>
-<p>设置SMB功能，然后注册</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
-<p>然后确定，然后就配置好了。</p>
-<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
-<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>打印机</tag>
       </tags>
   </entry>
 </search>
