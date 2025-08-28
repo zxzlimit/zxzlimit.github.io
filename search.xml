@@ -51,6 +51,14 @@
 
 <h2 id="12、检查端口是否被占用"><a href="#12、检查端口是否被占用" class="headerlink" title="12、检查端口是否被占用"></a>12、检查端口是否被占用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:80          # 查看占用 80 端口的进程</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="13、安装sh文件"><a href="#13、安装sh文件" class="headerlink" title="13、安装sh文件"></a>13、安装sh文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sido sh your_script.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="14、查看自己ip"><a href="#14、查看自己ip" class="headerlink" title="14、查看自己ip"></a>14、查看自己ip</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ifconfig		查看自己ip</span><br><span class="line"></span><br><span class="line">curl ifconfig.me			查看自己的公网ip</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -357,126 +365,6 @@
       </tags>
   </entry>
   <entry>
-    <title>win软件配置</title>
-    <url>/2025/02/25/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96%E4%BE%BF%E6%8D%B7%E9%85%8D%E7%BD%AE/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="win软件配置"><a href="#win软件配置" class="headerlink" title="win软件配置"></a>win软件配置</h1><h2 id="软件和插件"><a href="#软件和插件" class="headerlink" title="软件和插件"></a>软件和插件</h2><h2 id="1、Typora"><a href="#1、Typora" class="headerlink" title="1、Typora"></a>1、Typora</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rbscc3mo.vr3.png" alt="rbscc3mo.vr3" style="zoom: 50%;" /> 
-
-<p> 这是一个md文件的编辑软件经常使用的，感觉还不错吧</p>
-<h2 id="2、TTime"><a href="#2、TTime" class="headerlink" title="2、TTime"></a>2、TTime</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pekrp2uc.kft.png" alt="pekrp2uc.kft" style="zoom: 67%;" /> 
-
-<p>可以orc进行识别，效果还可以的</p>
-<h2 id="3、idm"><a href="#3、idm" class="headerlink" title="3、idm"></a>3、idm</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yr4emjxc.t1f.png" alt="yr4emjxc.t1f"> </p>
-<p>宇宙级下载器，也不多说了，已经入了永久版了</p>
-<h2 id="4、Twinkle-Tray"><a href="#4、Twinkle-Tray" class="headerlink" title="4、Twinkle Tray"></a>4、Twinkle Tray</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B7F62F815-DA19-496B-B7C4-C14565EE7C2E%7D" alt="img"> </p>
-<p> 能调剂电脑的显示亮度，感觉还是很有用的</p>
-<h2 id="5、QuickLook"><a href="#5、QuickLook" class="headerlink" title="5、QuickLook"></a>5、QuickLook</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B467D6B48-7DB5-4184-83B9-FCFF19823257%7D" alt="img"> </p>
-<p>按空格快速浏览文件，类似于mac上的空格</p>
-<h2 id="6、TranslucentTB"><a href="#6、TranslucentTB" class="headerlink" title="6、TranslucentTB"></a>6、TranslucentTB</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/e5mss02y.4im.png" alt="img"> </p>
-<p>一个能改变win底部框的小软件</p>
-<h2 id="7、Advanced-Archive-Password-Recovery"><a href="#7、Advanced-Archive-Password-Recovery" class="headerlink" title="7、Advanced Archive Password Recovery"></a>7、Advanced Archive Password Recovery</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/q02tb3to.y1u.png" alt="q02tb3to.y1u"> </p>
-<p>暴力破解压缩包的工具</p>
-<h2 id="8、Clash-for-Windows"><a href="#8、Clash-for-Windows" class="headerlink" title="8、Clash for Windows"></a>8、Clash for Windows</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/egew3ebt.y53.png" alt="egew3ebt.y53"> </p>
-<p>翻墙软件</p>
-<h2 id="9、PicList"><a href="#9、PicList" class="headerlink" title="9、PicList"></a>9、PicList</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fxunb05c.pn5.png" alt="fxunb05c.pn5" style="zoom:67%;" /> 
-
-<p>图床软件，和typora相关一起用</p>
-<h2 id="10、QQ截图独立版"><a href="#10、QQ截图独立版" class="headerlink" title="10、QQ截图独立版"></a>10、QQ截图独立版</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/05rmscg5.zre.png" alt="05rmscg5.zre"> </p>
-<p>截图软件，好用</p>
-<h2 id="11、平板串流"><a href="#11、平板串流" class="headerlink" title="11、平板串流"></a>11、平板串流</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/vnizhs3a.3rk.png" alt="vnizhs3a.3rk"> <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/04innbpq.ob4.png" alt="04innbpq.ob4" style="zoom:67%;" /></p>
-<p>这两个软件，第一个是虚拟屏幕，第二个是串流，详细配置去b站搜索平板串流有教程</p>
-<h2 id="12、Zoomlt"><a href="#12、Zoomlt" class="headerlink" title="12、Zoomlt"></a>12、Zoomlt</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/25f1alvl.bes.png" alt="25f1alvl.bes"> </p>
-<p>可以放大缩小屏幕，在屏幕上涂鸦，适合教学</p>
-<h2 id="13、火绒"><a href="#13、火绒" class="headerlink" title="13、火绒"></a>13、火绒</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ashircrk.teo.png" alt="ashircrk.teo"> </p>
-<p>真心不错的杀毒软件，它的弹窗拦截好评</p>
-<h2 id="14、Adobe-Acrobat-DC"><a href="#14、Adobe-Acrobat-DC" class="headerlink" title="14、Adobe Acrobat DC"></a>14、Adobe Acrobat DC</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3i3151rf.rw5.png" alt="3i3151rf.rw5"> </p>
-<p>pdf神奇了属于</p>
-<h2 id="15、draw-io"><a href="#15、draw-io" class="headerlink" title="15、draw.io"></a>15、draw.io</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hlvei5yf.zoy.png" alt="hlvei5yf.zoy"> </p>
-<p>流程图神器</p>
-<h2 id="16、Quicker"><a href="#16、Quicker" class="headerlink" title="16、Quicker"></a>16、Quicker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/dwxincma.v35.png" alt="dwxincma.v35"> </p>
-<p>绝对的神器，能快速启动软件，能自己编一些程序，然后通过其一键打开。十分十分有用对于我来说**********，当然这个配置也最麻烦。</p>
-<h2 id="17、篡改猴"><a href="#17、篡改猴" class="headerlink" title="17、篡改猴"></a>17、篡改猴</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/igrbehke.41v.png" alt="igrbehke.41v"> </p>
-<p>油猴脚本，可以自己写一些js代码在浏览器上执行，很不错</p>
-<h2 id="18、沉汉式翻译"><a href="#18、沉汉式翻译" class="headerlink" title="18、沉汉式翻译"></a>18、沉汉式翻译</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/jjbe1frv.44w.png" alt="jjbe1frv.44w"> </p>
-<p>浏览器翻译的神</p>
-<h2 id="19、OBS-Studio"><a href="#19、OBS-Studio" class="headerlink" title="19、OBS Studio"></a>19、OBS Studio</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwcu1x2l.cym.png" alt="mwcu1x2l.cym"> </p>
-<p>录屏直播软件好评</p>
-<h2 id="20、Todesk"><a href="#20、Todesk" class="headerlink" title="20、Todesk"></a>20、Todesk</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qjeg3pvd.yux.png" alt="qjeg3pvd.yux"> </p>
-<p>远程控制软件，也没什么好的，没办法暂时就这个好点</p>
-<h2 id="21、GIT"><a href="#21、GIT" class="headerlink" title="21、GIT"></a>21、GIT</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kf5fi0yx.uop.png" alt="kf5fi0yx.uop"> </p>
-<p>git的终端操作器好用</p>
-<h2 id="22、Docker"><a href="#22、Docker" class="headerlink" title="22、Docker"></a>22、Docker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1mwtcjqb.byp.png" alt="1mwtcjqb.byp"> </p>
-<p>容器</p>
-<h2 id="23、Mysql"><a href="#23、Mysql" class="headerlink" title="23、Mysql"></a>23、Mysql</h2><p>数据库</p>
-<h2 id="24、Xshell"><a href="#24、Xshell" class="headerlink" title="24、Xshell"></a>24、Xshell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ajiqvzrk.jfp.png" alt="ajiqvzrk.jfp"> </p>
-<p>远程连接服务器终端的</p>
-<h2 id="25、Postman"><a href="#25、Postman" class="headerlink" title="25、Postman"></a>25、Postman</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/izysicai.l4z.png" alt="izysicai.l4z"> </p>
-<p>后端api测试工具</p>
-<h2 id="26、VMware"><a href="#26、VMware" class="headerlink" title="26、VMware"></a>26、VMware</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uuwjmqqk.ac1.png" alt="uuwjmqqk.ac1"> </p>
-<p>虚拟机</p>
-<h2 id="27、Hbuilder"><a href="#27、Hbuilder" class="headerlink" title="27、Hbuilder"></a>27、Hbuilder</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/z0eadlkh.hax.png" alt="z0eadlkh.hax"> </p>
-<p>前端的ide</p>
-<h2 id="28、Vscode"><a href="#28、Vscode" class="headerlink" title="28、Vscode"></a>28、Vscode</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/evalbizt.0eq.png" alt="evalbizt.0eq"> </p>
-<p>全能好用的ide </p>
-<h2 id="29、Intell"><a href="#29、Intell" class="headerlink" title="29、Intell"></a>29、Intell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/er5hhttb.ivz.png" alt="er5hhttb.ivz"> </p>
-<p>java的ide</p>
-<h2 id="30、Navicat-Premium"><a href="#30、Navicat-Premium" class="headerlink" title="30、Navicat Premium"></a>30、Navicat Premium</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ucbwaunc.snf.png" alt="ucbwaunc.snf"> </p>
-<p>远程数据库管理软件 </p>
-<h2 id="31、Xmind"><a href="#31、Xmind" class="headerlink" title="31、Xmind"></a>31、Xmind</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4klfjefg.5vr.png" alt="4klfjefg.5vr"> </p>
-<p>不多说，思维导图软件 </p>
-<h2 id="32、figma"><a href="#32、figma" class="headerlink" title="32、figma"></a>32、figma</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250224161209063.png" alt="image-20250224161209063"> </p>
-<p>网页设计软件，不太会 </p>
-<h2 id="33、WSL"><a href="#33、WSL" class="headerlink" title="33、WSL"></a>33、WSL</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/30louyag.2oc.png" alt="30louyag.2oc"> </p>
-<p>win下的linux系统</p>
-<h2 id="34、Anaconda-Navigator"><a href="#34、Anaconda-Navigator" class="headerlink" title="34、Anaconda Navigator"></a>34、Anaconda Navigator</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mryxkjdd.4mz.png" alt="mryxkjdd.4mz"> </p>
-<p>python必装的东西 </p>
-<h2 id="35、OneDrive"><a href="#35、OneDrive" class="headerlink" title="35、OneDrive"></a>35、OneDrive</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pzigh3cd.hq5.png" alt="pzigh3cd.hq5"> </p>
-<p>云盘</p>
-<h2 id="36、word实用工具插件"><a href="#36、word实用工具插件" class="headerlink" title="36、word实用工具插件"></a>36、word实用工具插件</h2><p>可以支持正则表达</p>
-<h2 id="37、方方格子和uuoffice"><a href="#37、方方格子和uuoffice" class="headerlink" title="37、方方格子和uuoffice"></a>37、方方格子和uuoffice</h2><p>基本上就这些了，其他也没什么好说的了</p>
-<h2 id="38、LocalSend"><a href="#38、LocalSend" class="headerlink" title="38、LocalSend"></a>38、LocalSend</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/wkbhozcl.yvz.png" alt="wkbhozcl.yvz" style="zoom:50%;" /> 
-
-<p>局域网文件传输工具</p>
-<h2 id="39、SyncClipboard"><a href="#39、SyncClipboard" class="headerlink" title="39、SyncClipboard"></a>39、SyncClipboard</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ihjt1nkh.lml.png" alt="ihjt1nkh.lml"> </p>
-<p>云粘贴版</p>
-<h2 id="40、Everything"><a href="#40、Everything" class="headerlink" title="40、Everything"></a>40、Everything</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B4268A7C3-5DF7-4DE5-8852-991EB733C2CC%7D" alt="img"> </p>
-<p>文件搜索神器</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>其他便捷配置</category>
-      </categories>
-      <tags>
-        <tag>软件推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图床</title>
-    <url>/2025/02/17/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96%E4%BE%BF%E6%8D%B7%E9%85%8D%E7%BD%AE/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
-<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
-<p>新建一个bucket</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
-<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
-<p>然后基本完成了</p>
-<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
-<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
-<p>这些信息就是刚刚注册bucket时的，填写好。</p>
-<p>然后在配置一下serve</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
-<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>其他便捷配置</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客NexT主题美化设置</title>
     <url>/2025/02/16/%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="博客NexT主题美化设置"><a href="#博客NexT主题美化设置" class="headerlink" title="博客NexT主题美化设置"></a>博客NexT主题美化设置</h1><p>在网站根目录下输入以下命令</p>
@@ -754,37 +642,6 @@
       </tags>
   </entry>
   <entry>
-    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
-    <url>/2025/02/18/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96%E4%BE%BF%E6%8D%B7%E9%85%8D%E7%BD%AE/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
-    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
-<p>2、共享的相关设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
-<p>还有个设置，打开触控面板里面的程序设置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
-<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
-<p>然后找到通讯录</p>
-<p>设置SMB功能，然后注册</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
-<p>然后确定，然后就配置好了。</p>
-<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
-<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>其他便捷配置</category>
-      </categories>
-      <tags>
-        <tag>打印机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NginxProxyManager的部署和使用教程</title>
     <url>/2025/02/17/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/NginxProxyManager%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="NginxProxyManager的部署和使用教程"><a href="#NginxProxyManager的部署和使用教程" class="headerlink" title="NginxProxyManager的部署和使用教程"></a>NginxProxyManager的部署和使用教程</h1><h2 id="1、修改-Docker-配置（可选）"><a href="#1、修改-Docker-配置（可选）" class="headerlink" title="1、修改 Docker 配置（可选）"></a>1、修改 Docker 配置（可选）</h2><p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
@@ -942,5 +799,1077 @@
       <tags>
         <tag>springboot</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E5%86%85mysql/</url>
+    <content><![CDATA[<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240610100625082.png"></p>
+<p>docker -v </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">查看docker的版本</span><br></pre></td></tr></table></figure>
+
+
+
+<p>docker images -a</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">查看docker的所有镜像</span><br></pre></td></tr></table></figure>
+
+
+
+<p>docker pull mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">拉取一个mysql的镜像</span><br></pre></td></tr></table></figure>
+
+
+
+<p>docker run -p 3306:3306 –name shebei -e MYSQL_ROOT_PASSWORD&#x3D;123456 -d mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">运行该docker </span><br><span class="line"></span><br><span class="line">-p 是端口映射，本机3306端口映射docker对应的3306</span><br><span class="line"></span><br><span class="line">--name 是数据库的名称	</span><br><span class="line"></span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456		设置数据库的root密码</span><br><span class="line"></span><br><span class="line">-d mysql 进程后台运行</span><br></pre></td></tr></table></figure>
+
+
+
+<p>想要什么镜像就去docker hub上找</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240615105812552.png" alt="image-20240615105812552"></p>
+<p>复制命令在终端运行即可</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<h1 id="个人收藏【一些有用的网站】"><a href="#个人收藏【一些有用的网站】" class="headerlink" title="个人收藏【一些有用的网站】"></a>个人收藏【一些有用的网站】</h1><p><strong>用于病毒检测的网站</strong></p>
+<p><a href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a></p>
+<p><strong>用于ip对应的实际地理位置的查询</strong></p>
+<p><a href="https://www.chaipip.com/">https://www.chaipip.com/</a></p>
+<p><a href="https://toolwa.com/ip/">https://toolwa.com/ip/</a></p>
+<p><strong>极简机场网址</strong></p>
+<p><a href="https://www.wogg.life/user#">https://www.wogg.life/user#</a></p>
+<p><strong>以图搜寻</strong></p>
+<p><a href="https://xslist.org/zh/searchByImage">https://xslist.org/zh/searchByImage</a></p>
+<p><strong>正则表达式测试网站</strong></p>
+<p><a href="https://www.jyshare.com/front-end/854/">https://www.jyshare.com/front-end/854/</a></p>
+<p><strong>json数据规则化方便阅读</strong></p>
+<p><a href="https://www.json.cn/">https://www.json.cn/</a></p>
+<p><a href="https://jsonlint.com/">https://jsonlint.com/</a></p>
+<p><strong>base64编解码</strong></p>
+<p><a href="https://www.base64decode.org/">https://www.base64decode.org/</a></p>
+<p><strong>md5编码的破解</strong></p>
+<p><a href="https://www.cmd5.com/">https://www.cmd5.com/</a></p>
+<p><a href="https://gchq.github.io/CyberChef/">https://gchq.github.io/CyberChef/</a></p>
+<p><strong>ai检测助手，检测是否为ai生成（包含文字，图片，视频）</strong></p>
+<p><a href="https://matrix.tencent.com/ai-detect/">https://matrix.tencent.com/ai-detect/</a></p>
+<p><strong>将 <code>curl</code> 命令转换成多种编程语言中的网络请求代码，实现快速得到api</strong></p>
+<p><a href="https://curlconverter.com/">https://curlconverter.com/</a></p>
+<p><strong>文字，代码，文件差异对比</strong></p>
+<p><a href="https://www.diffchecker.com/">https://www.diffchecker.com/</a></p>
+<p><strong>在线语音转文字</strong></p>
+<p><a href="https://otter.ai/">https://otter.ai/</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E9%85%8D%E7%BD%AEflask%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p>对于flask项目的</p>
+<p>创建一个 <code>.dockerignore</code> 文件，并在其中列出不需要复制的文件或目录。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__pycache__</span><br><span class="line">.git</span><br><span class="line">.idea</span><br><span class="line">*.pyc</span><br><span class="line">*.pyo</span><br><span class="line">*.pyd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建一个dockerfile文件，里面写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 使用 Python 官方的 Alpine Linux 镜像作为基础镜像</span><br><span class="line">FROM python:3.9-alpine</span><br><span class="line"></span><br><span class="line"># 设置工作目录</span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line"># 复制当前目录下的所有文件到工作目录中</span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line"># 安装 Flask 和其他依赖	--no-cache-dir不安装缓存的</span><br><span class="line">RUN pip install --no-cache-dir -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 暴露端口（假设你的应用程序在端口 5000 上运行） 感觉没什么用，但写着吧</span><br><span class="line">EXPOSE 5000</span><br><span class="line"></span><br><span class="line"># 启动应用程序</span><br><span class="line">CMD [&quot;python&quot;, &quot;app.py&quot;]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在当前文件下使用以下命令构建 Docker 镜像，myflaskapp是名称，后面的.不能省略。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t myflaskapp .</span><br></pre></td></tr></table></figure>
+
+<p>这将会构建一个名为 <code>myflaskapp</code> 的 Docker 镜像。、</p>
+<p>运行 Docker 容器：-d是后台运行，-p是端口映射，本机端口-docker端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d -p 5000:5000 myflaskapp</span><br></pre></td></tr></table></figure>
+
+<p>这将会在后台运行你的 Flask 应用程序，并将容器的 5000 端口映射到主机的 5000 端口。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="docker的一些基础"><a href="#docker的一些基础" class="headerlink" title="docker的一些基础"></a>docker的一些基础</h1><p>流程</p>
+<p>一般的流程是先拉取一个镜像，就是一个环境image，注意，我们最终是要一个容器的，也就是container，然后</p>
+<p>docker run -d –name myredis -p 6379:6379 redis就可以产生容器了</p>
+<p>-d是后台运行</p>
+<p>-p是端口映射，-p &lt;宿主机端口&gt;:&lt;容器端口&gt;</p>
+<p>-v是数据持久化，将docker当中的容器的数据保持在本地电脑的某一文件下</p>
+<p>查看docker的容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+
+
+<p>进入容器的终端</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it 容器id或容器名称 sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看容器的ip</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker inspect &lt;container_name_or_id&gt; | grep &quot;IPAddress&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker start &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>停止容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>重启容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker restart &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>删除容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker rm &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>常见的容器的启动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name &lt;container_name&gt; -v &lt;宿主机路径&gt;:&lt;容器路径&gt; &lt;image_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>数据卷的挂载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker volume create my_volume</span><br><span class="line">docker run -d --name myredis -p 6379:6379 -v my_volume:/data redis redis-server --appendonly yes</span><br></pre></td></tr></table></figure>
+
+
+
+<p>设置一个mysql的容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=238545 -p 3306:3306 mysql</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Burbsuit/burp%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="burp学习"><a href="#burp学习" class="headerlink" title="burp学习"></a>burp学习</h1><p>burp使用时，有时候已经配置好的浏览器会加载不出来，这时候只需要在burp的代理中打开这个按钮就行了，但是拦截请求时会有点问题，拦截的时候可以关一下</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250611211144843.png" alt="image-20250611211144720"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Burbsuit/burpsuit%E7%9A%84%E4%B8%89%E4%B8%AA%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<h1 id="burpsuit的三个核心功能"><a href="#burpsuit的三个核心功能" class="headerlink" title="burpsuit的三个核心功能"></a>burpsuit的三个核心功能</h1><h3 id="1-拦截请求（Intercept）"><a href="#1-拦截请求（Intercept）" class="headerlink" title="1. 拦截请求（Intercept）"></a><strong>1. 拦截请求（Intercept）</strong></h3><ul>
+<li><strong>功能：</strong> 允许你在请求发送到服务器之前，捕获并修改它。你可以查看并更改请求的所有部分（如 URL、请求头、请求体、参数等），然后再发送给服务器。</li>
+<li><strong>应用场景：</strong><ul>
+<li>修改提交的数据，比如修改表单字段，改变账号或密码。</li>
+<li>绕过前端验证、模拟不同的用户行为等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-代理（Proxy）"><a href="#2-代理（Proxy）" class="headerlink" title="2. 代理（Proxy）"></a><strong>2. 代理（Proxy）</strong></h3><ul>
+<li><strong>功能：</strong> Burp Suite 充当一个中间代理服务器，拦截和转发客户端与服务器之间的所有请求和响应。你需要在浏览器或其他应用程序中配置代理，将流量引导到 Burp。</li>
+<li><strong>应用场景：</strong><ul>
+<li>监控和分析网站与服务器之间的所有通信。</li>
+<li>在浏览器中使用 Burp 代理，你可以捕获所有 HTTP&#x2F;HTTPS 请求并进行修改或分析。</li>
+<li>调试和优化 web 应用，分析请求和响应的内容。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-重发请求（Repeater）"><a href="#3-重发请求（Repeater）" class="headerlink" title="3. 重发请求（Repeater）"></a><strong>3. 重发请求（Repeater）</strong></h3><ul>
+<li><strong>功能：</strong> 将捕获的请求发送到 <strong>Repeater</strong>，让你能够对请求进行细致的修改，然后反复提交请求。你可以手动修改请求的任何部分，并查看不同输入数据的响应。</li>
+<li><strong>应用场景：</strong><ul>
+<li>批量提交数据或者反复尝试不同参数的请求。</li>
+<li>测试应用的安全性，如 SQL 注入、XSS 攻击等。</li>
+<li>反复调整和测试 API 请求，直到得到预期的响应。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/vue%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEdocker/</url>
+    <content><![CDATA[<p>1、文件结构</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173640999.png" alt="image-20240701173640999"></p>
+<p>2、先打包为dist，在dist中创建nginx并配置</p>
+<p><strong><img src="C:\Users\zxz\AppData\Roaming\Typora\typora-user-images\image-20240701173732994.png" alt="image-20240701173732994"></strong></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173752121.png" alt="image-20240701173752121"></p>
+<p>3、在外层docker中配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173820991.png" alt="image-20240701173820991"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173834925.png" alt="image-20240701173834925"></p>
+<p>4、配置好了，运行docker的两个步骤</p>
+<p>在当前文件下使用以下命令构建 Docker 镜像，myvue是名称，后面的.不能省略。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t myvue .</span><br></pre></td></tr></table></figure>
+
+<p>这将会构建一个名为 <code>myflaskapp</code> 的 Docker 镜像。、</p>
+<p>运行 Docker 容器：-d是后台运行，-p是端口映射，本机端口-docker端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d -p 5000:5000 myvue</span><br></pre></td></tr></table></figure>
+
+<p>这将会在后台运行你的 Flask 应用程序，并将容器的 5000 端口映射到主机的 5000 端口。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Nginx/nginx%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8Cuwsgi%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<ul>
+<li>1、<strong>全局块</strong>：配置影响nginx全局的指令。一般有运行nginx服务器的用户组，nginx进程pid存放路径，日志存放路径，配置文件引入，允许生成worker process数等。</li>
+<li>2、<strong>events块</strong>：配置影响nginx服务器或与用户的网络连接。有每个进程的最大连接数，选取哪种事件驱动模型处理连接请求，是否允许同时接受多个网路连接，开启多个网络连接序列化等。</li>
+<li>3、<strong>http块</strong>：可以嵌套多个server，配置代理，缓存，日志定义等绝大多数功能和第三方模块的配置。如文件引入，mime-type定义，日志自定义，是否使用sendfile传输文件，连接超时时间，单连接请求数等。<ul>
+<li>4、<strong>server块</strong>：配置虚拟主机的相关参数，一个http中可以有多个server。</li>
+<li>5、<strong>location块</strong>：配置请求的路由，以及各种页面的处理情况。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">########### 每个指令必须有分号结束。#################</span><br><span class="line">#user administrator administrators;  #配置用户或者组，默认为nobody nobody。</span><br><span class="line">#worker_processes 2;  #允许生成的进程数，默认为1</span><br><span class="line">#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址</span><br><span class="line">error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg</span><br><span class="line">events &#123;</span><br><span class="line">    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on</span><br><span class="line">    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off</span><br><span class="line">    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport</span><br><span class="line">    worker_connections  1024;    #最大连接数，默认为512</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;   #文件扩展名与文件类型映射表</span><br><span class="line">    default_type  application/octet-stream; #默认文件类型，默认为text/plain</span><br><span class="line">    #access_log off; #取消服务日志    </span><br><span class="line">    log_format myFormat &#x27;$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for&#x27;; #自定义格式</span><br><span class="line">    access_log log/access.log myFormat;  #combined为日志格式的默认值</span><br><span class="line">    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。</span><br><span class="line">    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。</span><br><span class="line">    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。</span><br><span class="line"></span><br><span class="line">    upstream mysvr &#123;   </span><br><span class="line">      server 127.0.0.1:7878;</span><br><span class="line">      server 192.168.10.121:3333 backup;  #热备</span><br><span class="line">    &#125;</span><br><span class="line">    error_page 404 https://www.baidu.com; #错误页</span><br><span class="line">    server &#123;</span><br><span class="line">        keepalive_requests 120; #单连接请求上限次数。</span><br><span class="line">        listen       4545;   #监听端口</span><br><span class="line">        server_name  127.0.0.1;   #监听地址       </span><br><span class="line">        location  ~*^.+$ &#123;       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。</span><br><span class="line">           #root path;  #根目录</span><br><span class="line">           #index vv.txt;  #设置默认页</span><br><span class="line">           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表</span><br><span class="line">           deny 127.0.0.1;  #拒绝的ip</span><br><span class="line">           allow 172.18.5.54; #允许的ip           </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>简单示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">        root /var/www/html;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            try_files $uri $uri/ =404;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>推荐配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user www-data;</span><br><span class="line">worker_processes auto;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">        root /var/www/html;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            try_files $uri $uri/ =404;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>flask项目的配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">upstream django &#123;</span><br><span class="line">    server 127.0.0.1:8001; #具体端口必须与您uWSGI配置文件中定义的端口一致</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80; #设置的nginx访问端口</span><br><span class="line">    server_name  test;</span><br><span class="line">    charset      utf-8;</span><br><span class="line">    location /static &#123;</span><br><span class="line">        autoindex on;</span><br><span class="line">        alias /home/myblog/uwsgi_project/static; #具体目录以您现场具体部署的目录为准</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass 127.0.0.1:8001;</span><br><span class="line">        include uwsgi_params; #具体目录以您现场具体部署的目录为准</span><br><span class="line">        include /etc/nginx/uwsgi_params; #具体目录以您现场具体部署的目录为准</span><br><span class="line">        uwsgi_param UWSGI_SCRIPT iCourse.wsgi; #具体目录以您现场具体部署的目录为准</span><br><span class="line">        uwsgi_param UWSGI_CHDIR /iCourse; #具体目录以您现场具体部署的目录为准</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">        client_max_body_size 35m;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701164254178.png" alt="image-20240701164254178"></p>
+<p>简单说一下uwsgi的配置</p>
+<p>1、新建uWSGI配置文件<code>uwsgi_config.ini</code>。</p>
+<p>2、编辑文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">socket = 127.0.0.1:8001		此处的8001端口需要和nginx配置文件中定义的uwsgi_pass端口一致。</span><br><span class="line">chdir = /home/myblog/uwsgi_project/		指定项目目录，本示例中为/home/myblog/uwsgi_project，根据项目修改。</span><br><span class="line">wsgi-file = uwsgi_project/wsgi.py		指定Django&#x27;s wsgi file启动文件，根据项目修改</span><br><span class="line">processes = 4		最大工作进程。</span><br><span class="line">threads = 2		每个工作进程processes启动后开启的线程个数。</span><br><span class="line">vacuum = true		环境退出时自动清理。</span><br><span class="line">buffer-size = 65536		设置用于uwsgi包解析的内部缓存区大小为64k，默认是4k。</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Nginx/nginx/</url>
+    <content><![CDATA[<p>停止nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service nginx stop</span><br></pre></td></tr></table></figure>
+
+
+
+<p>停止 Nginx 实例后，再次检查端口是否已被释放：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo netstat -tuln | grep &#x27;:80\|:443\|:888&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>重启 Nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service nginx start</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查找端口程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo lsof -i :80</span><br><span class="line">sudo lsof -i :443</span><br><span class="line">sudo lsof -i :888</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用 <code>kill</code> 命令终止占用端口的进程：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo kill -9 &lt;PID&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>端口被释放后，重新启动 Nginx：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<p>Nginx 在 Linux 系统中一般安装在 <code>/etc/nginx</code> 目录下。主要的配置文件 <code>nginx.conf</code> 通常位于 <code>/etc/nginx/nginx.conf</code>。在这个目录下还会包含其他一些重要的配置文件和目录，如：</p>
+<ul>
+<li><code>/etc/nginx/conf.d/</code>：存放额外的配置文件，通常用于配置虚拟主机等。</li>
+<li><code>/etc/nginx/sites-available/</code>：存放虚拟主机配置文件的模板或者可用配置。</li>
+<li><code>/etc/nginx/sites-enabled/</code>：包含实际生效的虚拟主机配置文件的符号链接，通常指向 <code>sites-available</code> 中的配置文件。</li>
+</ul>
+<p>此外，Nginx 的日志文件通常位于 <code>/var/log/nginx/</code> 目录下，包括 <code>access.log</code>（访问日志）和 <code>error.log</code>（错误日志）等。</p>
+<ol>
+<li><p><strong>启动Nginx</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>停止Nginx</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>优雅地关闭Nginx</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>重新加载Nginx配置</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>测试Nginx配置文件是否正确</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查Nginx版本</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<p>在宝塔面板下安装的 Nginx 的配置文件通常位于 <code>/www/server/panel/vhost/nginx</code> 目录中。在这个目录下，每个站点都有一个对应的配置文件，文件名通常以域名命名，如 <code>example.com.conf</code>。</p>
+<p>你可以通过以下步骤找到宝塔面板下 Nginx 配置文件的位置：</p>
+<ol>
+<li>登录到宝塔面板。</li>
+<li>在面板左侧菜单中，找到并点击 “网站” 选项。</li>
+<li>在 “网站” 页面中，找到你想查看配置文件的网站，并点击网站名称。</li>
+<li>在网站详情页面，点击 “设置” 选项卡。</li>
+<li>在 “Nginx 配置” 部分，你可以看到 Nginx 配置文件的路径。点击 “配置文件” 按钮即可查看或编辑该配置文件。</li>
+</ol>
+<hr>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240527200453950.png" alt="image-20240527200453950"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Nginx/uwsgi%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>uwsgi是一种协议</p>
+<p>python的web框架基本上都要用，为什么，优化性能什么的嘛</p>
+<p>安装</p>
+<p>pip install uwsgi</p>
+<p>在项目下创建一个ini文件，就uwsgi.ini,在里面写配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">socket和http只能配一个</span><br><span class="line">和nginx整合用socket</span><br><span class="line"></span><br><span class="line">chdir项目目录</span><br><span class="line"></span><br><span class="line">wsgi-file 启动文件</span><br><span class="line"></span><br><span class="line">最后#必须去掉</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240615172207562.png" alt="image-20240615172207562"></p>
+<p>把项目搞到当前环境</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240615172346869.png" alt="image-20240615172346869"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240615172757631.png" alt="image-20240615172757631"></p>
+<p>需要虚拟环境的文件requirements.txt也叫依赖</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240616151140842.png" alt="image-20240616151140842"></p>
+<p>装依赖</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240616152102502.png" alt="image-20240616152102502"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Python/python%E6%89%93%E5%8C%85exe/</url>
+    <content><![CDATA[<p>对于py文件打包成exe文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pyinstaller --noconsole --onefile aa.py --add-data &quot;ic.ico;.&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="noconsole（或-w）"><a href="#noconsole（或-w）" class="headerlink" title="--noconsole（或 -w）"></a><code>--noconsole</code>（或 <code>-w</code>）</h3><p>表示 <strong>打包后运行时不会弹出黑色控制台窗口</strong>。</p>
+<h3 id="onefile"><a href="#onefile" class="headerlink" title="--onefile"></a><code>--onefile</code></h3><p>打包成 <strong>单一 <code>.exe</code> 文件</strong>。</p>
+<h3 id="aa-py"><a href="#aa-py" class="headerlink" title="aa.py"></a><code>aa.py</code></h3><p>你要打包的主 Python 脚本。</p>
+<h3 id="add-data-ic-ico"><a href="#add-data-ic-ico" class="headerlink" title="--add-data &quot;ic.ico;.&quot;"></a><code>--add-data &quot;ic.ico;.&quot;</code></h3><p>–add-data “源路径;目标路径”</p>
+<p>这是让 PyInstaller **把额外的资源文件一起打包进 <code>.exe</code>**。</p>
+<ul>
+<li>Windows 系统：用分号 <code>;</code> 分隔</li>
+<li>Linux&#x2F;macOS：用冒号 <code>:</code> 分隔</li>
+</ul>
+<p><strong><code>ic.ico</code> 是你项目里的源文件</strong></p>
+<p><strong><code>.</code> 表示打包后这个文件放到当前目录（运行时的“当前”目录）</strong></p>
+<p>如果把所有文件都放在一个文件夹下面</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pyinstaller --onefile --noconsole aa.py --add-data &quot;assets;assets&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Mysql/-MySQL%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><img src="D:\screenshot\Screenshots\2023-12\LenovoAppStore_Qgj2CGOLio.png" alt="LenovoAppStore_Qgj2CGOLio"></p>
+<h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><p>常用的DDL（Data Definition Language）命令用于数据库的结构定义，包括创建、修改和删除数据库对象。以下是一些常用的DDL命令及其示例：</p>
+<ul>
+<li>创建数据库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE 数据库名称;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除数据库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE 数据库名称;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建表格</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE 表名 (</span><br><span class="line">    头名 数据类型,</span><br><span class="line">    头名 数据类型,</span><br><span class="line">    ...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>修改表格结构</p>
+<p>添加新列</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE 表名</span><br><span class="line">ADD 头名 数据类型;</span><br></pre></td></tr></table></figure>
+
+<p>​	删除某列</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE 表名</span><br><span class="line">DROP 头名 数据类型;</span><br></pre></td></tr></table></figure>
+
+<p>   修改列的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE 表名</span><br><span class="line">MODIFY 头名 new_datatype;</span><br></pre></td></tr></table></figure>
+
+<p>​	修改列名同时数据类型也能改变</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE table_name</span><br><span class="line">CHANGE 老头名 新头名 数据类型;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>删除表格</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE 表名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h1><p>插入数据（增）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO 表名 (头名1, 头名2, ...) VALUES (值1, 值2, ...);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO 表名 VALUES (值1, 值2, ...);	所有头名按顺序</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (id, name, email) VALUES</span><br><span class="line">(1, &#x27;John Doe&#x27;, &#x27;john@example.com&#x27;),</span><br><span class="line">(2, &#x27;Jane Doe&#x27;, &#x27;jane@example.com&#x27;),</span><br><span class="line">(3, &#x27;Bob Smith&#x27;, &#x27;bob@example.com&#x27;);		插入多组数据</span><br></pre></td></tr></table></figure>
+
+<p>删除数据（删）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM table_name;	这将删除名为 table_name 的表中的所有行，但保留表结构不变。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM users WHERE id = 5; 这将删除 users 表中 id 为 5 的行。</span><br></pre></td></tr></table></figure>
+
+<p>数据更新（改）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE users SET age = age + 1; users 表中所有用户的 age 字段值都加 1。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE users SET age = 30 WHERE name = &#x27;John&#x27;;  users 表中 name 为 &quot;John&quot; 的用户的 age 更新为 30 岁。</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h1><p>数据查询（查）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT column1, column2, ... FROM table_name WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM table_name WHERE condition;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h1><p>创建用户</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREAT USER &#x27;用户名&#x27;@&#x27;主机名&#x27; IDENTIFIED BY &#x27;密码&#x27;；</span><br><span class="line">例：CREAT USER &#x27;text&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;；</span><br><span class="line">创建一个text用户，可以在任意ip主机访问数据库，密码为123456</span><br></pre></td></tr></table></figure>
+
+<p>修改密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER USER &#x27;用户名&#x27;@&#x27;主机名&#x27; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#x27;新密码&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>删除用户</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP USER &#x27;用户名&#x27;@&#x27;主机名&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>显示权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW GRANTS FOR &#x27;用户名&#x27;@&#x27;主机名&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_9ARzSgJpGP.png" alt="chrome_9ARzSgJpGP"></p>
+<p>赋予权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRANK 权限名称，权限名称.... ON 数据库名.表明 TO &#x27;用户&#x27;@&#x27;主机名&#x27;；</span><br><span class="line">数据库下的所有表可以用*.*来表示</span><br><span class="line">GRANT ALL ON MYSQL.TO &#x27;test&#x27;@&#x27;%&#x27;;</span><br><span class="line">GRANT ALL ON *.* TO &#x27;test&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>撤销权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">REVOKE 权限列表 ON 数据库名.表名 FROM &#x27;用户名&#x27;@&#x27;主机名&#x27;；</span><br><span class="line">REVOKE SELECT ON *.* FROM &#x27;test&#x27;e&#x27;%&#x27;；</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>每个表都最好加一个id</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE your_table_name (</span><br><span class="line">    id INT AUTO_INCREMENT PRIMARY KEY,</span><br><span class="line">    -- Other columns</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><img src="D:\screenshot\Screenshots\2023-12\chrome_iSTvzsmncU.png" alt="chrome_iSTvzsmncU"></p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_MmVGSd6Vqx.png" alt="chrome_MmVGSd6Vqx"></p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_bZ8L63tdnd.png" alt="chrome_bZ8L63tdnd"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>win软件配置</title>
+    <url>/2025/02/25/%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="win软件配置"><a href="#win软件配置" class="headerlink" title="win软件配置"></a>win软件配置</h1><h2 id="软件和插件"><a href="#软件和插件" class="headerlink" title="软件和插件"></a>软件和插件</h2><h2 id="1、Typora"><a href="#1、Typora" class="headerlink" title="1、Typora"></a>1、Typora</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/rbscc3mo.vr3.png" alt="rbscc3mo.vr3" style="zoom: 50%;" /> 
+
+<p> 这是一个md文件的编辑软件经常使用的，感觉还不错吧</p>
+<h2 id="2、TTime"><a href="#2、TTime" class="headerlink" title="2、TTime"></a>2、TTime</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pekrp2uc.kft.png" alt="pekrp2uc.kft" style="zoom: 67%;" /> 
+
+<p>可以orc进行识别，效果还可以的</p>
+<h2 id="3、idm"><a href="#3、idm" class="headerlink" title="3、idm"></a>3、idm</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/yr4emjxc.t1f.png" alt="yr4emjxc.t1f"> </p>
+<p>宇宙级下载器，也不多说了，已经入了永久版了</p>
+<h2 id="4、Twinkle-Tray"><a href="#4、Twinkle-Tray" class="headerlink" title="4、Twinkle Tray"></a>4、Twinkle Tray</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B7F62F815-DA19-496B-B7C4-C14565EE7C2E%7D" alt="img"> </p>
+<p> 能调剂电脑的显示亮度，感觉还是很有用的</p>
+<h2 id="5、QuickLook"><a href="#5、QuickLook" class="headerlink" title="5、QuickLook"></a>5、QuickLook</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B467D6B48-7DB5-4184-83B9-FCFF19823257%7D" alt="img"> </p>
+<p>按空格快速浏览文件，类似于mac上的空格</p>
+<h2 id="6、TranslucentTB"><a href="#6、TranslucentTB" class="headerlink" title="6、TranslucentTB"></a>6、TranslucentTB</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/e5mss02y.4im.png" alt="img"> </p>
+<p>一个能改变win底部框的小软件</p>
+<h2 id="7、Advanced-Archive-Password-Recovery"><a href="#7、Advanced-Archive-Password-Recovery" class="headerlink" title="7、Advanced Archive Password Recovery"></a>7、Advanced Archive Password Recovery</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/q02tb3to.y1u.png" alt="q02tb3to.y1u"> </p>
+<p>暴力破解压缩包的工具</p>
+<h2 id="8、Clash-for-Windows"><a href="#8、Clash-for-Windows" class="headerlink" title="8、Clash for Windows"></a>8、Clash for Windows</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/egew3ebt.y53.png" alt="egew3ebt.y53"> </p>
+<p>翻墙软件</p>
+<h2 id="9、PicList"><a href="#9、PicList" class="headerlink" title="9、PicList"></a>9、PicList</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/fxunb05c.pn5.png" alt="fxunb05c.pn5" style="zoom:67%;" /> 
+
+<p>图床软件，和typora相关一起用</p>
+<h2 id="10、QQ截图独立版"><a href="#10、QQ截图独立版" class="headerlink" title="10、QQ截图独立版"></a>10、QQ截图独立版</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/05rmscg5.zre.png" alt="05rmscg5.zre"> </p>
+<p>截图软件，好用</p>
+<h2 id="11、平板串流"><a href="#11、平板串流" class="headerlink" title="11、平板串流"></a>11、平板串流</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/vnizhs3a.3rk.png" alt="vnizhs3a.3rk"> <img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/04innbpq.ob4.png" alt="04innbpq.ob4" style="zoom:67%;" /></p>
+<p>这两个软件，第一个是虚拟屏幕，第二个是串流，详细配置去b站搜索平板串流有教程</p>
+<h2 id="12、Zoomlt"><a href="#12、Zoomlt" class="headerlink" title="12、Zoomlt"></a>12、Zoomlt</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/25f1alvl.bes.png" alt="25f1alvl.bes"> </p>
+<p>可以放大缩小屏幕，在屏幕上涂鸦，适合教学</p>
+<h2 id="13、火绒"><a href="#13、火绒" class="headerlink" title="13、火绒"></a>13、火绒</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ashircrk.teo.png" alt="ashircrk.teo"> </p>
+<p>真心不错的杀毒软件，它的弹窗拦截好评</p>
+<h2 id="14、Adobe-Acrobat-DC"><a href="#14、Adobe-Acrobat-DC" class="headerlink" title="14、Adobe Acrobat DC"></a>14、Adobe Acrobat DC</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/3i3151rf.rw5.png" alt="3i3151rf.rw5"> </p>
+<p>pdf神奇了属于</p>
+<h2 id="15、draw-io"><a href="#15、draw-io" class="headerlink" title="15、draw.io"></a>15、draw.io</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/hlvei5yf.zoy.png" alt="hlvei5yf.zoy"> </p>
+<p>流程图神器</p>
+<h2 id="16、Quicker"><a href="#16、Quicker" class="headerlink" title="16、Quicker"></a>16、Quicker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/dwxincma.v35.png" alt="dwxincma.v35"> </p>
+<p>绝对的神器，能快速启动软件，能自己编一些程序，然后通过其一键打开。十分十分有用对于我来说**********，当然这个配置也最麻烦。</p>
+<h2 id="17、篡改猴"><a href="#17、篡改猴" class="headerlink" title="17、篡改猴"></a>17、篡改猴</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/igrbehke.41v.png" alt="igrbehke.41v"> </p>
+<p>油猴脚本，可以自己写一些js代码在浏览器上执行，很不错</p>
+<h2 id="18、沉汉式翻译"><a href="#18、沉汉式翻译" class="headerlink" title="18、沉汉式翻译"></a>18、沉汉式翻译</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/jjbe1frv.44w.png" alt="jjbe1frv.44w"> </p>
+<p>浏览器翻译的神</p>
+<h2 id="19、OBS-Studio"><a href="#19、OBS-Studio" class="headerlink" title="19、OBS Studio"></a>19、OBS Studio</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mwcu1x2l.cym.png" alt="mwcu1x2l.cym"> </p>
+<p>录屏直播软件好评</p>
+<h2 id="20、Todesk"><a href="#20、Todesk" class="headerlink" title="20、Todesk"></a>20、Todesk</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/qjeg3pvd.yux.png" alt="qjeg3pvd.yux"> </p>
+<p>远程控制软件，也没什么好的，没办法暂时就这个好点</p>
+<h2 id="21、GIT"><a href="#21、GIT" class="headerlink" title="21、GIT"></a>21、GIT</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/kf5fi0yx.uop.png" alt="kf5fi0yx.uop"> </p>
+<p>git的终端操作器好用</p>
+<h2 id="22、Docker"><a href="#22、Docker" class="headerlink" title="22、Docker"></a>22、Docker</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/1mwtcjqb.byp.png" alt="1mwtcjqb.byp"> </p>
+<p>容器</p>
+<h2 id="23、Mysql"><a href="#23、Mysql" class="headerlink" title="23、Mysql"></a>23、Mysql</h2><p>数据库</p>
+<h2 id="24、Xshell"><a href="#24、Xshell" class="headerlink" title="24、Xshell"></a>24、Xshell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ajiqvzrk.jfp.png" alt="ajiqvzrk.jfp"> </p>
+<p>远程连接服务器终端的</p>
+<h2 id="25、Postman"><a href="#25、Postman" class="headerlink" title="25、Postman"></a>25、Postman</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/izysicai.l4z.png" alt="izysicai.l4z"> </p>
+<p>后端api测试工具</p>
+<h2 id="26、VMware"><a href="#26、VMware" class="headerlink" title="26、VMware"></a>26、VMware</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/uuwjmqqk.ac1.png" alt="uuwjmqqk.ac1"> </p>
+<p>虚拟机</p>
+<h2 id="27、Hbuilder"><a href="#27、Hbuilder" class="headerlink" title="27、Hbuilder"></a>27、Hbuilder</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/z0eadlkh.hax.png" alt="z0eadlkh.hax"> </p>
+<p>前端的ide</p>
+<h2 id="28、Vscode"><a href="#28、Vscode" class="headerlink" title="28、Vscode"></a>28、Vscode</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/evalbizt.0eq.png" alt="evalbizt.0eq"> </p>
+<p>全能好用的ide </p>
+<h2 id="29、Intell"><a href="#29、Intell" class="headerlink" title="29、Intell"></a>29、Intell</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/er5hhttb.ivz.png" alt="er5hhttb.ivz"> </p>
+<p>java的ide</p>
+<h2 id="30、Navicat-Premium"><a href="#30、Navicat-Premium" class="headerlink" title="30、Navicat Premium"></a>30、Navicat Premium</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ucbwaunc.snf.png" alt="ucbwaunc.snf"> </p>
+<p>远程数据库管理软件 </p>
+<h2 id="31、Xmind"><a href="#31、Xmind" class="headerlink" title="31、Xmind"></a>31、Xmind</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/4klfjefg.5vr.png" alt="4klfjefg.5vr"> </p>
+<p>不多说，思维导图软件 </p>
+<h2 id="32、figma"><a href="#32、figma" class="headerlink" title="32、figma"></a>32、figma</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20250224161209063.png" alt="image-20250224161209063"> </p>
+<p>网页设计软件，不太会 </p>
+<h2 id="33、WSL"><a href="#33、WSL" class="headerlink" title="33、WSL"></a>33、WSL</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/30louyag.2oc.png" alt="30louyag.2oc"> </p>
+<p>win下的linux系统</p>
+<h2 id="34、Anaconda-Navigator"><a href="#34、Anaconda-Navigator" class="headerlink" title="34、Anaconda Navigator"></a>34、Anaconda Navigator</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/mryxkjdd.4mz.png" alt="mryxkjdd.4mz"> </p>
+<p>python必装的东西 </p>
+<h2 id="35、OneDrive"><a href="#35、OneDrive" class="headerlink" title="35、OneDrive"></a>35、OneDrive</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/pzigh3cd.hq5.png" alt="pzigh3cd.hq5"> </p>
+<p>云盘</p>
+<h2 id="36、word实用工具插件"><a href="#36、word实用工具插件" class="headerlink" title="36、word实用工具插件"></a>36、word实用工具插件</h2><p>可以支持正则表达</p>
+<h2 id="37、方方格子和uuoffice"><a href="#37、方方格子和uuoffice" class="headerlink" title="37、方方格子和uuoffice"></a>37、方方格子和uuoffice</h2><p>基本上就这些了，其他也没什么好说的了</p>
+<h2 id="38、LocalSend"><a href="#38、LocalSend" class="headerlink" title="38、LocalSend"></a>38、LocalSend</h2><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/wkbhozcl.yvz.png" alt="wkbhozcl.yvz" style="zoom:50%;" /> 
+
+<p>局域网文件传输工具</p>
+<h2 id="39、SyncClipboard"><a href="#39、SyncClipboard" class="headerlink" title="39、SyncClipboard"></a>39、SyncClipboard</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/ihjt1nkh.lml.png" alt="ihjt1nkh.lml"> </p>
+<p>云粘贴版</p>
+<h2 id="40、Everything"><a href="#40、Everything" class="headerlink" title="40、Everything"></a>40、Everything</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/%7B4268A7C3-5DF7-4DE5-8852-991EB733C2CC%7D" alt="img"> </p>
+<p>文件搜索神器</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>其他便捷配置</category>
+      </categories>
+      <tags>
+        <tag>软件推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/Python/playwright%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96/</url>
+    <content><![CDATA[<p>对于playwright的爬虫，一般就是先使用xpathhlerper来查找到自己想要的东西，这会直接把文本内容显示出来的，然后使用playwright codegen来一步一步到达所在位置，然后使用循环来进行批量爬取</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#导入所需要的包</span><br><span class="line">import re</span><br><span class="line">from playwright.sync_api import Playwright, sync_playwright, expect</span><br><span class="line">from openpyxl import Workbook</span><br><span class="line">import os</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">#初始化 Excel 文件</span><br><span class="line">wb = Workbook()</span><br><span class="line">ws = wb.active</span><br><span class="line">ws.append([&quot;队伍&quot;, &quot;材料名称&quot;, &quot;类型&quot;, &quot;单位&quot;, &quot;数量&quot;])</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">#设置excel文件路径</span><br><span class="line">desktop_path = os.path.join(os.path.expanduser(&quot;~&quot;), &quot;Desktop&quot;)</span><br><span class="line">file_path = os.path.join(desktop_path, &quot;output.xlsx&quot;)</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">#浏览器自动化查找对应位置</span><br><span class="line">def run(playwright: Playwright) -&gt; None:</span><br><span class="line">    browser = playwright.chromium.launch(headless=False)</span><br><span class="line">    context = browser.new_context()</span><br><span class="line">    page = context.new_page()</span><br><span class="line">    page.goto(&quot;https://cms.zjjtgc.com/zjjg-portal-ui/login?redirect=%2Fhomepage%2Findex&quot;)</span><br><span class="line">   </span><br><span class="line">    # 登录过程</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入用户名&quot;).click()</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入用户名&quot;).fill(&quot;17353190891&quot;)</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入用户名&quot;).press(&quot;Tab&quot;)</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入密码&quot;).press(&quot;CapsLock&quot;)</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入密码&quot;).fill(&quot;A&quot;)</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入密码&quot;).press(&quot;CapsLock&quot;)</span><br><span class="line">    page.get_by_role(&quot;textbox&quot;, name=&quot;请输入密码&quot;).fill(&quot;Aa736188huang&quot;)</span><br><span class="line">    page.get_by_role(&quot;button&quot;, name=&quot;登 录&quot;).click()</span><br><span class="line">    page.get_by_text(&quot;应用中心&quot;).click()</span><br><span class="line">    </span><br><span class="line">    with page.expect_popup() as page1_info:</span><br><span class="line">        page.locator(&quot;#app-group-0&quot;).get_by_role(&quot;img&quot;, name=&quot;材料管理系统&quot;).click()</span><br><span class="line">    page1 = page1_info.value</span><br><span class="line">    page1.locator(&quot;div&quot;).filter(has_text=re.compile(r&quot;^库存管理$&quot;)).click()</span><br><span class="line">    page1.locator(&quot;div&quot;).filter(has_text=re.compile(r&quot;^材料出库$&quot;)).click()</span><br><span class="line">    page1.get_by_role(&quot;link&quot;, name=&quot;领料出库&quot;).click()</span><br><span class="line">    </span><br><span class="line">    page1.wait_for_timeout(5000)  # 等待页面加载完成</span><br><span class="line"></span><br><span class="line">    page1.get_by_role(&quot;textbox&quot;, name=&quot;请选择&quot;).click()</span><br><span class="line">    page1.get_by_text(&quot;100条/页&quot;).click()</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">#获取总页数</span><br><span class="line">    time.sleep(5)  # 获取总页数</span><br><span class="line">    total_pages = int(page1.locator(f&quot;//button[@class=&#x27;vxe-pager--num-btn&#x27;][5]&quot;).first.inner_text())</span><br><span class="line">    print(f&quot;共 &#123;total_pages&#125; 页&quot;)</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">#数据定位</span><br><span class="line">    # 页面循环</span><br><span class="line">    for page_num in range(1, total_pages + 1):</span><br><span class="line">        #行数循环</span><br><span class="line">        for i in range(1, 101):</span><br><span class="line">            try:</span><br><span class="line">                # 获取数据</span><br><span class="line">                cadre = page1.locator(f&quot;//table[contains(@class, &#x27;vxe-table--body&#x27;)]//tr[&#123;i&#125;]//td[contains(@class, &#x27;col_22&#x27;)]//span&quot;).first.inner_text()</span><br><span class="line">                name_of_material = page1.locator(f&quot;//table[contains(@class, &#x27;vxe-table--body&#x27;)]//tr[&#123;i&#125;]//td[contains(@class, &#x27;col_32&#x27;)]//span&quot;).first.inner_text()</span><br><span class="line">                setpecification = page1.locator(f&quot;//table[contains(@class, &#x27;vxe-table--body&#x27;)]//tr[&#123;i&#125;]//td[contains(@class, &#x27;col_43&#x27;)]//span&quot;).first.inner_text()</span><br><span class="line">                unit = page1.locator(f&quot;//table[contains(@class, &#x27;vxe-table--body&#x27;)]//tr[&#123;i&#125;]//td[contains(@class, &#x27;col_44&#x27;)]//span&quot;).first.inner_text()</span><br><span class="line">                number = page1.locator(f&quot;//table[contains(@class, &#x27;vxe-table--body&#x27;)]//tr[&#123;i&#125;]//td[contains(@class, &#x27;col_45&#x27;)]//span&quot;).first.inner_text()</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line"># 打印数据并写入Excel</span><br><span class="line">                print(f&quot;&#123;cadre&#125;|&#123;name_of_material&#125;|&#123;setpecification&#125;|&#123;unit&#125;|&#123;number&#125;&quot;)</span><br><span class="line">                ws.append([cadre, name_of_material, setpecification, unit, number])</span><br><span class="line">            except Exception as e:</span><br><span class="line">                print(f&quot;第&#123;i&#125;行出错：&#123;e&#125;&quot;)</span><br><span class="line">                break</span><br><span class="line"></span><br><span class="line">        print(&quot;============================================&quot;)</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line"># 点击下一页</span><br><span class="line">        if page_num &lt; total_pages:</span><br><span class="line">            page1.get_by_role(&quot;button&quot;, name=str(page_num + 1), exact=True).click()</span><br><span class="line"></span><br><span class="line">        page1.wait_for_timeout(3000)  # 等待页面加载完成</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">#excel保存</span><br><span class="line">    wb.save(file_path)</span><br><span class="line">    </span><br><span class="line">#关闭</span><br><span class="line">    context.close()</span><br><span class="line">    browser.close()</span><br><span class="line"></span><br><span class="line">with sync_playwright() as playwright:</span><br><span class="line">    run(playwright)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/Python/%E6%8A%8Apython%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E5%88%B0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%AD/</url>
+    <content><![CDATA[<p>直接就是一行命令</p>
+<p>您可以使用以下命令将虚拟环境的依赖导出到一个文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>这将会将当前虚拟环境中安装的所有包及其版本号导出到名为 <code>requirements.txt</code> 的文件中。您可以随后使用该文件来安装相同的依赖，方法是在另一个环境中运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>请注意，导出的 <code>requirements.txt</code> 文件中将包含所有直接安装的包以及它们的依赖项。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图床</title>
+    <url>/2025/02/17/%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>在typora中，图片一般是只保存在本地的，如果要分享或者上传到库中备份，则图片无法加载。这里采用阿里云+PicList来实现云图床。</p>
+<h2 id="第一步-阿里云的oss"><a href="#第一步-阿里云的oss" class="headerlink" title="第一步 阿里云的oss"></a>第一步 阿里云的oss</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211841633.png" alt="image-20240426211841633"></p>
+<p>新建一个bucket</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212023781.png" alt="image-20240426212023781"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212049855.png" alt="image-20240426212049855"></p>
+<p>设置一个accesskey  包含id和密码 这个要记住一会有用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212216063.png" alt="image-20240426212216063"></p>
+<p>然后基本完成了</p>
+<h2 id="第二步-下载PicList"><a href="#第二步-下载PicList" class="headerlink" title="第二步 下载PicList"></a>第二步 下载PicList</h2><p>主要讲解如何配置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426211714882.png" alt="image-20240426211714882"></p>
+<p><img src="https://zxzmac.oss-cn-beijing.aliyuncs.com/image-20250108220931737.png" alt="image-20250108220931737"></p>
+<p>这些信息就是刚刚注册bucket时的，填写好。</p>
+<p>然后在配置一下serve</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212430431.png" alt="image-20240426212430431"></p>
+<h2 id="第三步-typora中的设置"><a href="#第三步-typora中的设置" class="headerlink" title="第三步 typora中的设置"></a>第三步 typora中的设置</h2><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240426212508604.png" alt="image-20240426212508604"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>其他便捷配置</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/-ubuntu%E4%B8%8Bmysql/</url>
+    <content><![CDATA[<p>亲测ok</p>
+<p>重新装的一个Ubuntu系统<br>先来</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update </span><br></pre></td></tr></table></figure>
+
+<p>然后安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install mysql-server-8.0 </span><br></pre></td></tr></table></figure>
+
+<p>查看是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -V</span><br></pre></td></tr></table></figure>
+
+<p>查看服务状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status mysql </span><br></pre></td></tr></table></figure>
+
+<p>然后在MySQL中修改以管理员身份启动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mysql</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql</span><br></pre></td></tr></table></figure>
+
+<p>查看user</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select host,user from user;</span><br></pre></td></tr></table></figure>
+
+<p>更新一下添加一个用户，host&#x3D;’%’为任意ip可连接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">update user set host=&#x27;%&#x27; where user=&#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>改密码为123456</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter user &#x27;root&#x27;@&#x27;%&#x27; identified with mysql_native_password by &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>检查防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+
+<p>允许开发端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw allow 3306</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> ，将 <code>bind-address</code> 设置为虚拟机的IP地址或者设置为 <code>0.0.0.0</code> 以允许所有地址连接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
+
+<p>需要vim基础，i进入编辑，esx退出，：wq保存</p>
+<p>记得重启一下mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart mysql</span><br></pre></td></tr></table></figure>
+
+<p>使用下面这个命令来查看ip</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
+
+<p>测试能否连通</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -h 192.168.183.130 -p</span><br><span class="line">//root：用户名  192.168.183.130：本机ip</span><br></pre></td></tr></table></figure>
+
+<p>后面在登录就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><p>. 匹配换行符外的任意字符</p>
+<p>\w 匹配字母、数字、下划线、汉字     \W 匹配非字母、数字、下划线、汉字<br>\s 匹配任意空白符                                   \S 匹配除单个字符外的所有字符（包括tal和换行符）<br>\d 匹配数字                                              \D 匹配非数字<br>\b 匹配单词边界<br>() 分组<br>^ 匹配字符串开始                     $匹配字符串结束<br>\A 匹配字符串开始                   \Z匹配字符串结束</p>
+<p>？0次或多次</p>
+<p>+1次或多次</p>
+<p>*0次或多次</p>
+<p>{n} n次<br>{n，}  最少n次<br>{n，m}  n次到m次</p>
+<p>|  表示或</p>
+<p>转义 \</p>
+<p>[^ ]   排除匹配</p>
+<hr>
+<p>贪婪匹配    .*<br>非贪婪匹配    .*?</p>
+<hr>
+<p>匹配汉字  [\u4e00-\u9fa5]<br>匹配英文字母    [a-zA-Z]   含大小写<br>匹配英文字母和数字组合    [a-zA-Z0-9]</p>
+<h1 id="python中的正则表达式"><a href="#python中的正则表达式" class="headerlink" title="python中的正则表达式"></a>python中的正则表达式</h1><ul>
+<li>findall</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">#正则</span><br><span class="line">pattern = r&quot;https://.*?.com&quot;</span><br><span class="line"></span><br><span class="line">#str字符串</span><br><span class="line">txt = &quot;https://www.baidu.com/ sdfsdfsdfdsfsdfsdf sdfdsf https://www.bilibili.com/&quot;</span><br><span class="line"></span><br><span class="line">#匹配</span><br><span class="line">match = re.findall(pattern, txt)</span><br><span class="line"></span><br><span class="line">#打印</span><br><span class="line">print(match)</span><br><span class="line"></span><br><span class="line">结果</span><br><span class="line">[&#x27;https://www.baidu.com&#x27;, &#x27;https://www.bilibili.com&#x27;]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>search和group</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 要匹配的字符串</span><br><span class="line">input_string = &quot;17353190891&quot;</span><br><span class="line"></span><br><span class="line"># 定义正则表达式模式，匹配11位数字，并提取第4位到第8位的数字</span><br><span class="line">pattern = r&quot;\d&#123;3&#125;(\d&#123;5&#125;)\d&#123;3&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 使用re.search()函数进行匹配</span><br><span class="line">match = re.search(pattern, string)</span><br><span class="line"></span><br><span class="line"># 如果匹配成功</span><br><span class="line">if match:</span><br><span class="line">    # 提取第4位到第8位的数字</span><br><span class="line">    extracted_digits = match.group(1)   #第一个()的内容</span><br><span class="line">    print(&quot;提取的数字：&quot;, extracted_digits)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;没有找到匹配的数字&quot;)</span><br><span class="line">    </span><br><span class="line">结果</span><br><span class="line">提取的数字： 53190</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</title>
+    <url>/2025/02/18/%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"><a href="#电脑SMB连接打印机-直接打印机扫描文件传输到电脑上" class="headerlink" title="电脑SMB连接打印机-直接打印机扫描文件传输到电脑上"></a>电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</h1><p>1、创建一个共享文件</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193034235.png" alt="image-20241209193034235"></p>
+<p>2、共享的相关设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193100350.png" alt="image-20241209193100350"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193127090.png" alt="image-20241209193127090"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193152143.png" alt="image-20241209193152143"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193218642.png" alt="image-20241209193218642"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193229896.png" alt="image-20241209193229896"></p>
+<p>还有个设置，打开触控面板里面的程序设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193402217.png" alt="image-20241209193402217"></p>
+<p>然后就是访问打印机的ip地址了。直接浏览器输入打印机ip地址</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193514187.png" alt="image-20241209193514187"></p>
+<p>然后找到通讯录</p>
+<p>设置SMB功能，然后注册</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193743809.png" alt="image-20241209193743809"></p>
+<p>然后确定，然后就配置好了。</p>
+<p>总结一下，首先创建一个共享文件，然后配置共享文件的权限，有三步</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20241209193903027.png" alt="image-20241209193903027"></p>
+<p>在然后是计算机程序里面的SMB打开。好了，剩下就是连接打印机ip在上面的通讯录里面添加自己的信息了。具体上面已经写好了，不在复述。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>其他便捷配置</category>
+      </categories>
+      <tags>
+        <tag>打印机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/Ubuntu%E6%89%A9%E5%AE%B9/</url>
+    <content><![CDATA[<p>在虚拟机上完成扩容后还需要分配才行的</p>
+<p>查看储存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">df</span><br><span class="line">df -h	以人类的方式查看</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1、先安装磁盘软件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install gparted</span><br></pre></td></tr></table></figure>
+
+<p>2、我们要扩容的一般为</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240516135458976.png" alt="image-20240516135458976"></p>
+<p>但现在不能对其进行操作的</p>
+<p>3、先挂载一下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount -o remount -rw /</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount -o remount -rw /  /var/snap/firefox/common/host-hunspell</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240516135631573.png" alt="image-20240516135631573"></p>
+<p>详情里面查看地址</p>
+<p>4、然后对其进行扩容，并执行保存</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240516135718963.png" alt="image-20240516135718963"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%85%B3%E4%BA%8Exhelp%EF%BC%8C%E6%8C%89%E4%B8%8Bctrl+shift+x%E5%8F%AF%E4%BB%A5%E5%BC%B9%E5%87%BA%E7%95%8C%E9%9D%A2%E3%80%82%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%AA%E6%8C%89ctrl+shift%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8A%8A%E9%BC%A0%E6%A0%87%E4%BD%8D%E4%BA%8E%E6%83%B3%E8%A6%81%E6%9F%A5%E6%89%BE%E7%9A%84%E4%B8%9C%E8%A5%BF%E4%B8%8A%E5%B0%B1%E8%83%BD%E6%98%BE%E7%A4%BA%E4%BA%86/</url>
+    <content><![CDATA[<p>关于xhelp，按下ctrl+shift+x可以弹出界面。然后在只按ctrl+shift，然后把鼠标位于想要查找的东西上就能显示了</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%85%B3%E4%BA%8E%E7%BD%91%E9%A1%B5%E4%B8%AD%E6%96%87%E4%BB%B6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h1 id="关于网页中文件和字符串的上传"><a href="#关于网页中文件和字符串的上传" class="headerlink" title="关于网页中文件和字符串的上传"></a>关于网页中文件和字符串的上传</h1><p>一、单上传一个文件给后端</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;fileInput&quot;&gt;</span><br><span class="line">&lt;button id=&quot;uploadBtn&quot;&gt;Upload&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&#x27;uploadBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; &#123;</span><br><span class="line">    const fileInput = document.getElementById(&#x27;fileInput&#x27;);</span><br><span class="line">    const file = fileInput.files[0];  // 获取文件</span><br><span class="line"></span><br><span class="line">    const formData = new FormData();</span><br><span class="line">    formData.append(&#x27;file&#x27;, file);  // 将文件添加到 FormData 中</span><br><span class="line"></span><br><span class="line">    axios.post(&#x27;/upload&#x27;, formData)</span><br><span class="line">      .then(response =&gt; &#123;</span><br><span class="line">        console.log(&#x27;File uploaded successfully&#x27;);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(error =&gt; &#123;</span><br><span class="line">        console.error(&#x27;Error:&#x27;, error);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1、<input type="file" id="fileInput">这是一个专门用来接收文件的东西，它有一个特别的属性file，上传的文件就存储在这个file里面。file是一个元组的数据类型。</p>
+<p>2、创建一个    const formData &#x3D; new FormData();  玩意，并且将其添加到里面</p>
+<p>3、在通过axios来进行传送</p>
+<p>二、同时上传文件和字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;fileInput&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; id=&quot;textInput&quot; placeholder=&quot;Enter some text&quot;&gt;</span><br><span class="line">&lt;button id=&quot;uploadBtn&quot;&gt;Upload&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&#x27;uploadBtn&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; &#123;</span><br><span class="line">    const fileInput = document.getElementById(&#x27;fileInput&#x27;);</span><br><span class="line">    const textInput = document.getElementById(&#x27;textInput&#x27;);</span><br><span class="line">    </span><br><span class="line">    const file = fileInput.files[0];  // 获取文件</span><br><span class="line">    const text = textInput.value;  // 获取输入的字符串</span><br><span class="line"></span><br><span class="line">    const formData = new FormData();</span><br><span class="line">    formData.append(&#x27;file&#x27;, file);  // 将文件添加到 FormData 中</span><br><span class="line">    formData.append(&#x27;text&#x27;, text);  // 将字符串添加到 FormData 中</span><br><span class="line"></span><br><span class="line">    axios.post(&#x27;/upload&#x27;, formData, &#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        &#x27;Content-Type&#x27;: &#x27;multipart/form-data&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(response =&gt; &#123;</span><br><span class="line">      console.log(&#x27;File and text uploaded successfully&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(error =&gt; &#123;</span><br><span class="line">      console.error(&#x27;Error:&#x27;, error);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>一样的操作</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E7%90%86%E8%A7%A3%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>理解回调函数</p>
+<p>例如，实际上就是一个函数当中的一个参数为函数就这么简单了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function greet(name, callback) &#123;</span><br><span class="line">  console.log(&quot;Hello, &quot; + name);</span><br><span class="line">  callback();  // 执行回调函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function sayGoodbye() &#123;</span><br><span class="line">  console.log(&quot;Goodbye!&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(&quot;Alice&quot;, sayGoodbye);  // greet函数接收sayGoodbye作为回调函数</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%BF%AB%E9%80%9F%E5%88%86%E6%9E%90%E5%87%BA%E6%9D%A5%E4%B8%80%E4%B8%AAapi/</url>
+    <content><![CDATA[<p>快速分析出来一个api</p>
+<p>1、在浏览器查找相关数据的api</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701204652098.png" alt="image-20250701204651886"></p>
+<p>2、即使打开开发者，然后在对应的network下使用ctrl+f搜索要查找的内容，然后定位所需内容的所在的请求，在然后copy其curl（注意是bash下的）</p>
+<p>3、然后可以导入postman当中查看下，</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701205144182.png" alt="image-20250701205144078"></p>
+<p>4、也可以使用python的request发起请求，这里有一个网站能直接将curl转化为python的request，即：<a href="https://curlconverter.com/">https://curlconverter.com/</a></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701204937270.png" alt="image-20250701204937194"></p>
+<p>复杂粘贴，添加几句代码，即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import urllib3</span><br><span class="line"></span><br><span class="line">urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)</span><br><span class="line"></span><br><span class="line">cookies = &#123;</span><br><span class="line">    &#x27;CCSESSID&#x27;: &#x27;n31md76nm2qsv4vqvv7bo0r22u&#x27;,</span><br><span class="line">    &#x27;inputUser&#x27;: &#x27;%2BSS0qEifrRMznZDfTqFlh2I4NjViYzEwNzA2ZGM3NDI1NDc3YWY3MzYwODUyYTU3MzQxMWVlOTA4NmY1ZTBhNDRkNmFjYmIzMWQ3YWRjYmQr6Fot%2FHa%2FV43G2CfjeUgj&#x27;,</span><br><span class="line">    &#x27;cookiePhone&#x27;: &#x27;6dXCuOl5waPwtFRQgPCUITY3ODI1YTZhYWRkMjE1MjU0MDNiMzM1NzgyYTI3NGM5NDJiNDA0NzM5MWZhZTE2NTZlMmJkMDBkNmI3Yzg3MzWxZaB4HEAW76xm7yElYXJ2&#x27;,</span><br><span class="line">    &#x27;Projmain-Token&#x27;: &#x27;52b1c126-273b-478e-8ac4-5831d61a1762&#x27;,</span><br><span class="line">    &#x27;ssoquery&#x27;: &#x27;&#123;%22token%22:%229b14e3e6dc974189ccabdf6241c9c417473ec7e1%22%2C%22rdi%22:%22calendar%22%2C%22ssohost%22:%22cms.zjjtgc.com%22%2C%22ssoproto%22:%22https%22%2C%22appid%22:%22wedge_calendar%22%2C%22ssoprefix%22:%22sso%22&#125;&#x27;,</span><br><span class="line">    &#x27;WiseSessionId&#x27;: &#x27;7b8d698d-dbd5-4d2b-b66e-ee88d8d81dd0&#x27;,</span><br><span class="line">    &#x27;Admin-Token&#x27;: &#x27;admin-token&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    &#x27;Accept&#x27;: &#x27;*/*&#x27;,</span><br><span class="line">    &#x27;Accept-Language&#x27;: &#x27;zh-CN,zh;q=0.9&#x27;,</span><br><span class="line">    &#x27;Authorization&#x27;: &#x27;fcb27683-1e41-40c3-aa75-33519604a9a7&#x27;,</span><br><span class="line">    &#x27;Connection&#x27;: &#x27;keep-alive&#x27;,</span><br><span class="line">    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,</span><br><span class="line">    &#x27;Origin&#x27;: &#x27;https://cms.zjjtgc.com&#x27;,</span><br><span class="line">    &#x27;Referer&#x27;: &#x27;https://cms.zjjtgc.com/jg-web/jg-inventory/&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Dest&#x27;: &#x27;empty&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Mode&#x27;: &#x27;cors&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Site&#x27;: &#x27;same-origin&#x27;,</span><br><span class="line">    &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36&#x27;,</span><br><span class="line">    &#x27;X-Requested-With&#x27;: &#x27;XMLHttpRequest&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua&#x27;: &#x27;&quot;Google Chrome&quot;;v=&quot;137&quot;, &quot;Chromium&quot;;v=&quot;137&quot;, &quot;Not/A)Brand&quot;;v=&quot;24&quot;&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua-mobile&#x27;: &#x27;?0&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua-platform&#x27;: &#x27;&quot;Windows&quot;&#x27;,</span><br><span class="line">    &#x27;wise-json&#x27;: &#x27;1&#x27;,</span><br><span class="line">    # &#x27;Cookie&#x27;: &#x27;CCSESSID=n31md76nm2qsv4vqvv7bo0r22u; inputUser=%2BSS0qEifrRMznZDfTqFlh2I4NjViYzEwNzA2ZGM3NDI1NDc3YWY3MzYwODUyYTU3MzQxMWVlOTA4NmY1ZTBhNDRkNmFjYmIzMWQ3YWRjYmQr6Fot%2FHa%2FV43G2CfjeUgj; cookiePhone=6dXCuOl5waPwtFRQgPCUITY3ODI1YTZhYWRkMjE1MjU0MDNiMzM1NzgyYTI3NGM5NDJiNDA0NzM5MWZhZTE2NTZlMmJkMDBkNmI3Yzg3MzWxZaB4HEAW76xm7yElYXJ2; Projmain-Token=52b1c126-273b-478e-8ac4-5831d61a1762; ssoquery=&#123;%22token%22:%229b14e3e6dc974189ccabdf6241c9c417473ec7e1%22%2C%22rdi%22:%22calendar%22%2C%22ssohost%22:%22cms.zjjtgc.com%22%2C%22ssoproto%22:%22https%22%2C%22appid%22:%22wedge_calendar%22%2C%22ssoprefix%22:%22sso%22&#125;; WiseSessionId=7b8d698d-dbd5-4d2b-b66e-ee88d8d81dd0; Admin-Token=admin-token&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">params = &#123;</span><br><span class="line">    &#x27;page&#x27;: &#x27;0&#x27;,</span><br><span class="line">    &#x27;size&#x27;: &#x27;20&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">json_data = &#123;</span><br><span class="line">    &#x27;transtypeNo&#x27;: &#x27;QI&#x27;,</span><br><span class="line">    &#x27;projectNo&#x27;: &#x27;XM_0000497&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.post(</span><br><span class="line">    &#x27;https://cms.zjjtgc.com/jg-api/jg-inventory/mtlSheet/listAllDetailPage&#x27;,</span><br><span class="line">    params=params,</span><br><span class="line">    cookies=cookies,</span><br><span class="line">    headers=headers,</span><br><span class="line">    json=json_data,</span><br><span class="line">    verify=False</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
+
+<p>这里也能快速获取对应的cookie等数据。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/linux%E4%B8%8B%E5%AE%89%E8%A3%85anconda/</url>
+    <content><![CDATA[<p>运行命令直接安装，这就不说了。关键是安装后的文件配置</p>
+<p>这个centos的</p>
+<p>还vim好用</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20240516095108.png" alt="QQ截图20240516095108"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<p>一般来说是使用账号密码登录的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh root@8.134.186.40</span><br><span class="line">root为用户名</span><br><span class="line">@后面接ip</span><br><span class="line"></span><br><span class="line">然后会要求输入密码。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在用ssh的方式不用在输入密码了，这个其实和以前的ssh远程仓库一样的</p>
+<p>首先生成密钥，参考之前的ssh远程仓库，不同的一点是</p>
+<p>在远程服务器创建的.ssh文件下创建一个文件，里面保存公钥即可（注意是在远程服务器的哈）这里涉及vim编辑</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@iZ7xv5l9nyp6ssokyrj5uxZ ~]# cd .ssh</span><br><span class="line">[root@iZ7xv5l9nyp6ssokyrj5uxZ .ssh]# touch authorized_keys</span><br><span class="line">[root@iZ7xv5l9nyp6ssokyrj5uxZ .ssh]# ls</span><br><span class="line">authorized_keys </span><br><span class="line">[root@iZ7xv5l9nyp6ssokyrj5uxZ .ssh]# vim authorized_keys</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/mysql%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>1.首先检测下系统是否自带安装MySQL</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p>2.如果你系统有安装，那可以选择进行卸载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式</span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件</span><br></pre></td></tr></table></figure>
+
+<p>3.安装MySQL,可以mkdir mysql 新建一个文件夹用于存放mysql 相关文件。 分别输入如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>4.权限设置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+<p>5.初始化MySQL</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure>
+
+<p>6.启动MySQL</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<p>7.查看MySQL 运行状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure>
+
+<p>8.验证MySQL安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@host]# mysqladmin --version</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20181225104601204.png" alt="image"></p>
+<p>9.查看默认密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+
+<p>只要能先登录进去就可以不用管这个了</p>
+<p>10.修改密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;admin&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>11.Mysql安装成功后，默认的root用户密码为空，你可以使用以下命令来创建root用户的密码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@host]# mysqladmin -u root password &quot;new_password&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>12.现在你可以通过以下命令来连接到Mysql服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p </span><br><span class="line">• 1</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>CTRL+D 退出mysql</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/xshell%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>打开文件管理器，方便查看<br><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240519104032641.png" alt="image-20240519104032641"></p>
+<p>文件的传输功能</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y install lrzsz</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装完成好使用命令rpm -qa lrzsz查看是否安装</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240519104120039.png" alt="image-20240519104120039"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240519104328618.png" alt="image-20240519104328618"></p>
+<h3 id="输入命令，并选择文件（建议将文件先压缩，因为一次只能选择一个文件）"><a href="#输入命令，并选择文件（建议将文件先压缩，因为一次只能选择一个文件）" class="headerlink" title="输入命令，并选择文件（建议将文件先压缩，因为一次只能选择一个文件）"></a>输入命令，并选择文件（建议将文件先压缩，因为一次只能选择一个文件）</h3><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240519104343366.png" alt="image-20240519104343366"></p>
+<h3 id="等待文件进行传输，传输成功后可在根目录进行查看"><a href="#等待文件进行传输，传输成功后可在根目录进行查看" class="headerlink" title="等待文件进行传输，传输成功后可在根目录进行查看"></a>等待文件进行传输，传输成功后可在根目录进行查看</h3><p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240519104421683.png" alt="image-20240519104421683"></p>
+<p>服务器文件解压和压缩</p>
+<p>压缩： 命令格式：tar -zcvf  压缩文件名.tar.gz  被压缩文件名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">例如	tar -czvf ddd.tar.gz ddd</span><br></pre></td></tr></table></figure>
+
+<p>解压：命令格式：tar -zxvf  压缩文件名.tar.g            tar -zvxf 解压文件名 -C 要解压的路径</p>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>zip格式（这个才是常用的）</p>
+<p>先下载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum install unzip</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用 <code>zip</code> 命令将目录压缩成 ZIP 文件。假设你要将 <code>ddd</code> 目录压缩为 <code>ddd.zip</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip -r ddd.zip ddd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-r</code>：递归地将目录及其内容添加到 ZIP 文件中。</li>
+</ul>
+<p>解压</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unzip ddd.zip</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文件重命名</p>
+<p><strong>将文件 <code>file1.txt</code> 重命名为 <code>newfile.txt</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv file1.txt newfile.txt</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Flask/Flask/</url>
+    <content><![CDATA[<p>一个项目<br><img src="D:\screenshot\Screenshots\2023-12\chrome_8goyabxX0g.png" alt="chrome_8goyabxX0g"></p>
+<p>由static 静态文件，放css的和templates和一个flask的文件组成和一个app.py</p>
+<p>一个最基础的flask</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">form flask import Flask		#导入</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)		#默认</span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/&#x27;)		#创建一个路由</span><br><span class="line">def index():		#路由中定义一个返回函数</span><br><span class="line">	reture &quot;hellow wolrd&quot;		#返回hello world</span><br><span class="line">	</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:	</span><br><span class="line">	app.run()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>run启动方式的参数<br>调试不方便，写了得重启才能刷新<br><img src="D:\screenshot\Screenshots\2023-12\chrome_EIk9MxC3kb.png" alt="chrome_EIk9MxC3kb"></p>
+<p>模板渲染</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@app.route(&#x27;/index/&#x27;)</span><br><span class="line">def index():</span><br><span class="line">	return	&#x27;&lt;b&gt;ddd&lt;b&gt;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>在templates中放html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@app.route(&#x27;/index/&#x27;)</span><br><span class="line">def index():    </span><br><span class="line"> 	return  render_template(&#x27;index.html&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\zxz\Desktop\chrome_th1L7Svvvn.png" alt="chrome_th1L7Svvvn"></p>
+<p>模板渲染</p>
+<p>项目拆分<br>项目大的时候不可能全部写入到app.py,所以要拆分</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_eNEiXPCPgJ.png" alt="chrome_eNEiXPCPgJ"></p>
+<p>init为初始化；models数据，跟数据库相关；views放路由和视图；app.py负责启动</p>
+<p>views</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_0srDkPv0t8.png" alt="chrome_0srDkPv0t8"></p>
+<p>init</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_6Mz4Y1vIvZ.png" alt="chrome_6Mz4Y1vIvZ"></p>
+<p>app</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_2HwGGmByzp.png" alt="chrome_2HwGGmByzp"></p>
+<p>models</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_CKCF03iazh.png" alt="chrome_CKCF03iazh"></p>
+<p>路由参数</p>
+<p><img src="D:\screenshot\Screenshots\2023-12\chrome_0Td08mifTY.png" alt="chrome_0Td08mifTY"></p>
+<p>加一句话</p>
+<p>pip install –force-reinstall -v “Flask-Migrate&#x3D;&#x3D;3.1.0”</p>
+<p>flask db init   创建</p>
+<p>flask db migrate	迁移到数据库</p>
+<p>flask db upgrade	数据更新一下</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%9F%9F%E5%90%8D%EF%BC%8Cssl%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>有了一个服务器还需要给它一个域名，像www.什么什么，把解析过来</p>
+<p>要花钱买一个域名，还要实名认证</p>
+<p>先去域名列表里面看看</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112350359.png" alt="image-20240520112350359"></p>
+<p>在到DNS云解析看看</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112453322.png" alt="image-20240520112453322"></p>
+<p>然后就是添加两个解析</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112520227.png" alt="image-20240520112520227"></p>
+<p>完成后，ping一下看能不能成。</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112548608.png" alt="image-20240520112548608"></p>
+<p>有回复就说明成立。</p>
+<p>或者在宝塔面板下查看</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520113033605.png" alt="image-20240520113033605"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520113105359.png" alt="image-20240520113105359"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112843784.png" alt="image-20240520112843784"></p>
+<p>然后再到ssl里面申请验证，等待证书验证通过。</p>
+<p><strong><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240520112643143.png" alt="image-20240520112643143"></strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%AE%9D%E5%A1%94%E7%9A%84mysql%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<p>1、端口开发</p>
+<p>云服务器开发3306端口</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240512203518515.png" alt="image-20240512203518515"></p>
+<p>宝塔面板开发3306端口</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240512203623689.png" alt="image-20240512203623689"></p>
+<p>2、访问权限的设置</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240512203730701.png" alt="image-20240512203730701"></p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240512203803143.png" alt="image-20240512203803143"></p>
+<p>还是分为服务器和宝塔面板</p>
+<p>3、数据库的访问权限设置</p>
+<p>这个直接在终端进行操作吧</p>
+<p>终端进入数据库的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u 用户名 -p</span><br><span class="line"></span><br><span class="line">如果是root用户的话直接</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 选择你要操作的数据库</span><br><span class="line">use mysql；</span><br><span class="line"></span><br><span class="line">-- 给root账户授权（root默认只有本机访问的权限，要通过其他机器访问，必须授权）</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO&#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;root&#x27; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">-- 最后刷新数据库服务</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line">请注意，授予 root 用户在所有数据库的所有表上执行任何操作的权限可能会造成安全风险。建议仅在</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%89%8D%E7%AB%AF/vue/Vue%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%84%E5%BC%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E5%80%BC/</url>
+    <content><![CDATA[<p>对于一个页面，我们通常会写多个组件，并将其分开写，方便以后维护，这就涉及到了组件之间的传值。</p>
+<h1 id="非总线机制"><a href="#非总线机制" class="headerlink" title="非总线机制"></a>非总线机制</h1><h2 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;我是父组件&lt;/div&gt;</span><br><span class="line">	&lt;ZJA :li_a=&quot;li_a&quot; :abc=&quot;abc&quot; :hanshu=&quot;hanshu&quot;&gt;&lt;/ZJA&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">import ZJA from &#x27;./component/zujian-a.vue&#x27;</span><br><span class="line"></span><br><span class="line">const li_a = ref(&#x27;dasd&#x27;)</span><br><span class="line">const abc = &#x27;我是父组件传来的&#x27;</span><br><span class="line">const hanshu = () =&gt; &#123;</span><br><span class="line">	console.log(&#x27;顶顶顶顶&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; props.li_a &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; props.abc &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;hanshu&quot;&gt;调用父组件函数&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; defineProps &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 这是一种调用的方法，但要声明</span><br><span class="line">// const props = defineProps(&#123;</span><br><span class="line">//   li_a: String,</span><br><span class="line">//   abc: String,</span><br><span class="line">//   hanshu: Function</span><br><span class="line">// &#125;)</span><br><span class="line"></span><br><span class="line">// 这一种直接使用</span><br><span class="line">const props = defineProps([</span><br><span class="line">  &#x27;li_a&#x27;,</span><br><span class="line">  &#x27;abc&#x27;,</span><br><span class="line">  &#x27;hanshu&#x27;</span><br><span class="line">])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">		&lt;button @click=&quot;sendValueToParent&quot;&gt;传值给父组件&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; defineEmits, onMounted &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">// 声明自定义事件</span><br><span class="line">const emits = defineEmits([&#x27;childEvent&#x27;]);</span><br><span class="line"></span><br><span class="line">// 点击方法传函数和值</span><br><span class="line">const sendValueToParent = ()=&gt;&#123;</span><br><span class="line">	const valueToSend = ()=&gt;&#123;</span><br><span class="line">		console.log(&quot;哈哈哈哈哈哈哈啊&quot;)</span><br><span class="line">	&#125;;</span><br><span class="line">	const h = &#x27;阿三大苏打撒旦&#x27;</span><br><span class="line">	emits(&#x27;childEvent&#x27;, valueToSend, h);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//生命周期传值</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  const valueToSenda = &#x27;这是非按钮子组件传给父组件的值&#x27;;</span><br><span class="line">  emits(&#x27;childEventa&#x27;, valueToSenda);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">父组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;我是父组件&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;p&gt;从子组件接收到的值：&#123;&#123; receivedValue &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;ZJB @childEvent=&quot;handleChildEvent&quot; /&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;p&gt;不是从按钮子组件接收到的值：&#123;&#123; receivedValuea &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;ZJB @childEventa=&quot;handleChildEventa&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">import ZJB from &#x27;./component/zujian-b.vue&#x27;</span><br><span class="line"></span><br><span class="line">//存储子组件传过来的值</span><br><span class="line">const receivedValue = ref(&#x27;&#x27;);</span><br><span class="line"></span><br><span class="line">// 点击方法获得子组件传过来的东西</span><br><span class="line">const handleChildEvent = (valueToSend,h)=&gt;&#123;</span><br><span class="line">	receivedValue.value = h</span><br><span class="line">	valueToSend();//子组件传过来的函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//存储子组件传过来的值</span><br><span class="line">const receivedValuea = ref(&#x27;&#x27;);</span><br><span class="line">// 生命周期方法获得子组件传过来的东西</span><br><span class="line">function handleChildEventa(valueReceived) &#123;</span><br><span class="line">  receivedValuea.value = valueReceived;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="子传子的话可以先子传父在父传子"><a href="#子传子的话可以先子传父在父传子" class="headerlink" title="子传子的话可以先子传父在父传子"></a>子传子的话可以先子传父在父传子</h2><h1 id="总线机制"><a href="#总线机制" class="headerlink" title="总线机制"></a>总线机制</h1><p>其实和上面的很像的，只是要多一个js文件。</p>
+<p>结构为<br><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240503142852677.png" alt="image-20240503142852677"></p>
+<p>js文件怎么写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dataStore.vue</span><br><span class="line">文件的内容</span><br><span class="line"></span><br><span class="line">import mitt from &#x27;mitt&#x27;;</span><br><span class="line">// 创建一个响应式变量来存储需要传递的数据</span><br><span class="line"></span><br><span class="line">// 创建事件总线</span><br><span class="line">const eventBus = mitt();</span><br><span class="line"></span><br><span class="line">const Father = mitt();</span><br><span class="line"></span><br><span class="line">export &#123; eventBus, Father &#125;; // 导出 sharedData 变量和 eventBus 对象</span><br></pre></td></tr></table></figure>
+
+
+
+<p>每个组件文件都要引入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; eventBus, Father &#125; from &#x27;./component/dataStore&#x27;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后就是传值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; eventBus, Father &#125; from &#x27;./component/dataStore&#x27;;</span><br><span class="line"></span><br><span class="line">这里一定要引入Father哈</span><br><span class="line"></span><br><span class="line">const Parent = () =&gt; &#123;</span><br><span class="line">	const dataToSend = &#x27;急急急急急急急急急急急急就&#x27;;</span><br><span class="line">	Father.emit(&#x27;fatherData&#x27;, dataToSend);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">和上面一样的，也可以传函数。</span><br><span class="line"></span><br><span class="line">const Parent = () =&gt; &#123;</span><br><span class="line">	const asdasd = ()=&gt;&#123;</span><br><span class="line">		console.log(&quot;萨达萨达萨达萨达撒旦撒旦&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	Father.emit(&#x27;fatherData&#x27;, asdasd);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">如果这个函数在外面也没关系，一样的方法进行传值</span><br><span class="line"></span><br><span class="line">const asdasd = ()=&gt;&#123;</span><br><span class="line">	console.log(&quot;萨达萨达萨达萨达撒旦撒旦&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Parent = () =&gt; &#123;</span><br><span class="line">	asdasd()</span><br><span class="line">	Father.emit(&#x27;fatherData&#x27;, asdasd);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后就是要接收的组件了</p>
+<pre><code>onMounted(()=&gt;	&#123;
+    Father.on(&#39;fatherData&#39;,	(asdasd)	=&gt;	&#123;
+            asdasd();
+        &#125;);
+&#125;);
+这个一般放在一个生命周期函数中。自动接收嘛，或者其他的也行。
+</code></pre>
+<h1 id="总结一下，非总线的子传父和总线机制比较相识，非总的父传子则最为简单。"><a href="#总结一下，非总线的子传父和总线机制比较相识，非总的父传子则最为简单。" class="headerlink" title="总结一下，非总线的子传父和总线机制比较相识，非总的父传子则最为简单。"></a>总结一下，非总线的子传父和总线机制比较相识，非总的父传子则最为简单。</h1>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Flask/flask%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<p>flask db init   创建</p>
+<p>flask db migrate	迁移到数据库</p>
+<p>flask db upgrade	数据更新一下</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Flask/%E5%89%8D%E7%AB%AF%E5%90%8E%E7%AB%AF%E5%A4%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<p>后端flask想传递一个数据给前端</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@blue.route(&#x27;/download&#x27;, methods=[&#x27;POST&#x27;])</span><br><span class="line">def download_file():</span><br><span class="line">    # 文件路径</span><br><span class="line">    data = request.get_json()</span><br><span class="line">    zbh = data.get(&#x27;id&#x27;)  # 确保前端发送的 JSON 键为 &#x27;xuhao&#x27;</span><br><span class="line"></span><br><span class="line">    row = shebei.query.filter_by(id=zbh).first()</span><br><span class="line"></span><br><span class="line">    file_path = os.path.join(blue.root_path, f&#x27;../shebei/&#123;row.zbh&#125;/&#123;row.zbh&#125;.docx&#x27;)</span><br><span class="line">    </span><br><span class="line">    print(file_path)</span><br><span class="line"></span><br><span class="line">    # 检查文件是否存在</span><br><span class="line">    if os.path.exists(file_path):</span><br><span class="line">        # 发送文件</span><br><span class="line">        print(&quot;存在&quot;)</span><br><span class="line">        response = make_response(send_file(file_path, as_attachment=True))</span><br><span class="line">        response.headers[&#x27;h&#x27;] = row.zbh</span><br><span class="line">        return response</span><br><span class="line">    else:</span><br><span class="line">        return &quot;File not found&quot;, 404  # 返回 404 错误码表示文件未找到</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">row.zbh为想要传递的数据</span><br></pre></td></tr></table></figure>
+
+<p>此外还要暴露这个头才行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 主程序的</span><br><span class="line">from APP import create_app</span><br><span class="line">from flask_cors import CORS</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app = create_app()</span><br><span class="line">CORS(app,expose_headers=[&quot;h&quot;])</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run(debug=True, port=5000, host=&#x27;0.0.0.0&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>前端接收</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const	download	=	async	()	=&gt;	&#123;</span><br><span class="line">	try	&#123;</span><br><span class="line">			axios.post(&#x27;http://127.0.0.1:5000/download&#x27;,	&#123;&#x27;id&#x27;:data.value&#125;,	&#123;	responseType:	&#x27;blob&#x27;	&#125;)</span><br><span class="line">							.then(response	=&gt;	&#123;</span><br><span class="line">								//通过头传递参数</span><br><span class="line">								console.log(&#x27;Custom	Message:&#x27;,	response.headers.get(&#x27;h&#x27;));</span><br><span class="line">								const	h	=	response.headers.get(&#x27;h&#x27;)</span><br><span class="line">								//	创建一个	URL	对象</span><br><span class="line">								const	imageUrl	=	URL.createObjectURL(new	Blob([response.data]));</span><br><span class="line">								//	创建一个	&lt;a&gt;	标签并设置下载属性</span><br><span class="line">								const	link	=	document.createElement(&#x27;a&#x27;);</span><br><span class="line">								link.href	=	imageUrl;</span><br><span class="line">								link.download	=	`$&#123;h&#125;.docx`;	//	下载文件的名称</span><br><span class="line">								//	模拟点击下载</span><br><span class="line">								link.click();</span><br><span class="line">								//	释放	URL	对象</span><br><span class="line">								URL.revokeObjectURL(imageUrl);</span><br><span class="line">							&#125;)</span><br><span class="line">							.catch(()	=&gt;	&#123;</span><br><span class="line">								const	open3	=	()	=&gt;	&#123;</span><br><span class="line">									ElMessage(&#123;</span><br><span class="line">										message:	&#x27;后台无数据&#x27;,</span><br><span class="line">										type:	&#x27;warning&#x27;,</span><br><span class="line">									&#125;)</span><br><span class="line">								&#125;</span><br><span class="line">								open3()</span><br><span class="line">							&#125;);</span><br><span class="line">	&#125;	catch	(error)	&#123;</span><br><span class="line">	//	捕获异常，显示错误消息</span><br><span class="line">	new	proxy.$tips(&#x27;服务器发生错误&#x27;,	&#x27;error&#x27;).mess_age();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有弊端的，我不能传递汉字，不然会出错。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/08/22/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%89%8D%E7%AB%AF/%E5%B8%83%E5%B1%80/%E5%8A%A8%E6%80%81%E9%AB%98%E5%BA%A6%E7%9A%84%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 在页面上展示计算后的窗口高度 --&gt;</span><br><span class="line">    &lt;p&gt;当前窗口高度: &#123;&#123; adjustedWindowHeight &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">/*</span><br><span class="line">  引入 Vue 的组合式 API：</span><br><span class="line">  - ref: 定义响应式变量</span><br><span class="line">  - onMounted: 组件挂载后执行回调</span><br><span class="line">  - onBeforeUnmount: 组件卸载前执行回调</span><br><span class="line">  - computed: 定义计算属性</span><br><span class="line">*/</span><br><span class="line">import &#123; ref, onMounted, onBeforeUnmount, computed &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">// 定义一个响应式变量 originalWindowHeight，初始值是当前窗口高度</span><br><span class="line">const originalWindowHeight = ref(window.innerHeight);</span><br><span class="line"></span><br><span class="line">// 定义一个函数，用于在窗口大小改变时更新窗口高度</span><br><span class="line">const handleResize = () =&gt; &#123;</span><br><span class="line">  originalWindowHeight.value = window.innerHeight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 在组件挂载完成后，给 window 添加 resize 事件监听器</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  window.addEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 在组件卸载前，移除监听器，避免内存泄漏</span><br><span class="line">onBeforeUnmount(() =&gt; &#123;</span><br><span class="line">  window.removeEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 定义一个计算属性：在 originalWindowHeight 的基础上减去 380</span><br><span class="line">// 注意：这个 380 可能是为了预留固定区域的高度（比如底部导航栏、头部工具栏等）</span><br><span class="line">const adjustedWindowHeight = computed(() =&gt; &#123;</span><br><span class="line">  return originalWindowHeight.value - 380;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
 </search>
