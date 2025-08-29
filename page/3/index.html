@@ -170,12 +170,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -213,7 +213,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/vue%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEdocker/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -231,7 +231,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/vue%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEdocker/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">ssh远程连接</a>
         </h2>
 
         <div class="post-meta-container">
@@ -242,14 +242,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:02:26" itemprop="dateCreated datePublished" datetime="2025-08-06T17:02:26+08:00">2025-08-06</time>
+      <time title="创建时间：2025-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-05T00:00:00+08:00">2025-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-03 10:35:19" itemprop="dateModified" datetime="2024-07-03T10:35:19+08:00">2024-07-03</time>
+      <time title="修改时间：2025-08-26 10:36:36" itemprop="dateModified" datetime="2025-08-26T10:36:36+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">服务器配置</span></a>
+        </span>
     </span>
 
   
@@ -259,7 +272,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>268</span>
+      <span>378</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -277,24 +290,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1、文件结构</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173640999.png" alt="image-20240701173640999"></p>
-<p>2、先打包为dist，在dist中创建nginx并配置</p>
-<p><strong><img src="C:\Users\zxz\AppData\Roaming\Typora\typora-user-images\image-20240701173732994.png" alt="image-20240701173732994"></strong></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173752121.png" alt="image-20240701173752121"></p>
-<p>3、在外层docker中配置</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173820991.png" alt="image-20240701173820991"></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240701173834925.png" alt="image-20240701173834925"></p>
-<p>4、配置好了，运行docker的两个步骤</p>
-<p>在当前文件下使用以下命令构建 Docker 镜像，myvue是名称，后面的.不能省略。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t myvue .</span><br></pre></td></tr></table></figure>
-
-<p>这将会构建一个名为 <code>myflaskapp</code> 的 Docker 镜像。、</p>
-<p>运行 Docker 容器：-d是后台运行，-p是端口映射，本机端口-docker端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d -p 5000:5000 myvue</span><br></pre></td></tr></table></figure>
-
-<p>这将会在后台运行你的 Flask 应用程序，并将容器的 5000 端口映射到主机的 5000 端口。</p>
-
+          <p>ssh远程连接服务器</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -320,7 +324,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E9%85%8D%E7%BD%AEflask%E9%A1%B9%E7%9B%AE/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/xshell%E7%9A%84%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -338,7 +342,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E9%85%8D%E7%BD%AEflask%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/xshell%E7%9A%84%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">xshell的配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -349,14 +353,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:02:26" itemprop="dateCreated datePublished" datetime="2025-08-06T17:02:26+08:00">2025-08-06</time>
+      <time title="创建时间：2025-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-05T00:00:00+08:00">2025-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-03 10:34:18" itemprop="dateModified" datetime="2024-07-03T10:34:18+08:00">2024-07-03</time>
+      <time title="修改时间：2025-08-26 10:37:26" itemprop="dateModified" datetime="2025-08-26T10:37:26+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">服务器配置</span></a>
+        </span>
     </span>
 
   
@@ -366,7 +383,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>587</span>
+      <span>519</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -384,24 +401,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>对于flask项目的</p>
-<p>创建一个 <code>.dockerignore</code> 文件，并在其中列出不需要复制的文件或目录。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__pycache__</span><br><span class="line">.git</span><br><span class="line">.idea</span><br><span class="line">*.pyc</span><br><span class="line">*.pyo</span><br><span class="line">*.pyd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>创建一个dockerfile文件，里面写</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 使用 Python 官方的 Alpine Linux 镜像作为基础镜像</span><br><span class="line">FROM python:3.9-alpine</span><br><span class="line"></span><br><span class="line"># 设置工作目录</span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line"># 复制当前目录下的所有文件到工作目录中</span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line"># 安装 Flask 和其他依赖	--no-cache-dir不安装缓存的</span><br><span class="line">RUN pip install --no-cache-dir -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 暴露端口（假设你的应用程序在端口 5000 上运行） 感觉没什么用，但写着吧</span><br><span class="line">EXPOSE 5000</span><br><span class="line"></span><br><span class="line"># 启动应用程序</span><br><span class="line">CMD [&quot;python&quot;, &quot;app.py&quot;]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>在当前文件下使用以下命令构建 Docker 镜像，myflaskapp是名称，后面的.不能省略。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t myflaskapp .</span><br></pre></td></tr></table></figure>
-
-<p>这将会构建一个名为 <code>myflaskapp</code> 的 Docker 镜像。、</p>
-<p>运行 Docker 容器：-d是后台运行，-p是端口映射，本机端口-docker端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d -p 5000:5000 myflaskapp</span><br></pre></td></tr></table></figure>
-
-<p>这将会在后台运行你的 Flask 应用程序，并将容器的 5000 端口映射到主机的 5000 端口。</p>
-
+          <p>xshell的配置。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/xshell%E7%9A%84%E9%85%8D%E7%BD%AE/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -427,7 +435,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E5%86%85mysql/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%AE%9D%E5%A1%94%E7%9A%84mysql%E8%BF%9E%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -445,7 +453,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E5%86%85mysql/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%AE%9D%E5%A1%94%E7%9A%84mysql%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">宝塔的mysql连接</a>
         </h2>
 
         <div class="post-meta-container">
@@ -456,14 +464,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:02:26" itemprop="dateCreated datePublished" datetime="2025-08-06T17:02:26+08:00">2025-08-06</time>
+      <time title="创建时间：2025-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-05T00:00:00+08:00">2025-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-03 10:36:09" itemprop="dateModified" datetime="2024-07-03T10:36:09+08:00">2024-07-03</time>
+      <time title="修改时间：2025-08-26 10:38:08" itemprop="dateModified" datetime="2025-08-26T10:38:08+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">服务器配置</span></a>
+        </span>
     </span>
 
   
@@ -473,7 +494,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>280</span>
+      <span>369</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -491,31 +512,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240610100625082.png"></p>
-<p>docker -v </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">查看docker的版本</span><br></pre></td></tr></table></figure>
-
-
-
-<p>docker images -a</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">查看docker的所有镜像</span><br></pre></td></tr></table></figure>
-
-
-
-<p>docker pull mysql</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">拉取一个mysql的镜像</span><br></pre></td></tr></table></figure>
-
-
-
-<p>docker run -p 3306:3306 –name shebei -e MYSQL_ROOT_PASSWORD&#x3D;123456 -d mysql</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">运行该docker </span><br><span class="line"></span><br><span class="line">-p 是端口映射，本机3306端口映射docker对应的3306</span><br><span class="line"></span><br><span class="line">--name 是数据库的名称	</span><br><span class="line"></span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456		设置数据库的root密码</span><br><span class="line"></span><br><span class="line">-d mysql 进程后台运行</span><br></pre></td></tr></table></figure>
-
-
-
-<p>想要什么镜像就去docker hub上找</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/image-20240615105812552.png" alt="image-20240615105812552"></p>
-<p>复制命令在终端运行即可</p>
-
+          <p>宝塔的mysql连接。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%AE%9D%E5%A1%94%E7%9A%84mysql%E8%BF%9E%E6%8E%A5/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -541,7 +546,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%AB%99/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%9F%9F%E5%90%8D%EF%BC%8Cssl%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -559,7 +564,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%9F%9F%E5%90%8D%EF%BC%8Cssl%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">域名，ssl证书配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -570,14 +575,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-05T00:00:00+08:00">2025-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-19 11:21:34" itemprop="dateModified" datetime="2025-08-19T11:21:34+08:00">2025-08-19</time>
+      <time title="修改时间：2025-08-26 10:40:17" itemprop="dateModified" datetime="2025-08-26T10:40:17+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">服务器配置</span></a>
+        </span>
     </span>
 
   
@@ -587,7 +605,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>588</span>
+      <span>145</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -605,34 +623,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="个人收藏【一些有用的网站】"><a href="#个人收藏【一些有用的网站】" class="headerlink" title="个人收藏【一些有用的网站】"></a>个人收藏【一些有用的网站】</h1><p><strong>用于病毒检测的网站</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a></p>
-<p><strong>用于ip对应的实际地理位置的查询</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.chaipip.com/">https://www.chaipip.com/</a></p>
-<p><a target="_blank" rel="noopener" href="https://toolwa.com/ip/">https://toolwa.com/ip/</a></p>
-<p><strong>极简机场网址</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.wogg.life/user#">https://www.wogg.life/user#</a></p>
-<p><strong>以图搜寻</strong></p>
-<p><a target="_blank" rel="noopener" href="https://xslist.org/zh/searchByImage">https://xslist.org/zh/searchByImage</a></p>
-<p><strong>正则表达式测试网站</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.jyshare.com/front-end/854/">https://www.jyshare.com/front-end/854/</a></p>
-<p><strong>json数据规则化方便阅读</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.json.cn/">https://www.json.cn/</a></p>
-<p><a target="_blank" rel="noopener" href="https://jsonlint.com/">https://jsonlint.com/</a></p>
-<p><strong>base64编解码</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.base64decode.org/">https://www.base64decode.org/</a></p>
-<p><strong>md5编码的破解</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.cmd5.com/">https://www.cmd5.com/</a></p>
-<p><a target="_blank" rel="noopener" href="https://gchq.github.io/CyberChef/">https://gchq.github.io/CyberChef/</a></p>
-<p><strong>ai检测助手，检测是否为ai生成（包含文字，图片，视频）</strong></p>
-<p><a target="_blank" rel="noopener" href="https://matrix.tencent.com/ai-detect/">https://matrix.tencent.com/ai-detect/</a></p>
-<p><strong>将 <code>curl</code> 命令转换成多种编程语言中的网络请求代码，实现快速得到api</strong></p>
-<p><a target="_blank" rel="noopener" href="https://curlconverter.com/">https://curlconverter.com/</a></p>
-<p><strong>文字，代码，文件差异对比</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.diffchecker.com/">https://www.diffchecker.com/</a></p>
-<p><strong>在线语音转文字</strong></p>
-<p><a target="_blank" rel="noopener" href="https://otter.ai/">https://otter.ai/</a></p>
-
+          <p>域名，ssl证书配置。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/08/05/Learning/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%9F%9F%E5%90%8D%EF%BC%8Cssl%E9%85%8D%E7%BD%AE/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -658,7 +657,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E7%90%86%E8%A7%A3%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/04/21/Learning/Linux/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -676,7 +675,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E7%90%86%E8%A7%A3%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/04/21/Learning/Linux/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">常用的linux指令</a>
         </h2>
 
         <div class="post-meta-container">
@@ -687,14 +686,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-04-21 16:26:22" itemprop="dateCreated datePublished" datetime="2025-04-21T16:26:22+08:00">2025-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 16:31:12" itemprop="dateModified" datetime="2025-05-07T16:31:12+08:00">2025-05-07</time>
+      <time title="修改时间：2025-08-26 10:34:12" itemprop="dateModified" datetime="2025-08-26T10:34:12+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
     </span>
 
   
@@ -704,7 +716,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>259</span>
+      <span>948</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -722,11 +734,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>理解回调函数</p>
-<p>例如，实际上就是一个函数当中的一个参数为函数就这么简单了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function greet(name, callback) &#123;</span><br><span class="line">  console.log(&quot;Hello, &quot; + name);</span><br><span class="line">  callback();  // 执行回调函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function sayGoodbye() &#123;</span><br><span class="line">  console.log(&quot;Goodbye!&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(&quot;Alice&quot;, sayGoodbye);  // greet函数接收sayGoodbye作为回调函数</span><br></pre></td></tr></table></figure>
-
-
+          <p>常用的linux指令</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/04/21/Learning/Linux/%E5%B8%B8%E7%94%A8%E7%9A%84linux%E6%8C%87%E4%BB%A4/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -752,7 +768,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%BF%AB%E9%80%9F%E5%88%86%E6%9E%90%E5%87%BA%E6%9D%A5%E4%B8%80%E4%B8%AAapi/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/springboot%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -770,7 +786,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%BF%AB%E9%80%9F%E5%88%86%E6%9E%90%E5%87%BA%E6%9D%A5%E4%B8%80%E4%B8%AAapi/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/springboot%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">springboot的结构解析</a>
         </h2>
 
         <div class="post-meta-container">
@@ -781,14 +797,35 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-04-21 16:25:45" itemprop="dateCreated datePublished" datetime="2025-04-21T16:25:45+08:00">2025-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-01 20:52:13" itemprop="dateModified" datetime="2025-07-01T20:52:13+08:00">2025-07-01</time>
+      <time title="修改时间：2025-08-29 11:00:34" itemprop="dateModified" datetime="2025-08-29T11:00:34+08:00">2025-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前后端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/springboot/" itemprop="url" rel="index"><span itemprop="name">springboot</span></a>
+        </span>
     </span>
 
   
@@ -798,7 +835,126 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>springboot的结构解析的一些分析。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/springboot%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/mybatis-plus%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
+      <meta itemprop="name" content="zxzlimit">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zxz's blog">
+      <meta itemprop="description" content="无人扶我青云志，我自踏雪至山巅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | zxz's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/mybatis-plus%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">mybatis-plus的使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-21 16:25:12" itemprop="dateCreated datePublished" datetime="2025-04-21T16:25:12+08:00">2025-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-29 11:00:09" itemprop="dateModified" datetime="2025-08-29T11:00:09+08:00">2025-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前后端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/springboot/" itemprop="url" rel="index"><span itemprop="name">springboot</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -816,19 +972,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>快速分析出来一个api</p>
-<p>1、在浏览器查找相关数据的api</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701204652098.png" alt="image-20250701204651886"></p>
-<p>2、即使打开开发者，然后在对应的network下使用ctrl+f搜索要查找的内容，然后定位所需内容的所在的请求，在然后copy其curl（注意是bash下的）</p>
-<p>3、然后可以导入postman当中查看下，</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701205144182.png" alt="image-20250701205144078"></p>
-<p>4、也可以使用python的request发起请求，这里有一个网站能直接将curl转化为python的request，即：<a target="_blank" rel="noopener" href="https://curlconverter.com/">https://curlconverter.com/</a></p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250701204937270.png" alt="image-20250701204937194"></p>
-<p>复杂粘贴，添加几句代码，即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import urllib3</span><br><span class="line"></span><br><span class="line">urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)</span><br><span class="line"></span><br><span class="line">cookies = &#123;</span><br><span class="line">    &#x27;CCSESSID&#x27;: &#x27;n31md76nm2qsv4vqvv7bo0r22u&#x27;,</span><br><span class="line">    &#x27;inputUser&#x27;: &#x27;%2BSS0qEifrRMznZDfTqFlh2I4NjViYzEwNzA2ZGM3NDI1NDc3YWY3MzYwODUyYTU3MzQxMWVlOTA4NmY1ZTBhNDRkNmFjYmIzMWQ3YWRjYmQr6Fot%2FHa%2FV43G2CfjeUgj&#x27;,</span><br><span class="line">    &#x27;cookiePhone&#x27;: &#x27;6dXCuOl5waPwtFRQgPCUITY3ODI1YTZhYWRkMjE1MjU0MDNiMzM1NzgyYTI3NGM5NDJiNDA0NzM5MWZhZTE2NTZlMmJkMDBkNmI3Yzg3MzWxZaB4HEAW76xm7yElYXJ2&#x27;,</span><br><span class="line">    &#x27;Projmain-Token&#x27;: &#x27;52b1c126-273b-478e-8ac4-5831d61a1762&#x27;,</span><br><span class="line">    &#x27;ssoquery&#x27;: &#x27;&#123;%22token%22:%229b14e3e6dc974189ccabdf6241c9c417473ec7e1%22%2C%22rdi%22:%22calendar%22%2C%22ssohost%22:%22cms.zjjtgc.com%22%2C%22ssoproto%22:%22https%22%2C%22appid%22:%22wedge_calendar%22%2C%22ssoprefix%22:%22sso%22&#125;&#x27;,</span><br><span class="line">    &#x27;WiseSessionId&#x27;: &#x27;7b8d698d-dbd5-4d2b-b66e-ee88d8d81dd0&#x27;,</span><br><span class="line">    &#x27;Admin-Token&#x27;: &#x27;admin-token&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    &#x27;Accept&#x27;: &#x27;*/*&#x27;,</span><br><span class="line">    &#x27;Accept-Language&#x27;: &#x27;zh-CN,zh;q=0.9&#x27;,</span><br><span class="line">    &#x27;Authorization&#x27;: &#x27;fcb27683-1e41-40c3-aa75-33519604a9a7&#x27;,</span><br><span class="line">    &#x27;Connection&#x27;: &#x27;keep-alive&#x27;,</span><br><span class="line">    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,</span><br><span class="line">    &#x27;Origin&#x27;: &#x27;https://cms.zjjtgc.com&#x27;,</span><br><span class="line">    &#x27;Referer&#x27;: &#x27;https://cms.zjjtgc.com/jg-web/jg-inventory/&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Dest&#x27;: &#x27;empty&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Mode&#x27;: &#x27;cors&#x27;,</span><br><span class="line">    &#x27;Sec-Fetch-Site&#x27;: &#x27;same-origin&#x27;,</span><br><span class="line">    &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36&#x27;,</span><br><span class="line">    &#x27;X-Requested-With&#x27;: &#x27;XMLHttpRequest&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua&#x27;: &#x27;&quot;Google Chrome&quot;;v=&quot;137&quot;, &quot;Chromium&quot;;v=&quot;137&quot;, &quot;Not/A)Brand&quot;;v=&quot;24&quot;&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua-mobile&#x27;: &#x27;?0&#x27;,</span><br><span class="line">    &#x27;sec-ch-ua-platform&#x27;: &#x27;&quot;Windows&quot;&#x27;,</span><br><span class="line">    &#x27;wise-json&#x27;: &#x27;1&#x27;,</span><br><span class="line">    # &#x27;Cookie&#x27;: &#x27;CCSESSID=n31md76nm2qsv4vqvv7bo0r22u; inputUser=%2BSS0qEifrRMznZDfTqFlh2I4NjViYzEwNzA2ZGM3NDI1NDc3YWY3MzYwODUyYTU3MzQxMWVlOTA4NmY1ZTBhNDRkNmFjYmIzMWQ3YWRjYmQr6Fot%2FHa%2FV43G2CfjeUgj; cookiePhone=6dXCuOl5waPwtFRQgPCUITY3ODI1YTZhYWRkMjE1MjU0MDNiMzM1NzgyYTI3NGM5NDJiNDA0NzM5MWZhZTE2NTZlMmJkMDBkNmI3Yzg3MzWxZaB4HEAW76xm7yElYXJ2; Projmain-Token=52b1c126-273b-478e-8ac4-5831d61a1762; ssoquery=&#123;%22token%22:%229b14e3e6dc974189ccabdf6241c9c417473ec7e1%22%2C%22rdi%22:%22calendar%22%2C%22ssohost%22:%22cms.zjjtgc.com%22%2C%22ssoproto%22:%22https%22%2C%22appid%22:%22wedge_calendar%22%2C%22ssoprefix%22:%22sso%22&#125;; WiseSessionId=7b8d698d-dbd5-4d2b-b66e-ee88d8d81dd0; Admin-Token=admin-token&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">params = &#123;</span><br><span class="line">    &#x27;page&#x27;: &#x27;0&#x27;,</span><br><span class="line">    &#x27;size&#x27;: &#x27;20&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">json_data = &#123;</span><br><span class="line">    &#x27;transtypeNo&#x27;: &#x27;QI&#x27;,</span><br><span class="line">    &#x27;projectNo&#x27;: &#x27;XM_0000497&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.post(</span><br><span class="line">    &#x27;https://cms.zjjtgc.com/jg-api/jg-inventory/mtlSheet/listAllDetailPage&#x27;,</span><br><span class="line">    params=params,</span><br><span class="line">    cookies=cookies,</span><br><span class="line">    headers=headers,</span><br><span class="line">    json=json_data,</span><br><span class="line">    verify=False</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
-
-<p>这里也能快速获取对应的cookie等数据。</p>
-
+          <p>mybatis-plus的使用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/04/21/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Sprinboot/mybatis-plus%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -854,7 +1006,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%85%B3%E4%BA%8Exhelp%EF%BC%8C%E6%8C%89%E4%B8%8Bctrl+shift+x%E5%8F%AF%E4%BB%A5%E5%BC%B9%E5%87%BA%E7%95%8C%E9%9D%A2%E3%80%82%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%AA%E6%8C%89ctrl+shift%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8A%8A%E9%BC%A0%E6%A0%87%E4%BD%8D%E4%BA%8E%E6%83%B3%E8%A6%81%E6%9F%A5%E6%89%BE%E7%9A%84%E4%B8%9C%E8%A5%BF%E4%B8%8A%E5%B0%B1%E8%83%BD%E6%98%BE%E7%A4%BA%E4%BA%86/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/03/02/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -872,7 +1024,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/%E5%85%B3%E4%BA%8Exhelp%EF%BC%8C%E6%8C%89%E4%B8%8Bctrl+shift+x%E5%8F%AF%E4%BB%A5%E5%BC%B9%E5%87%BA%E7%95%8C%E9%9D%A2%E3%80%82%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%AA%E6%8C%89ctrl+shift%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8A%8A%E9%BC%A0%E6%A0%87%E4%BD%8D%E4%BA%8E%E6%83%B3%E8%A6%81%E6%9F%A5%E6%89%BE%E7%9A%84%E4%B8%9C%E8%A5%BF%E4%B8%8A%E5%B0%B1%E8%83%BD%E6%98%BE%E7%A4%BA%E4%BA%86/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/03/02/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/" class="post-title-link" itemprop="url">Nginx Proxy Manager配置SSL</a>
         </h2>
 
         <div class="post-meta-container">
@@ -883,14 +1035,31 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-03-02 10:09:50" itemprop="dateCreated datePublished" datetime="2025-03-02T10:09:50+08:00">2025-03-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 10:26:27" itemprop="dateModified" datetime="2025-07-07T10:26:27+08:00">2025-07-07</time>
+      <time title="修改时间：2025-08-29 11:07:26" itemprop="dateModified" datetime="2025-08-29T11:07:26+08:00">2025-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前后端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">网站部署配置</span></a>
+        </span>
     </span>
 
   
@@ -900,7 +1069,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>65</span>
+      <span>509</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -918,8 +1087,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>关于xhelp，按下ctrl+shift+x可以弹出界面。然后在只按ctrl+shift，然后把鼠标位于想要查找的东西上就能显示了</p>
-
+          <p>Nginx Proxy Manager配置SSL,打开https的443端口啊，血的教训了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/02/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/Nginx-Proxy-Manager%E9%85%8D%E7%BD%AESSL/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -945,7 +1121,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Python/python%E6%89%93%E5%8C%85exe/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/02/25/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -963,7 +1139,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Python/python%E6%89%93%E5%8C%85exe/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/02/25/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">win软件配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -974,14 +1150,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-02-25 10:54:24" itemprop="dateCreated datePublished" datetime="2025-02-25T10:54:24+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-03 15:17:05" itemprop="dateModified" datetime="2025-07-03T15:17:05+08:00">2025-07-03</time>
+      <time title="修改时间：2025-08-26 10:42:59" itemprop="dateModified" datetime="2025-08-26T10:42:59+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">个人电脑配置</span></a>
+        </span>
     </span>
 
   
@@ -991,7 +1180,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>412</span>
+      <span>987</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1009,24 +1198,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>对于py文件打包成exe文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pyinstaller --noconsole --onefile aa.py --add-data &quot;ic.ico;.&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="noconsole（或-w）"><a href="#noconsole（或-w）" class="headerlink" title="--noconsole（或 -w）"></a><code>--noconsole</code>（或 <code>-w</code>）</h3><p>表示 <strong>打包后运行时不会弹出黑色控制台窗口</strong>。</p>
-<h3 id="onefile"><a href="#onefile" class="headerlink" title="--onefile"></a><code>--onefile</code></h3><p>打包成 <strong>单一 <code>.exe</code> 文件</strong>。</p>
-<h3 id="aa-py"><a href="#aa-py" class="headerlink" title="aa.py"></a><code>aa.py</code></h3><p>你要打包的主 Python 脚本。</p>
-<h3 id="add-data-ic-ico"><a href="#add-data-ic-ico" class="headerlink" title="--add-data &quot;ic.ico;.&quot;"></a><code>--add-data &quot;ic.ico;.&quot;</code></h3><p>–add-data “源路径;目标路径”</p>
-<p>这是让 PyInstaller **把额外的资源文件一起打包进 <code>.exe</code>**。</p>
-<ul>
-<li>Windows 系统：用分号 <code>;</code> 分隔</li>
-<li>Linux&#x2F;macOS：用冒号 <code>:</code> 分隔</li>
-</ul>
-<p><strong><code>ic.ico</code> 是你项目里的源文件</strong></p>
-<p><strong><code>.</code> 表示打包后这个文件放到当前目录（运行时的“当前”目录）</strong></p>
-<p>如果把所有文件都放在一个文件夹下面</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pyinstaller --onefile --noconsole aa.py --add-data &quot;assets;assets&quot;</span><br></pre></td></tr></table></figure>
-
-
+          <p>我很喜欢捣鼓一些电脑的配置，尤其喜欢搞一下软件来提升自己的效率，其实对于mac应为有时间备份基本不用在重新配置了，但是对于win，我找了很多备份的，但都没有能完全还原配置的。这里我就把我常用的软件罗列出来吧，比较都是经常用的，还有之前找这些东西也花了我不少时间的。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/25/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/win%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1052,7 +1232,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/02/18/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
@@ -1070,7 +1250,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Docker/docker%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2025/02/18/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/" class="post-title-link" itemprop="url">电脑SMB连接打印机-直接打印机扫描文件传输到电脑上</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1081,14 +1261,27 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
+      <time title="创建时间：2025-02-18 19:34:35" itemprop="dateCreated datePublished" datetime="2025-02-18T19:34:35+08:00">2025-02-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-04 11:10:42" itemprop="dateModified" datetime="2025-04-04T11:10:42+08:00">2025-04-04</time>
+      <time title="修改时间：2025-08-26 10:42:46" itemprop="dateModified" datetime="2025-08-26T10:42:46+08:00">2025-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">个人电脑配置</span></a>
+        </span>
     </span>
 
   
@@ -1098,7 +1291,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>788</span>
+      <span>222</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1116,153 +1309,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="docker的一些基础"><a href="#docker的一些基础" class="headerlink" title="docker的一些基础"></a>docker的一些基础</h1><p>流程</p>
-<p>一般的流程是先拉取一个镜像，就是一个环境image，注意，我们最终是要一个容器的，也就是container，然后</p>
-<p>docker run -d –name myredis -p 6379:6379 redis就可以产生容器了</p>
-<p>-d是后台运行</p>
-<p>-p是端口映射，-p &lt;宿主机端口&gt;:&lt;容器端口&gt;</p>
-<p>-v是数据持久化，将docker当中的容器的数据保持在本地电脑的某一文件下</p>
-<p>查看docker的容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-
-
-<p>进入容器的终端</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it 容器id或容器名称 sh</span><br></pre></td></tr></table></figure>
-
-
-
-<p>查看容器的ip</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker inspect &lt;container_name_or_id&gt; | grep &quot;IPAddress&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>启动容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker start &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>停止容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>重启容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker restart &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>删除容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker rm &lt;container_id_or_name&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>常见的容器的启动</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name &lt;container_name&gt; -v &lt;宿主机路径&gt;:&lt;容器路径&gt; &lt;image_name&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>数据卷的挂载</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker volume create my_volume</span><br><span class="line">docker run -d --name myredis -p 6379:6379 -v my_volume:/data redis redis-server --appendonly yes</span><br></pre></td></tr></table></figure>
-
-
-
-<p>设置一个mysql的容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=238545 -p 3306:3306 mysql</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/06/%E5%AD%A6%E4%B9%A0/Burbsuit/burp%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
-      <meta itemprop="name" content="zxzlimit">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zxz's blog">
-      <meta itemprop="description" content="无人扶我青云志，我自踏雪至山巅。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | zxz's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/06/%E5%AD%A6%E4%B9%A0/Burbsuit/burp%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-08-06 17:01:53" itemprop="dateCreated datePublished" datetime="2025-08-06T17:01:53+08:00">2025-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-11 21:12:03" itemprop="dateModified" datetime="2025-06-11T21:12:03+08:00">2025-06-11</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>81</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="burp学习"><a href="#burp学习" class="headerlink" title="burp学习"></a>burp学习</h1><p>burp使用时，有时候已经配置好的浏览器会加载不出来，这时候只需要在burp的代理中打开这个按钮就行了，但是拦截请求时会有点问题，拦截的时候可以关一下</p>
-<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250611211144843.png" alt="image-20250611211144720"></p>
-
+          <p>为了不每次去扫描都带一个u盘，插拔插拔的，烦死了，所以研究了一下SMB打印机传输文件到电脑，直接打印机扫描，文件就直接到电脑了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/18/Learning/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%9A%84%E9%85%8D%E7%BD%AE/%E7%94%B5%E8%84%91SMB%E8%BF%9E%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA-%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1309,13 +1364,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">70k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">1:03</span>
   </span>
 </div>
 
