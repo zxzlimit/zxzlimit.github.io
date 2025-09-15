@@ -28,7 +28,7 @@
 <meta property="og:description" content="网页布局当中，有一些地方需要用动态高度来调整大小。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-17T07:23:56.000Z">
-<meta property="article:modified_time" content="2025-08-29T03:06:46.106Z">
+<meta property="article:modified_time" content="2025-08-29T03:24:05.755Z">
 <meta property="article:author" content="zxzlimit">
 <meta property="article:tag" content="布局">
 <meta name="twitter:card" content="summary">
@@ -139,7 +139,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -152,7 +152,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%AB%98%E5%BA%A6%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%B0%83%E6%95%B4"><span class="nav-text">动态高度大小的调整</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -178,7 +177,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -253,7 +252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-29 11:06:46" itemprop="dateModified" datetime="2025-08-29T11:06:46+08:00">2025-08-29</time>
+      <time title="修改时间：2025-08-29 11:24:05" itemprop="dateModified" datetime="2025-08-29T11:24:05+08:00">2025-08-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,7 +290,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>975</span>
+      <span>966</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -309,7 +308,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="动态高度大小的调整"><a href="#动态高度大小的调整" class="headerlink" title="动态高度大小的调整"></a>动态高度大小的调整</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 在页面上展示计算后的窗口高度 --&gt;</span><br><span class="line">    &lt;p&gt;当前窗口高度: &#123;&#123; adjustedWindowHeight &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">/*</span><br><span class="line">  引入 Vue 的组合式 API：</span><br><span class="line">  - ref: 定义响应式变量</span><br><span class="line">  - onMounted: 组件挂载后执行回调</span><br><span class="line">  - onBeforeUnmount: 组件卸载前执行回调</span><br><span class="line">  - computed: 定义计算属性</span><br><span class="line">*/</span><br><span class="line">import &#123; ref, onMounted, onBeforeUnmount, computed &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">// 定义一个响应式变量 originalWindowHeight，初始值是当前窗口高度</span><br><span class="line">const originalWindowHeight = ref(window.innerHeight);</span><br><span class="line"></span><br><span class="line">// 定义一个函数，用于在窗口大小改变时更新窗口高度</span><br><span class="line">const handleResize = () =&gt; &#123;</span><br><span class="line">  originalWindowHeight.value = window.innerHeight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 在组件挂载完成后，给 window 添加 resize 事件监听器</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  window.addEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 在组件卸载前，移除监听器，避免内存泄漏</span><br><span class="line">onBeforeUnmount(() =&gt; &#123;</span><br><span class="line">  window.removeEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 定义一个计算属性：在 originalWindowHeight 的基础上减去 380</span><br><span class="line">// 注意：这个 380 可能是为了预留固定区域的高度（比如底部导航栏、头部工具栏等）</span><br><span class="line">const adjustedWindowHeight = computed(() =&gt; &#123;</span><br><span class="line">  return originalWindowHeight.value - 380;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 在页面上展示计算后的窗口高度 --&gt;</span><br><span class="line">    &lt;p&gt;当前窗口高度: &#123;&#123; adjustedWindowHeight &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">/*</span><br><span class="line">  引入 Vue 的组合式 API：</span><br><span class="line">  - ref: 定义响应式变量</span><br><span class="line">  - onMounted: 组件挂载后执行回调</span><br><span class="line">  - onBeforeUnmount: 组件卸载前执行回调</span><br><span class="line">  - computed: 定义计算属性</span><br><span class="line">*/</span><br><span class="line">import &#123; ref, onMounted, onBeforeUnmount, computed &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">// 定义一个响应式变量 originalWindowHeight，初始值是当前窗口高度</span><br><span class="line">const originalWindowHeight = ref(window.innerHeight);</span><br><span class="line"></span><br><span class="line">// 定义一个函数，用于在窗口大小改变时更新窗口高度</span><br><span class="line">const handleResize = () =&gt; &#123;</span><br><span class="line">  originalWindowHeight.value = window.innerHeight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 在组件挂载完成后，给 window 添加 resize 事件监听器</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  window.addEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 在组件卸载前，移除监听器，避免内存泄漏</span><br><span class="line">onBeforeUnmount(() =&gt; &#123;</span><br><span class="line">  window.removeEventListener(&#x27;resize&#x27;, handleResize);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 定义一个计算属性：在 originalWindowHeight 的基础上减去 380</span><br><span class="line">// 注意：这个 380 可能是为了预留固定区域的高度（比如底部导航栏、头部工具栏等）</span><br><span class="line">const adjustedWindowHeight = computed(() =&gt; &#123;</span><br><span class="line">  return originalWindowHeight.value - 380;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -327,8 +326,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/02/17/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%89%8D%E7%AB%AF/vue/Vue%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%84%E5%BC%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E5%80%BC/" rel="prev" title="vue父子兄弟之间传值">
-                  <i class="fa fa-angle-left"></i> vue父子兄弟之间传值
+                <a href="/2025/02/17/Learning/%E5%89%8D%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF/Flask/flask%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%81%E7%A7%BB/" rel="prev" title="flask的数据迁移">
+                  <i class="fa fa-angle-left"></i> flask的数据迁移
                 </a>
             </div>
             <div class="post-nav-item">
@@ -372,13 +371,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">71k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:03</span>
+    <span title="站点阅读时长">1:04</span>
   </span>
 </div>
 
