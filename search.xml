@@ -2509,4 +2509,44 @@ opacity：0.5
         <tag>SyncClipboard</tag>
       </tags>
   </entry>
+  <entry>
+    <title>hexo文章加密</title>
+    <url>/2025/09/15/Learning/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置站点文件"><a href="#配置站点文件" class="headerlink" title="配置站点文件"></a>配置站点文件</h4><p>站点配置文件中可能就直接有以下代码，将<code>enable: false</code> 改为 <code>enable: true</code> 即可启用插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Security</span><br><span class="line">##</span><br><span class="line">encrypt:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
+
+<p>如果站点配置文件没有如下代码，直接在最后面加上这些内容就行</p>
+<h4 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h4><p>如果需要使用，在文章的头部配置中添加上相应的字段，如password、message等，如下图</p>
+<p><img src="https://zxztypora.oss-cn-hangzhou.aliyuncs.com/20250915163506730.png" alt="company模板"></p>
+<p>发布文章后如果想要访问，就需要输入密码了</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>个人博客配置</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2025.09.15</title>
+    <url>/2025/09/15/Diary/2025.9.15/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="079346959ce7fef42e72013a1d33212f43951e33df77c9ef5cbb349b3a933293">1bd3bd312516a9a209976099ef49f4794d1f7cf394c7b16094ea09ff4648e186574b352f73066642a481191061357954fcef3292470aef30d588b90451f6d9f540b9fbdbd21198baec45de02ca51fde3e4b16d8f0241129f23159697d840c35d5c9583ce2205888556184b890449077eac2914a54021643ebd3bdf007bfe3f4e70b7609c25960a27cb01e6e107b88dd60a78186452b63f7038f49e4a7e5356878096c33e147229c09dc5fff00dd3129dfa259fb2302bb42c71890df8c1efe24f5da50d8adf6e37b8e2f51da6d106743dde44a5f2a18d468b445c9a85558ce9f5ac7441a063f40a61b006e903ec74d45c3bdeb12eaf7f0c3dc2001366e1b9a1d477bf79acafef1b343bc596ae924dd68d5b1293617071e4f87ebd5ecc4205d18dfdca35ec5ae11625e6902f4d878b772dd768aae44f6cc7a4c4e723aaf809039997df8f147386df17abdc514ca7070ffc7116936b94658914d1b91cefe099e8c3</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">输入密码查看</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+  </entry>
 </search>
