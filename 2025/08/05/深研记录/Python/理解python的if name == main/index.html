@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zxzlimit.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"enable":true,"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="理解 python 的 if __name__ &#x3D;&#x3D; &#39;__main__&#39;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解 python 的 if __name__ &#x3D;&#x3D; &#39;__main__&#39;">
+<meta property="og:url" content="https://zxzlimit.github.io/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/index.html">
+<meta property="og:site_name" content="zxz&#39;s blog">
+<meta property="og:description" content="理解 python 的 if __name__ &#x3D;&#x3D; &#39;__main__&#39;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-20T13:50:13.383Z">
+<meta property="article:author" content="zxzlimit">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zxzlimit.github.io/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zxzlimit.github.io/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/","path":"2025/08/05/深研记录/Python/理解python的if name == main/","title":"理解 python 的 if __name__ == '__main__'"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+
+<title>理解 python 的 if __name__ == '__main__' | zxz's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8XKR4TC0K"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z8XKR4TC0K","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7299eb90191d4d3143dcc76492cf7598";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https//8.134.186.40:8360/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+ <style>
+      .icon-wrapper {
+          position: fixed;
+          left: 30px; /* 固定在左边30px位置 */
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 2000; /* 确保在装饰星星之上 */
+          cursor: pointer;
+      }
+      .icon-wrapper:hover {
+          transform: translateY(-50%) scale(1.05);
+      }
+      .icon {
+          opacity: 0.6;
+          cursor: pointer;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          width: 40px;
+          height: 40px;
+          filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+          animation: slowRotate 15s linear infinite; /* 更缓慢的持续旋转 */
+      }
+      .icon-wrapper:hover .icon {
+          opacity: 0.9;
+          filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
+          animation-duration: 8s; /* 悬停时旋转速度稍快 */
+      }
+      
+      @keyframes slowRotate {
+          from {
+              transform: rotate(0deg);
+          }
+          to {
+              transform: rotate(360deg);
+          }
+      }
+
+
+      .column {
+          transition: opacity 0.5s ease;
+          opacity: 1;
+      }
+      
+      .column.hidden {
+          opacity: 0;
+          pointer-events: none;
+      }
+
+
+
+      .main-inner.index.posts-expand.centered {
+          max-width: 800px; /* 限制最大宽度实现居中效果 */
+      }
+      
+      /* 左侧目录按钮 - 吸附在页面左边缘 */
+      .toc-toggle-btn {
+          position: fixed;
+          left: -35px; /* 默认隐藏在左边缘外 */
+          bottom: 20px;
+          width: 50px;
+          height: 50px;
+          background: #222;
+          border-radius: 0 25px 25px 0; /* 右侧圆角 */
+          display: none;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 1999;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .toc-toggle-btn.show {
+          display: flex;
+      }
+      .toc-toggle-btn:hover {
+          background: #333;
+          left: 0; /* 悬浮时完全显示 */
+          transform: scale(1.05);
+      }
+      .toc-toggle-btn svg {
+          width: 24px;
+          height: 24px;
+          fill: #fff;
+      }
+      
+      /* 当屏幕较小时，按钮的吸附效果 */
+      @media (max-width: 1200px) {
+          .toc-toggle-btn {
+              left: -35px; /* 保持吸附在边缘 */
+          }
+          .toc-toggle-btn:hover {
+              left: 0; /* 悬浮时显示 */
+          }
+      }
+      
+      /* 遮罩层 */
+      .toc-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 2001;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .toc-overlay.active {
+          opacity: 1;
+          visibility: visible;
+      }
+      
+      /* 侧边栏目录 */
+      .toc-sidebar {
+          position: fixed;
+          top: 0;
+          left: -350px;
+          width: 350px;
+          height: 100%;
+          background: #222;
+          z-index: 2002;
+          transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+          overflow-y: auto;
+      }
+      .toc-sidebar.active {
+          left: 0;
+      }
+      .toc-sidebar-header {
+          padding: 20px;
+          border-bottom: 1px solid #444;
+          background: #1a1a1a;
+      }
+      .toc-sidebar-title {
+          margin: 0;
+          font-size: 18px;
+          color: #fff;
+          font-weight: bold;
+      }
+      .toc-sidebar-content {
+          padding: 0;
+      }
+      
+      /* 克隆的sidebar黑色主题样式 - 只改背景颜色 */
+      .toc-sidebar-content .sidebar {
+          background: #222 !important;
+      }
+      .toc-sidebar-content .sidebar-inner {
+          background: #222 !important;
+      }
+      .toc-sidebar-content .sidebar-panel-container {
+          background: #222 !important;
+      }
+      .toc-sidebar-content .post-toc-wrap,
+      .toc-sidebar-content .site-overview-wrap {
+          background: #222 !important;
+      }
+      
+      /* 确保导航按钮可见并可点击 */
+      .toc-sidebar-content .sidebar-nav {
+          height: auto !important;
+          visibility: visible !important;
+          pointer-events: auto !important;
+          opacity: 1 !important;
+          overflow: visible !important;
+          display: block !important;
+          padding: 15px 20px !important;
+          margin: 0 !important;
+          background: #1a1a1a;
+          border-bottom: 1px solid #444;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          cursor: pointer;
+          user-select: none;
+      }
+      .toc-sidebar-content .sidebar-nav li {
+          cursor: pointer;
+          transition: color 0.3s ease;
+          display: inline-block !important;
+          padding: 5px 10px;
+          color: #999 !important;
+          font-size: 14px;
+      }
+      .toc-sidebar-content .sidebar-nav li:hover {
+          color: #ff6b35 !important;
+      }
+      .toc-sidebar-content .sidebar-nav li.sidebar-nav-overview {
+          margin-left: 10px;
+      }
+      /* 激活状态的导航按钮 */
+      .toc-sidebar-content .sidebar-toc-active .sidebar-nav-toc,
+      .toc-sidebar-content .sidebar-overview-active .sidebar-nav-overview {
+          color: #ff6b35 !important;
+          border-bottom: 2px solid #ff6b35;
+      }
+      
+        
+
+
+      /* 强制隐藏未激活的面板 */
+      .toc-sidebar-content .sidebar-toc-active .site-overview-wrap {
+          display: none !important;
+      }
+      .toc-sidebar-content .sidebar-overview-active .post-toc-wrap {
+          display: none !important;
+      }
+      
+      /* 强制展开所有目录层级 */
+      .toc-sidebar-content .post-toc ol,
+      .toc-sidebar-content .post-toc-wrap ol,
+      .toc-sidebar-content .toc ol {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          height: auto !important;
+          max-height: none !important;
+      }
+      
+      /* 左侧栏文字颜色设置为 #999 */
+      .toc-sidebar-content .post-toc,
+      .toc-sidebar-content .post-toc-wrap,
+      .toc-sidebar-content .toc,
+      .toc-sidebar-content .site-overview-wrap {
+          color: #999 !important;
+      }
+      .toc-sidebar-content .post-toc a,
+      .toc-sidebar-content .post-toc-wrap a,
+      .toc-sidebar-content .toc a,
+      .toc-sidebar-content .site-overview-wrap a {
+          color: #999 !important;
+      }
+      
+      /* 文章目录链接橙色悬停效果 */
+      .toc-sidebar-content .post-toc a:hover,
+      .toc-sidebar-content .post-toc-wrap a:hover,
+      .toc-sidebar-content .toc a:hover {
+          color: #ff6b35 !important;
+      }
+      .toc-sidebar-content .post-toc .active,
+      .toc-sidebar-content .post-toc-wrap .active,
+      .toc-sidebar-content .toc .active {
+          color: #ff6b35 !important;
+      }
+      
+      .site-overview-wrap.sidebar-panel.sidebar-panel-active {
+    margin-top: 20px;
+      }
+      
+
+      
+      .panel-item {
+          display: flex;
+          align-items: center;
+          padding: 12px 15px;
+          margin: 5px 0;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          color: #fff;
+          text-decoration: none;
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .panel-item:hover {
+          background: rgba(255, 107, 53, 0.2);
+          transform: translateX(5px);
+          color: #ff6b35;
+      }
+      
+      .panel-item svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+          fill: currentColor;
+          transition: all 0.3s ease;
+      }
+      
+      .panel-item span {
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+      }
+      
+      .panel-item:hover svg {
+          transform: scale(1.1);
+      }
+      
+      /* 添加涟漪效果 */
+      .panel-item::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: rgba(255, 107, 53, 0.3);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: width 0.6s ease, height 0.6s ease;
+      }
+      
+      .panel-item:active::before {
+          width: 300px;
+          height: 300px;
+      }
+
+      /* 当页面宽度小于991px时，隐藏六芒星按钮和相关功能 */
+      @media (max-width: 991px) {
+          .icon-wrapper {
+              display: none !important;
+          }
+          
+          .toc-toggle-btn {
+              display: none !important;
+          }
+          
+          .toc-overlay {
+              display: none !important;
+          }
+          
+          .toc-sidebar {
+              display: none !important;
+          }
+          
+          .top-left-panel {
+              display: none !important;
+          }
+      }
+  </style>
+
+
+<style>
+    h2 {
+        color: #1560d8;
+        font-size: 26px;
+        font-weight: normal;
+        margin: 10px 0;
+        padding-left: 10px;
+        border-left: 11px solid #3572d6;
+        background: linear-gradient(to right, #ecedf3 0%, #ecedf3 50%, transparent 80%, transparent 100%);
+        padding: 8px 200px 8px 18px;
+        display: inline-block;
+    }
+    h3 {
+        color: #1560d8;
+        font-size: 24px;
+        font-weight: normal;
+        margin: 10px 0;
+        padding-left: 8px;
+        border-left: 11px solid #3572d6;
+        padding: 6px 12px 6px 18px;
+    }
+    .post-title{
+        color:rgba(0, 0, 0, 1) !important;
+        font-size: 42px !important;
+        font-weight: bold !important;
+        margin: 10px 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: none !important;
+        display: block !important;
+    }
+    a.post-title-link {
+        font-size: 24px;
+        display: inline-block;
+    }
+
+    /* 顶部左侧黑色吸附区域样式 */
+    .top-left-panel {
+        position: fixed;
+        top: 0; /* 紧靠页面最上面 */
+        left: -166px; /* 隐藏大部分，只露出右边4px */
+        width: 170px; /* 缩小宽度 */
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 8px; /* 缩小圆角 */
+        backdrop-filter: blur(10px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* 缩小阴影 */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500;
+        padding: 10px 0; /* 缩小内边距 */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: none; /* 默认隐藏 */
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    /* 显示状态 */
+    .top-left-panel.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        left: -166px; /* 显示时只露出4px */
+    }
+
+    /* 鼠标悬停时完全展开 */
+    .top-left-panel.show:hover {
+        left: 0px; /* 悬停时完全展开 */
+    }
+    
+    .panel-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 15px; /* 缩小内边距 */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #999;
+        border-left: 2px solid transparent; /* 缩小边框 */
+        user-select: none;
+    }
+    
+    .panel-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ff6b35;
+        border-left-color: #ff6b35;
+        transform: translateX(3px);
+    }
+    
+    .panel-item svg {
+        width: 16px; /* 缩小图标 */
+        height: 16px;
+        margin-right: 10px; /* 缩小间距 */
+        fill: currentColor;
+        transition: all 0.3s ease;
+    }
+    
+    .panel-item span {
+        font-size: 12px; /* 缩小文字 */
+        font-weight: 500;
+        letter-spacing: 0.3px;
+    }
+
+    div#topLeftPanel {
+        border-radius: 0 8px 8px 0; /* 缩小圆角，左上角无圆角 */
+    }
+    
+    .panel-item:hover svg {
+        transform: scale(1.1);
+    }
+    
+    /* 小屏幕隐藏顶部面板 */
+    @media (max-width: 991px) {
+        .top-left-panel {
+            display: none !important;
+        }
+    }
+
+
+    @media (max-width: 991px) {
+    .column {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        }
+    
+    .column.hidden {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        }
+    }
+    
+    /* 新搜索弹窗样式 - 使用 mysearch 前缀，样式与原 search-popup 一致 */
+    .mysearch-active {
+        overflow: hidden;
+    }
+    
+    .mysearch-overlay {
+        background: rgba(0, 0, 0, 0);
+        display: flex;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        transition: visibility .4s, background .4s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 99999;
+    }
+    
+    .mysearch-active .mysearch-overlay {
+        background: rgba(0, 0, 0, .5);
+        visibility: visible;
+    }
+    
+    .mysearch-modal {
+        background: #fff;
+        border-radius: 8px;
+        height: 80%;
+        margin: auto;
+        transform: scale(0);
+        transition: transform .4s;
+        width: 700px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        z-index: 100000;
+        position: relative;
+    }
+    
+    .mysearch-active .mysearch-modal {
+        transform: scale(1);
+    }
+    
+    .mysearch-header {
+        background: #f5f5f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        display: flex;
+        padding: 15px 20px;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
+        flex-shrink: 0;
+        position: relative;
+    }
+    
+    .mysearch-icon-search {
+        color: #666;
+        font-size: 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    
+    .mysearch-input-wrapper {
+        flex: 1;
+    }
+    
+    .mysearch-input {
+        background: transparent;
+        border: 0;
+        outline: 0;
+        width: 100%;
+        font-size: 16px;
+        padding: 5px;
+        color: #333;
+    }
+    
+    .mysearch-close-btn {
+        color: #666;
+        font-size: 24px;
+        cursor: pointer;
+        transition: color 0.3s;
+        margin-left: 10px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .mysearch-close-btn:hover {
+        color: #ff6b35;
+    }
+    
+    .mysearch-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        position: relative;
+    }
+    
+    .mysearch-empty-state {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .mysearch-empty-icon {
+        font-size: 80px;
+        color: #ccc;
+    }
+    
+    .mysearch-empty-text {
+        font-size: 16px;
+        color: #999;
+        margin-top: 20px;
+    }
+    
+    .mysearch-stats-bar {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .mysearch-results-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mysearch-result-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .mysearch-result-item:last-child {
+        border-bottom: none;
+    }
+    
+    .mysearch-result-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .mysearch-result-title {
+        color: #1560d8;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        transition: color 0.3s;
+    }
+    
+    .mysearch-result-link:hover .mysearch-result-title {
+        color: #ff6b35;
+    }
+    
+    .mysearch-result-excerpt {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+    
+    .mysearch-highlight {
+        background: #fff3cd;
+        color: #856404;
+        padding: 2px 4px;
+        border-radius: 2px;
+    }
+    
+    .mysearch-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .mysearch-loading i {
+        font-size: 80px;
+        color: #ccc;
+    }
+    
+    .mysearch-loading div {
+        font-size: 16px;
+        color: #999;
+        margin-top: 20px;
+    }
+    
+    .mysearch-no-results {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .mysearch-no-results-icon {
+        font-size: 80px;
+        color: #ccc;
+    }
+    
+    .mysearch-no-results-text {
+        font-size: 16px;
+        color: #999;
+        margin-top: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .mysearch-modal {
+            border-radius: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .mysearch-header {
+            border-radius: 0;
+        }
+    }
+    
+ </style>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">zxz's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-日记"><a href="/categories/%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-book fa-fw"></i>日记</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E4%B8%80%E3%80%81%E6%B2%A1%E6%9C%89%E5%8A%A0-if-name-main-%EF%BC%9A"><span class="nav-text">✅ 一、没有加 if __name__ &#x3D;&#x3D; &quot;__main__&quot;：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%F0%9F%91%89-%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">👉 结果：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E4%BA%8C%E3%80%81%E5%8A%A0%E4%BA%86-if-name-main-%EF%BC%9A"><span class="nav-text">✅ 二、加了 if __name__ &#x3D;&#x3D; &quot;__main__&quot;：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%F0%9F%91%89-%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-text">👉 结果：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E5%B0%8F%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">✅ 小总结：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zxzlimit"
+      src="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
+  <p class="site-author-name" itemprop="name">zxzlimit</p>
+  <div class="site-description" itemprop="description">无人扶我青云志，我自踏雪至山巅。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zxzlimit" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zxzlimit" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:17353190891@163.com" title="E-Mail → mailto:17353190891@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzlimit.github.io/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/124022279?s=400&u=56dc953088938d2a3f363378a1929a38260cd9f9&v=4">
+      <meta itemprop="name" content="zxzlimit">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zxz's blog">
+      <meta itemprop="description" content="无人扶我青云志，我自踏雪至山巅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="理解 python 的 if __name__ == '__main__' | zxz's blog">
+      <meta itemprop="description" content="理解 python 的 if __name__ == '__main__'">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          理解 python 的 if __name__ == '__main__'
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-05T00:00:00+08:00">2025-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-10-20 21:50:13" itemprop="dateModified" datetime="2025-10-20T21:50:13+08:00">2025-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">深研记录</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="waline-pageview-count" data-path="/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/"></span>
+    </span>
+  
+</div>
+
+            <div class="post-description"></div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="✅-一、没有加-if-name-main-："><a href="#✅-一、没有加-if-name-main-：" class="headerlink" title="✅ 一、没有加 if __name__ == &quot;__main__&quot;："></a>✅ <strong>一、没有加 <code>if __name__ == &quot;__main__&quot;</code>：</strong></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python复制编辑# demo.py</span><br><span class="line"></span><br><span class="line">print(&quot;脚本开始执行&quot;)</span><br><span class="line"></span><br><span class="line">def say_hi():</span><br><span class="line">    print(&quot;Hi!&quot;)</span><br><span class="line"></span><br><span class="line">say_hi()</span><br></pre></td></tr></table></figure>
+
+<h4 id="👉-结果："><a href="#👉-结果：" class="headerlink" title="👉 结果："></a>👉 结果：</h4><ul>
+<li><p>直接运行：会输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">复制编辑脚本开始执行</span><br><span class="line">Hi!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>被 <code>import demo</code> 导入：也会<strong>自动输出</strong>上面的内容，因为 <code>print()</code> 和 <code>say_hi()</code> 是顶层代码，导入时就会执行。</p>
+</li>
+</ul>
+<hr>
+<h3 id="✅-二、加了-if-name-main-："><a href="#✅-二、加了-if-name-main-：" class="headerlink" title="✅ 二、加了 if __name__ == &quot;__main__&quot;："></a>✅ <strong>二、加了 <code>if __name__ == &quot;__main__&quot;</code>：</strong></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python复制编辑# demo.py</span><br><span class="line"></span><br><span class="line">print(&quot;模块被加载了&quot;)</span><br><span class="line"></span><br><span class="line">def say_hi():</span><br><span class="line">    print(&quot;Hi!&quot;)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    print(&quot;脚本开始执行&quot;)</span><br><span class="line">    say_hi()</span><br></pre></td></tr></table></figure>
+
+<h4 id="👉-结果：-1"><a href="#👉-结果：-1" class="headerlink" title="👉 结果："></a>👉 结果：</h4><ul>
+<li><p>直接运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">复制编辑模块被加载了</span><br><span class="line">脚本开始执行</span><br><span class="line">Hi!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>被 <code>import demo</code> 导入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">复制编辑</span><br><span class="line">模块被加载了</span><br></pre></td></tr></table></figure>
+
+<p>✅ 只执行了最外层的 <code>print()</code>，<code>if __name__ == &quot;__main__&quot;:</code> 里的内容不会自动跑。</p>
+</li>
+</ul>
+<hr>
+<h3 id="✅-小总结："><a href="#✅-小总结：" class="headerlink" title="✅ 小总结："></a>✅ 小总结：</h3><ul>
+<li>你写在 <code>if __name__ == &quot;__main__&quot;:</code> <strong>外面</strong> 的代码，在导入时就会执行。</li>
+<li>你写在 <code>if __name__ == &quot;__main__&quot;:</code> <strong>里面</strong> 的代码，只在<strong>直接运行</strong>这个脚本时执行。</li>
+</ul>
+<p>所以如果你希望脚本被导入时“干净点”，就别把主逻辑写在外面，而是包在 <code>if __name__ == &quot;__main__&quot;</code> 里。</p>
+<hr>
+<p>你想不想试试自己写一个脚本，然后新建一个文件导入它，感受一下这种差异？我可以帮你搭个结构~</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>zxzlimit
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://zxzlimit.github.io/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/" title="理解 python 的 if __name__ &#x3D;&#x3D; &#39;__main__&#39;">https://zxzlimit.github.io/2025/08/05/深研记录/Python/理解python的if name == main/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/05/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E4%B8%8B%E7%9A%84next%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%A7%E5%88%86%E7%B1%BB/" rel="prev" title="Hexo下的next实现多级分类">
+                  <i class="fa fa-angle-left"></i> Hexo下的next实现多级分类
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/05/%E5%B8%B8%E7%94%A8%E9%80%9F%E6%9F%A5/%E5%91%BD%E4%BB%A4/MySQL%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" rel="next" title="MySQL命令大全">
+                  MySQL命令大全 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+  <!-- 圆形主按钮 -->
+  <button class="main-btn">&#9776;</button>
+  <!-- 展开的两个按钮（无连接线） -->
+  <div class="arrow-btns">
+      <button class="arrow-btn up-btn">&#9650;</button>
+      <button class="arrow-btn down-btn">&#9660;</button>
+  </div>
+
+
+<style>
+    .main-btn {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(242,243,245,0.8);
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.06);
+        border: none;
+        color: #555;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, box-shadow 0.2s;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    .main-btn:hover {
+        background: rgba(228,230,235,0.8);
+        box-shadow: 0 4px 16px 0 rgba(0,0,0,0.14), 0 2px 8px 0 rgba(0,0,0,0.10);
+    }
+    .arrow-btns {
+        position: fixed;
+        right: 24px;
+        bottom: 80px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: translateY(20px);
+    }
+    .arrow-btns.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    .arrow-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(242,243,245,0.8);
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.06);
+        font-size: 22px;
+        color: #555;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s;
+        margin-bottom: 8px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    .arrow-btn:last-child {
+        margin-bottom: 0;
+    }
+    .arrow-btn:hover {
+        background: rgba(228,230,235,0.8);
+        box-shadow: 0 4px 16px 0 rgba(0,0,0,0.14), 0 2px 8px 0 rgba(0,0,0,0.10);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+  
+    <div class="waline-container">
+      <div id="waline"></div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+      init({
+        el: '#waline',
+        serverURL: 'https//8.134.186.40:8360/',
+        placeholder: '欢迎留言~',
+        meta: ["nick","mail","link"],
+        requiredMeta: [],
+        emoji: ["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/bilibili"],
+        comment: true,
+        pageview: true
+      });
+    </script>
+  
+  
+</div>
+  </main>
+
+    <div class="icon-wrapper">
+      <svg t="1760107821451" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1583" width="120" height="120">
+          <path d="M512 0l147.802 256h295.603L807.603 512l147.802 256H659.802L512 1024 364.198 768H68.595l147.802-256L68.595 256h295.603L512 0z m88.617 768H423.292l88.657 153.549L600.617 768zM245.939 563.168L157.235 716.8h177.403l-88.699-153.632zM630.183 307.2H393.73L275.483 512 393.73 716.8h236.453L748.448 512 630.183 307.2z m147.846 256.025L689.362 716.8h177.352l-88.685-153.575zM334.638 307.2H157.235l88.704 153.631L334.638 307.2z m532.076 0H689.362l88.667 153.575L866.714 307.2zM511.949 102.451L423.292 256h177.325l-88.668-153.549z" fill="#22282D" p-id="1584"/>
+      </svg>
+  </div>
+
+  <!-- 左下角目录按钮 -->
+  <div class="toc-toggle-btn" id="tocToggleBtn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/>
+      </svg>
+  </div>
+
+  <!-- 遮罩层 -->
+  <div class="toc-overlay" id="tocOverlay"></div>
+
+  <!-- 侧边栏目录 -->
+  <div class="toc-sidebar" id="tocSidebar">
+      <div class="toc-sidebar-header" id="tocSidebarHeader" style="display: none;">
+          <h3 class="toc-sidebar-title">站点概览</h3>
+      </div>
+      <div class="toc-sidebar-content" id="sidebarCloneContainer">
+          <!-- 整个sidebar将被克隆到这里 -->
+      </div>
+  </div>
+
+  <!-- 顶部左侧黑色吸附区域 -->
+  <div class="top-left-panel" id="topLeftPanel">
+      <div class="panel-item" data-action="home">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+          <span>首页</span>
+      </div>
+      <div class="panel-item" data-action="categories">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>分类</span>
+      </div>
+      <div class="panel-item" data-action="tags">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+          </svg>
+          <span>标签</span>
+      </div>
+      <div class="panel-item" data-action="diaries">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+          </svg>
+          <span>日记</span>
+      </div>
+      <div class="panel-item" data-action="archives">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          <span>归档</span>
+      </div>
+      <div class="panel-item" data-action="about">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <span>关于</span>
+      </div>
+      <div class="panel-item" data-action="search">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <span>搜索</span>
+      </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">zxzlimit</span>
+  </div>
+
+
+
+
+
+
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span  id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider" style="margin: 0 0.5em;">|</span>
+  
+
+  
+    <span  id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/zxzlimit" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script>
+    const mainBtn = document.querySelector('.main-btn');
+    const arrowBtns = document.querySelector('.arrow-btns');
+    const upBtn = document.querySelector('.up-btn');
+    const downBtn = document.querySelector('.down-btn');
+
+    mainBtn.onclick = function(e) {
+        arrowBtns.classList.toggle('show');
+    };
+
+    upBtn.onclick = function(e) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    downBtn.onclick = function(e) {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    };
+
+    // 点击页面其他地方收起按钮组
+    document.addEventListener('click', function(e) {
+        if (!arrowBtns.contains(e.target) && e.target !== mainBtn) {
+            arrowBtns.classList.remove('show');
+        }
+    });
+</script>
+
+
+    <script>
+        const icon = document.querySelector('.icon');
+        const column = document.querySelector('.column');
+        const mainInner = document.querySelector('.main-inner');
+        const footerInner = document.querySelector('.footer-inner');
+        const mainElement = document.querySelector('.main');
+        let rotationDegree = parseInt(localStorage.getItem('iconRotation')) || 0;
+        let isHidden = localStorage.getItem('sidebarHidden') === 'true';
+        
+        // 为元素添加过渡动画
+        if (mainInner) {
+            mainInner.style.transition = 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease';
+        }
+        if (footerInner) {
+            footerInner.style.transition = 'padding-left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease';
+        }
+        if (mainElement) {
+            mainElement.style.transition = 'justify-content 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+        if (column) {
+            column.style.transition = 'opacity 0.3s ease';
+        }
+        
+        let isAnimating = false;
+
+        // 监听过渡结束：如果已经标记隐藏且 opacity 过渡结束，则真正 display:none
+        column.addEventListener('transitionend', (e) => {
+            if (e.propertyName === 'opacity' && isHidden) {
+                column.style.display = 'none';
+                isAnimating = false;
+            }
+        });
+
+        icon.addEventListener('click', () => {
+            if (isAnimating) return; // 防抖，避免快速连续点击
+            isAnimating = true;
+
+            rotationDegree += 180;
+            icon.style.transform = `rotate(${rotationDegree}deg)`;
+            localStorage.setItem('iconRotation', rotationDegree);
+
+            if (isHidden) {
+                // 重新显示：侧边栏、文章内容和页脚同时淡出，改变布局，然后同时淡入
+                // 同时让侧边栏、文章内容和页脚淡出
+                column.style.opacity = '0';
+                if (mainInner) {
+                    mainInner.style.opacity = '0';
+                }
+                if (footerInner) {
+                    footerInner.style.opacity = '0';
+                }
+                
+                // 等待同时淡出完成后改变布局
+                setTimeout(() => {
+                    if (mainElement) {
+                        mainElement.style.justifyContent = 'space-between';
+                    }
+                    // 恢复 footer-inner 的 padding-left
+                    if (footerInner) {
+                        footerInner.style.paddingLeft = '252px';
+                    }
+                    // 恢复侧边栏显示
+                    column.style.display = '';
+                    void column.offsetWidth;
+                    
+                    // 等待布局变化完成后，侧边栏、文章内容和页脚同时淡入
+                    setTimeout(() => {
+                        column.style.opacity = '1';
+                        if (mainInner) {
+                            mainInner.style.opacity = '1';
+                        }
+                        if (footerInner) {
+                            footerInner.style.opacity = '1';
+                        }
+                        // 等待淡入完成后解除动画锁
+                        setTimeout(() => {
+                            isAnimating = false;
+                        }, 300);
+                    }, 500); // 等待 justify-content 变化完成
+                }, 300); // 等待淡出完成
+            } else {
+                // 隐藏：侧边栏、文章内容和页脚同时淡出，改变布局，然后文章内容和页脚淡入
+                // 同时让侧边栏、文章内容和页脚淡出
+                column.style.opacity = '0';
+                if (mainInner) {
+                    mainInner.style.opacity = '0';
+                }
+                if (footerInner) {
+                    footerInner.style.opacity = '0';
+                }
+                
+                // 等待同时淡出完成后改变布局
+                setTimeout(() => {
+                    if (mainElement) {
+                        mainElement.style.justifyContent = 'center';
+                    }
+                    // 移除 footer-inner 的 padding-left
+                    if (footerInner) {
+                        footerInner.style.paddingLeft = '0';
+                    }
+                    column.style.display = 'none';
+                    
+                    // 等待布局变化完成后淡入文章内容和页脚
+                    setTimeout(() => {
+                        if (mainInner) {
+                            mainInner.style.opacity = '1';
+                        }
+                        if (footerInner) {
+                            footerInner.style.opacity = '1';
+                        }
+                        // 等待淡入完成后解除动画锁
+                        setTimeout(() => {
+                            isAnimating = false;
+                        }, 300);
+                    }, 500); // 等待 justify-content 变化完成
+                }, 300); // 等待淡出完成
+            }
+
+            isHidden = !isHidden;
+            localStorage.setItem('sidebarHidden', isHidden);
+            
+            // 控制目录按钮的显示/隐藏
+            const tocToggleBtn = document.getElementById('tocToggleBtn');
+            if (tocToggleBtn) {
+                if (isHidden) {
+                    tocToggleBtn.classList.add('show');
+                } else {
+                    tocToggleBtn.classList.remove('show');
+                }
+            }
+            
+            // 控制顶部左侧面板的显示/隐藏
+            const topLeftPanel = document.getElementById('topLeftPanel');
+            if (topLeftPanel) {
+                if (isHidden) {
+                    topLeftPanel.classList.add('show');
+                } else {
+                    topLeftPanel.classList.remove('show');
+                }
+            }
+        });
+        
+        // 目录功能
+        const tocToggleBtn = document.getElementById('tocToggleBtn');
+        const tocOverlay = document.getElementById('tocOverlay');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const sidebarCloneContainer = document.getElementById('sidebarCloneContainer');
+        
+        // 恢复上一次的状态
+        if (isHidden) {
+            icon.style.transform = `rotate(${rotationDegree}deg)`;
+            column.style.display = 'none';
+            column.style.opacity = '0';
+            if (mainElement) {
+                mainElement.style.justifyContent = 'center';
+            }
+            if (footerInner) {
+                footerInner.style.paddingLeft = '0';
+            }
+            // 显示目录按钮
+            if (tocToggleBtn) {
+                tocToggleBtn.classList.add('show');
+            }
+            // 显示顶部面板
+            const topLeftPanel = document.getElementById('topLeftPanel');
+            if (topLeftPanel) {
+                topLeftPanel.classList.add('show');
+            }
+        } else {
+            icon.style.transform = `rotate(${rotationDegree}deg)`;
+            // 隐藏目录按钮
+            if (tocToggleBtn) {
+                tocToggleBtn.classList.remove('show');
+            }
+            // 隐藏顶部面板
+            const topLeftPanel = document.getElementById('topLeftPanel');
+            if (topLeftPanel) {
+                topLeftPanel.classList.remove('show');
+            }
+        }
+        
+        // 直接克隆整个 sidebar 到左侧overlay中
+        const sidebar = document.querySelector('.sidebar');
+        const tocSidebarHeader = document.getElementById('tocSidebarHeader');
+        
+        if (sidebar && sidebarCloneContainer) {
+            const sidebarClone = sidebar.cloneNode(true);
+            sidebarCloneContainer.appendChild(sidebarClone);
+            
+            // 检查是否在文章页面（有.post-toc）
+            const hasPostToc = sidebarClone.querySelector('.post-toc');
+            
+            // 如果不是文章页面，显示"站点概览"标题
+            if (!hasPostToc && tocSidebarHeader) {
+                tocSidebarHeader.style.display = 'block';
+            }
+            
+            // 展开所有多级目录 - 更强制的方式
+            const allTocOl = sidebarClone.querySelectorAll('.post-toc ol, .post-toc-wrap ol, .toc ol');
+            allTocOl.forEach(ol => {
+                ol.style.display = 'block';
+                ol.style.visibility = 'visible';
+                ol.style.opacity = '1';
+            });
+            
+            // 重新初始化切换功能
+            const navToc = sidebarClone.querySelector('.sidebar-nav-toc');
+            const navOverview = sidebarClone.querySelector('.sidebar-nav-overview');
+            const tocWrap = sidebarClone.querySelector('.post-toc-wrap');
+            const overviewWrap = sidebarClone.querySelector('.site-overview-wrap');
+            const sidebarInner = sidebarClone.querySelector('.sidebar-inner');
+            
+            if (navToc && navOverview && tocWrap && overviewWrap && sidebarInner) {
+                // 点击"文章目录"
+                navToc.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('点击文章目录');
+                    
+                    // 更新类名
+                    sidebarInner.classList.add('sidebar-nav-active', 'sidebar-toc-active');
+                    sidebarInner.classList.remove('sidebar-overview-active');
+                    
+                    // 显示/隐藏内容
+                    tocWrap.style.display = 'block';
+                    tocWrap.style.visibility = 'visible';
+                    tocWrap.classList.add('sidebar-panel-active');
+                    
+                    overviewWrap.style.display = 'none';
+                    overviewWrap.style.visibility = 'hidden';
+                    overviewWrap.classList.remove('sidebar-panel-active');
+                });
+                
+                // 点击"站点概览"
+                navOverview.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('点击站点概览');
+                    
+                    // 更新类名
+                    sidebarInner.classList.add('sidebar-overview-active');
+                    sidebarInner.classList.remove('sidebar-nav-active', 'sidebar-toc-active');
+                    
+                    // 显示/隐藏内容
+                    tocWrap.style.display = 'none';
+                    tocWrap.style.visibility = 'hidden';
+                    tocWrap.classList.remove('sidebar-panel-active');
+                    
+                    overviewWrap.style.display = 'block';
+                    overviewWrap.style.visibility = 'visible';
+                    overviewWrap.classList.add('sidebar-panel-active');
+                });
+            }
+        }
+        
+        // 打开目录侧边栏
+        function openTocSidebar() {
+            if (tocSidebar) tocSidebar.classList.add('active');
+            if (tocOverlay) tocOverlay.classList.add('active');
+        }
+        
+        // 关闭目录侧边栏
+        function closeTocSidebar() {
+            if (tocSidebar) tocSidebar.classList.remove('active');
+            if (tocOverlay) tocOverlay.classList.remove('active');
+        }
+        
+        // 点击按钮打开侧边栏
+        if (tocToggleBtn) {
+            tocToggleBtn.addEventListener('click', openTocSidebar);
+        }
+        
+        // 点击遮罩层关闭侧边栏
+        if (tocOverlay) {
+            tocOverlay.addEventListener('click', closeTocSidebar);
+        }
+        
+        // 顶部左侧面板点击事件
+        const topLeftPanel = document.getElementById('topLeftPanel');
+        if (topLeftPanel) {
+            const panelItems = topLeftPanel.querySelectorAll('.panel-item');
+            panelItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    let targetUrl = '';
+                    
+                    switch(action) {
+                        case 'home':
+                            targetUrl = '/';
+                            break;
+                        case 'categories':
+                            targetUrl = '/categories/';
+                            break;
+                        case 'tags':
+                            targetUrl = '/tags/';
+                            break;
+                        case 'diaries':
+                            targetUrl = '/categories/日记/';
+                            break;
+                        case 'archives':
+                            targetUrl = '/archives/';
+                            break;
+                        case 'about':
+                            targetUrl = '/about/';
+                            break;
+                        case 'search':
+                            // 触发搜索功能或跳转到搜索页面
+                            const searchInput = document.querySelector('.search-input');
+                            if (searchInput) {
+                                searchInput.focus();
+                                return;
+                            }
+                            // 如果没有搜索输入框，可以尝试其他搜索方式
+                            console.log('触发搜索功能');
+                            return;
+                        default:
+                            return;
+                    }
+                    
+                    // 添加点击动画效果
+                    this.style.transform = 'translateX(3px) scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        // 跳转到目标页面
+                        if (targetUrl) {
+                            window.location.href = targetUrl;
+                        }
+                    }, 150);
+                });
+            });
+        }
+    </script><script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https//8.134.186.40:8360/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":true,"pageSize":10,"meta":["nick","mail","link"],"requiredMeta":[],"locale":{"placeholder":"欢迎留言~"},"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/bilibili"],"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2025/08/05/%E6%B7%B1%E7%A0%94%E8%AE%B0%E5%BD%95/Python/%E7%90%86%E8%A7%A3python%E7%9A%84if%20name%20==%20main/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+
+<script>
+// 左侧面板功能
+document.addEventListener('DOMContentLoaded', function() {
+    const panelItems = document.querySelectorAll('.panel-item');
+    
+    // 为每个面板项添加点击事件
+    panelItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // 获取点击的动作类型
+            const action = this.getAttribute('data-action');
+            
+            // 根据动作跳转到相应页面
+            switch(action) {
+                case 'home':
+                    window.location.href = '/';
+                    break;
+                case 'categories':
+                    window.location.href = '/categories/';
+                    break;
+                case 'tags':
+                    window.location.href = '/tags/';
+                    break;
+                case 'diaries':
+                    window.location.href = '/categories/日记/';
+                    break;
+                case 'archives':
+                    window.location.href = '/archives/';
+                    break;
+                case 'about':
+                    window.location.href = '/about/';
+                    break;
+                case 'search':
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // 调用新的搜索功能
+                    if (window.openMysearch) {
+                        window.openMysearch();
+                    }
+                    break;
+            }
+        });
+    });
+});
+</script>
+
+  <!-- 新搜索弹窗 HTML -->
+  <div class="mysearch-overlay" id="mysearchOverlay">
+    <div class="mysearch-modal" id="mysearchModal">
+      <div class="mysearch-header">
+        <span class="mysearch-icon-search">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="mysearch-input-wrapper">
+          <input 
+            type="text" 
+            class="mysearch-input" 
+            id="mysearchInput" 
+            placeholder="搜索..." 
+            autocomplete="off"
+            spellcheck="false"
+            maxlength="80"
+          >
+        </div>
+        <span class="mysearch-close-btn" id="mysearchCloseBtn" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="mysearch-body" id="mysearchBody">
+        <div class="mysearch-empty-state">
+          <i class="fa fa-search mysearch-empty-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 新搜索功能逻辑
+    (function() {
+      const mysearchOverlay = document.getElementById('mysearchOverlay');
+      const mysearchModal = document.getElementById('mysearchModal');
+      const mysearchInput = document.getElementById('mysearchInput');
+      const mysearchCloseBtn = document.getElementById('mysearchCloseBtn');
+      const mysearchBody = document.getElementById('mysearchBody');
+      const mysearchEmptyState = document.getElementById('mysearchEmptyState');
+      
+      let mysearchData = [];
+      let mysearchDataLoaded = false;
+      
+      // 打开搜索弹窗
+      function openMysearch() {
+        document.body.classList.add('mysearch-active');
+        setTimeout(() => {
+          mysearchInput.focus();
+        }, 100);
+        
+        // 如果数据未加载，则加载
+        if (!mysearchDataLoaded) {
+          loadMysearchData();
+        }
+      }
+      
+      // 关闭搜索弹窗
+      function closeMysearch() {
+        document.body.classList.remove('mysearch-active');
+        mysearchInput.value = '';
+        mysearchBody.innerHTML = '<div class="mysearch-empty-state"><i class="fa fa-search mysearch-empty-icon"></i></div>';
+      }
+      
+      // 加载搜索数据
+      function loadMysearchData() {
+        mysearchBody.innerHTML = '<div class="mysearch-loading"><i class="fa fa-spinner fa-pulse"></i></div>';
+        
+        fetch('/search.xml')
+          .then(response => response.text())
+          .then(str => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(str, 'text/xml');
+            const entries = xml.querySelectorAll('entry');
+            
+            mysearchData = Array.from(entries).map(entry => {
+              const title = entry.querySelector('title')?.textContent || '';
+              const content = entry.querySelector('content')?.textContent || '';
+              const url = entry.querySelector('url')?.textContent || '';
+              
+              return {
+                title: title,
+                content: content.replace(/<[^>]+>/g, '').substring(0, 500),
+                url: url
+              };
+            });
+            
+            mysearchDataLoaded = true;
+            mysearchBody.innerHTML = '<div class="mysearch-empty-state"><i class="fa fa-search mysearch-empty-icon"></i></div>';
+          })
+          .catch(err => {
+            console.error('加载搜索数据失败:', err);
+            mysearchBody.innerHTML = '<div class="mysearch-no-results"><i class="fa fa-exclamation-circle mysearch-no-results-icon"></i><div class="mysearch-no-results-text">搜索数据加载失败</div></div>';
+          });
+      }
+      
+      // 执行搜索
+      function performMysearch(keyword) {
+        if (!keyword.trim()) {
+          mysearchBody.innerHTML = '<div class="mysearch-empty-state"><i class="fa fa-search mysearch-empty-icon"></i></div>';
+          return;
+        }
+        
+        const lowerKeyword = keyword.toLowerCase();
+        const results = mysearchData.filter(item => {
+          return item.title.toLowerCase().includes(lowerKeyword) || 
+                 item.content.toLowerCase().includes(lowerKeyword);
+        });
+        
+        if (results.length === 0) {
+          mysearchBody.innerHTML = '<div class="mysearch-no-results"><i class="fa fa-frown-o mysearch-no-results-icon"></i><div class="mysearch-no-results-text">未找到相关结果</div></div>';
+          return;
+        }
+        
+        let html = `<div class="mysearch-stats-bar">找到 ${results.length} 个结果</div>`;
+        html += '<ul class="mysearch-results-list">';
+        
+        results.forEach(item => {
+          const highlightedTitle = highlightKeyword(item.title, keyword);
+          const highlightedContent = highlightKeyword(item.content, keyword);
+          const excerpt = getExcerpt(item.content, keyword, 150);
+          
+          html += `
+            <li class="mysearch-result-item">
+              <a href="${item.url}" class="mysearch-result-link">
+                <span class="mysearch-result-title">${highlightedTitle}</span>
+                <div class="mysearch-result-excerpt">${highlightKeyword(excerpt, keyword)}</div>
+              </a>
+            </li>
+          `;
+        });
+        
+        html += '</ul>';
+        mysearchBody.innerHTML = html;
+      }
+      
+      // 高亮关键词
+      function highlightKeyword(text, keyword) {
+        const regex = new RegExp(`(${escapeRegExp(keyword)})`, 'gi');
+        return text.replace(regex, '<span class="mysearch-highlight">$1</span>');
+      }
+      
+      // 获取摘要
+      function getExcerpt(text, keyword, maxLength) {
+        const cleanText = text.replace(/<[^>]+>/g, '');
+        const lowerText = cleanText.toLowerCase();
+        const lowerKeyword = keyword.toLowerCase();
+        const index = lowerText.indexOf(lowerKeyword);
+        
+        if (index === -1) {
+          return cleanText.substring(0, maxLength);
+        }
+        
+        const start = Math.max(0, index - 40);
+        const end = Math.min(cleanText.length, index + keyword.length + 80);
+        let excerpt = cleanText.substring(start, end);
+        
+        if (start > 0) excerpt = '...' + excerpt;
+        if (end < cleanText.length) excerpt = excerpt + '...';
+        
+        return excerpt;
+      }
+      
+      // 转义 HTML
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+      
+      // 转义正则表达式
+      function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+      
+      // 事件监听
+      // 点击关闭按钮
+      mysearchCloseBtn.addEventListener('click', closeMysearch);
+      
+      // 点击遮罩层关闭
+      mysearchOverlay.addEventListener('click', (e) => {
+        if (e.target === mysearchOverlay) {
+          closeMysearch();
+        }
+      });
+      
+      // ESC 键关闭
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('mysearch-active')) {
+          closeMysearch();
+        }
+      });
+      
+      // 输入框监听
+      mysearchInput.addEventListener('input', (e) => {
+        performMysearch(e.target.value);
+      });
+      
+      // 暴露全局函数供外部调用
+      window.openMysearch = openMysearch;
+    })();
+  </script>
+
+</body>
+</html>
